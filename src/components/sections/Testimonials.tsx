@@ -37,29 +37,27 @@ export const Testimonials: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-24 px-6 md:px-12 relative overflow-hidden">
-      {/* Visual noise background for this section */}
-      <div className="absolute inset-0 bg-eclipse/50 -z-10"></div>
+    <section ref={container} className="py-24 px-6 md:px-12 relative overflow-hidden bg-white/40">
       
       <div className="container mx-auto grid md:grid-cols-2 gap-10 max-w-6xl">
         {testimonials.map((t, i) => (
           <div 
             key={i}
-            className="testi-card border border-ardent/10 rounded-[3rem] p-10 md:p-14 bg-gradient-to-b from-transparent to-ardent/[0.02] hover:bg-ardent/[0.04] transition-colors duration-500 relative flex flex-col"
+            className="testi-card border border-[#1a1a1a]/10 rounded-[3rem] p-10 md:p-14 bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-colors duration-500 relative flex flex-col shadow-sm"
           >
             {/* Quote decoration */}
-            <span className="absolute top-10 right-10 text-[6rem] font-display text-aura/20 leading-none">"</span>
+            <span className="absolute top-10 right-10 text-[6rem] font-display text-aura/10 leading-none">"</span>
             
-            <p className="text-2xl md:text-3xl font-display italic leading-tight text-ardent mb-12 relative z-10 text-balance">
+            <p className="text-2xl md:text-3xl font-display italic leading-tight text-[#1a1a1a] mb-12 relative z-10 text-balance">
               {t.quote}
             </p>
             
-            <div className="mt-auto border-t border-ardent/20 pt-6">
+            <div className="mt-auto border-t border-[#1a1a1a]/10 pt-6">
               <p className="font-medium text-sunbeam flex items-center gap-3">
                 <span className="w-4 h-[1px] bg-sunbeam"></span>
                 {t.author}, {t.age}
               </p>
-              <p className="text-sm font-light text-ardent/60 mt-1 pl-7">{t.role}</p>
+              <p className="text-sm font-light text-[#1a1a1a]/60 mt-1 pl-7">{t.role}</p>
             </div>
           </div>
         ))}

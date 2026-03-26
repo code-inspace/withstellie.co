@@ -1,6 +1,4 @@
 import React, { useRef } from 'react';
-import { Button } from '../ui/Button';
-import { TextReveal } from '../ui/TextReveal';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -10,73 +8,86 @@ export const Hero: React.FC = () => {
   useGSAP(() => {
     const tl = gsap.timeline({ delay: 0.2 });
 
-    tl.fromTo(".hero-eyebrow", 
-      { opacity: 0, letterSpacing: "1em", filter: "blur(10px)" },
-      { opacity: 1, letterSpacing: "0.2em", filter: "blur(0px)", duration: 1.5, ease: "power3.out" }
-    )
-    .fromTo(".reveal-word",
-      { yPercent: 120, rotate: 2, opacity: 0 },
-      { yPercent: 0, rotate: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: "power3.out" },
-      "-=1"
-    )
-    .fromTo(".hero-subtitle",
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-      "-=0.6"
-    )
-    .fromTo(".hero-cta",
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 1, ease: "elastic.out(1, 0.5)" },
-      "-=0.6"
-    )
-    .fromTo(".hero-image",
-      { opacity: 0, scale: 1.1, y: 40 },
-      { opacity: 1, scale: 1, y: 0, duration: 1.8, ease: "power3.out" },
-      "-=1.5"
+    // Animate pills mask (glissement vers le haut)
+    tl.fromTo(".mask-pill", 
+      { scaleY: 0, transformOrigin: "bottom" },
+      { scaleY: 1, duration: 1.5, stagger: 0.15, ease: "power3.inOut" }
     );
+
+    // Animate texts and buttons (opacity + position Y stagger)
+    tl.fromTo(".hero-element",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power2.out" },
+      "-=1" // overlap with mask animation
+    );
+
   }, { scope: container });
 
   return (
     <section 
       ref={container}
-      className="relative min-h-screen flex flex-col justify-center pt-32 pb-20 px-6 md:px-12 overflow-hidden"
+      className="relative min-h-screen bg-[#f4f7f4] flex flex-col justify-center pt-32 pb-20 px-6 md:px-12 overflow-hidden"
     >
-      <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        <div className="z-10 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <span className="hero-eyebrow tracking-[0.2em] text-xs md:text-sm uppercase text-sunbeam font-medium mb-8">
-            Mind · Body · Soul
-          </span>
-          
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display leading-[1.1] text-ardent mb-8 text-balance">
-            <TextReveal className="block mb-2">Tu n'es pas perdue.</TextReveal>
-            <br />
-            <TextReveal className="italic text-bliss">Tu es en train de te retrouver.</TextReveal>
+      <div className="container mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        {/* Left: Image Mask */}
+        <div className="z-10 order-2 lg:order-1 relative w-full max-w-[320px] md:max-w-md mx-auto lg:mx-0 lg:ml-auto flex justify-center lg:justify-end">
+          <svg viewBox="0 0 400 500" className="w-full h-auto" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <mask id="pills-mask">
+                <rect className="mask-pill" x="0" y="80" width="120" height="380" rx="60" fill="white" />
+                <rect className="mask-pill" x="140" y="0" width="120" height="500" rx="60" fill="white" />
+                <rect className="mask-pill" x="280" y="120" width="120" height="320" rx="60" fill="white" />
+              </mask>
+            </defs>
+            <image 
+              href="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1400&auto=format&fit=crop" 
+              width="400" 
+              height="500" 
+              preserveAspectRatio="xMidYMid slice" 
+              mask="url(#pills-mask)" 
+            />
+          </svg>
+        </div>
+
+        {/* Right: Text Content */}
+        <div className="z-10 order-1 lg:order-2 flex flex-col items-start text-left lg:pl-10">
+          <h1 
+            className="hero-element text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-[#1a1a1a] mb-6 tracking-tight text-balance"
+            style={{ fontFamily: "'Inter', 'Sora', sans-serif" }}
+          >
+            The way you want to be heard
           </h1>
           
-          <p className="hero-subtitle text-lg md:text-xl text-ardent/70 font-light max-w-lg mb-12 text-balance leading-relaxed">
-            Coaching somatique pour femmes en transition de vie. Sessions 1:1 avec Stellie.
+          <p 
+            className="hero-element text-lg md:text-xl text-[#1a1a1a]/80 font-normal max-w-lg mb-10 text-balance leading-relaxed"
+            style={{ fontFamily: "'Inter', 'Sora', sans-serif" }}
+          >
+            Coaching somatique pour femmes en transition de vie. Sessions 1:1 avec Stellie. Explorons la résonance de votre voix intérieure.
           </p>
           
-          <div className="hero-cta">
-            <Button size="lg" onClick={() => window.location.href = '/reserver'}>
-              Réserver mon appel découverte gratuit
-            </Button>
+          <div className="hero-element flex flex-col sm:flex-row flex-wrap gap-4 items-center w-full sm:w-auto">
+            <button 
+              className="px-8 py-4 bg-[#1a3a32] text-white rounded-full font-medium transition-all hover:bg-[#112621] hover:scale-[1.02] active:scale-95 shadow-md w-full sm:w-auto"
+              onClick={() => window.location.href = '/reserver'}
+              style={{ fontFamily: "'Inter', 'Sora', sans-serif" }}
+            >
+              Réserver un appel
+            </button>
+            <button 
+              className="px-8 py-4 bg-transparent text-[#1a1a1a] border border-[#1a1a1a]/20 rounded-full font-medium transition-all flex items-center justify-center gap-2 hover:bg-[#1a1a1a]/5 hover:border-[#1a1a1a]/40 w-full sm:w-auto"
+              onClick={() => window.location.href = '/about'}
+              style={{ fontFamily: "'Inter', 'Sora', sans-serif" }}
+            >
+              En savoir plus
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
           </div>
         </div>
         
-        <div className="hero-image z-0 order-1 lg:order-2 w-full max-w-lg mx-auto lg:max-w-none relative">
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden relative shadow-[0_30px_60px_-15px_rgba(26,0,0,0.5)]">
-            <div className="absolute inset-0 bg-gradient-to-tr from-eclipse/60 via-transparent to-sunbeam/20 z-10 mix-blend-overlay"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1400&auto=format&fit=crop" 
-              alt="Mouvement somatique" 
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
-          
-          {/* Decorative blur/glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-sunbeam/20 blur-[100px] -z-10 rounded-full"></div>
-        </div>
       </div>
     </section>
   );

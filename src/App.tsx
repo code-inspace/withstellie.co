@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-eclipse text-ardent selection:bg-sunbeam selection:text-eclipse min-h-screen font-sans selection:bg-sunbeam selection:text-eclipse">
+    <div className="bg-[#f4f7f4] text-[#1a1a1a] selection:bg-[#1a3a32]/10 selection:text-[#1a1a1a] min-h-screen font-sans">
       <Navbar />
       
       <main className="w-full relative z-10 overflow-hidden">

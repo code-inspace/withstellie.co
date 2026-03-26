@@ -53,7 +53,7 @@ export const Method: React.FC = () => {
   return (
     <section ref={container} className="py-32 px-6 md:px-12">
       <div className="container mx-auto">
-        <h2 className="method-title text-5xl md:text-7xl font-display text-center mb-24 text-ardent">
+        <h2 className="method-title text-5xl md:text-7xl font-display text-center mb-24 text-[#1a1a1a]">
           La méthode <span className="text-sunbeam italic">MBS</span>
         </h2>
         
@@ -74,9 +74,9 @@ export const Method: React.FC = () => {
         </div>
         
         <div className="text-center">
-          <a href="/methode" className="method-link inline-flex items-center gap-4 text-ardent hover:text-sunbeam uppercase tracking-widest text-sm font-medium transition-colors group">
+          <a href="/methode" className="method-link inline-flex items-center gap-4 text-[#1a1a1a] hover:text-sunbeam uppercase tracking-widest text-sm font-medium transition-colors group">
             Découvrir comment on travaille ensemble
-            <span className="p-3 rounded-full border border-ardent/30 group-hover:bg-ardent/10 transition-colors group-hover:translate-x-2 duration-300">
+            <span className="p-3 rounded-full border border-[#1a1a1a]/30 group-hover:bg-[#1a1a1a]/10 transition-colors group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>
           </a>

@@ -5,8 +5,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: theme('colors.eclipse');
-    color: theme('colors.ardent');
+    background-color: #f4f7f4;
+    color: #1a1a1a;
   }
 
   body {

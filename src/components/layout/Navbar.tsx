@@ -34,15 +34,19 @@ export const Navbar: React.FC = () => {
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="/" className="text-2xl font-display text-ardent tracking-wide hover:text-sunbeam transition-colors duration-300">
-          STELLIE
+        <a href="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
+          <img 
+            src="/logo.png" 
+            alt="WithStellie.co" 
+            className="h-5 md:h-6 w-auto object-contain" 
+          />
         </a>
         
         <div className="flex items-center gap-6 md:gap-12">
-          <div className="hidden md:flex gap-4 text-sm font-medium tracking-wider text-ardent/70">
-            <button className="text-ardent hover:text-sunbeam transition-colors">FR</button>
+          <div className="hidden md:flex gap-4 text-sm font-medium tracking-wider text-[#1a1a1a]/70">
+            <button className="text-[#1a1a1a] hover:opacity-70 transition-colors">FR</button>
             <span>/</span>
-            <button className="hover:text-sunbeam transition-colors">EN</button>
+            <button className="hover:opacity-70 transition-colors">EN</button>
           </div>
           
           <Button variant="outline" size="sm" onClick={() => window.location.href = '/reserver'}>

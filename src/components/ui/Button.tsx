@@ -46,10 +46,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }, []);
 
     const variants = {
-      primary: "bg-sunbeam text-eclipse",
-      secondary: "bg-aura text-ardent",
-      outline: "border border-ardent/30 text-ardent hover:border-sunbeam",
-      ghost: "bg-transparent text-ardent hover:text-sunbeam",
+      primary: "bg-[#1a3a32] text-white",
+      secondary: "bg-[#1a1a1a] text-[#f4f7f4]",
+      outline: "border border-[#1a1a1a]/20 text-[#1a1a1a] hover:border-[#1a1a1a]/40 shadow-sm",
+      ghost: "bg-transparent text-[#1a1a1a] hover:bg-[#1a1a1a]/5",
     };
 
     const sizes = {

@@ -49,15 +49,15 @@ export const About: React.FC = () => {
               className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-sunbeam/30 flex items-center justify-center bg-eclipse z-20">
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-sunbeam/30 flex items-center justify-center bg-[#f4f7f4] z-20">
             <span className="font-display italic text-aura text-2xl rotate-[-10deg]">Stellie</span>
           </div>
         </div>
 
         <div className="order-1 md:order-2">
-          <h2 className="about-title text-4xl md:text-5xl lg:text-6xl font-display text-ardent mb-10">Je suis Stellie.</h2>
+          <h2 className="about-title text-4xl md:text-5xl lg:text-6xl font-display text-[#1a1a1a] mb-10">Je suis Stellie.</h2>
           
-          <div className="space-y-6 text-lg md:text-xl font-light text-ardent/80 leading-relaxed max-w-lg mb-12">
+          <div className="space-y-6 text-lg md:text-xl font-light text-[#1a1a1a]/80 leading-relaxed max-w-lg mb-12">
             <p className="about-text">
               Je suis coach somatique. Je travaille avec des femmes qui savent qu'elles sont capables de plus, mais qui n'arrivent plus à s'entendre elles-mêmes.
             </p>
