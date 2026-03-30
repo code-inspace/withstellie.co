@@ -5,6 +5,7 @@ import { AboutOriginal } from './AboutOriginal';
 import { MethodOriginal } from './MethodOriginal';
 import { TestimonialsOriginal } from './TestimonialsOriginal';
 import { CTAOriginal } from './CTAOriginal';
+import { Footer } from '../../components/layout/Footer';
 
 const Home3: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Home3: React.FC = () => {
       <MethodOriginal />
       <TestimonialsOriginal />
       <CTAOriginal />
+      <Footer />
     </div>
   );
 };

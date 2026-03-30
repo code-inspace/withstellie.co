@@ -58,7 +58,7 @@ export const HeroOriginal: React.FC = () => {
 
       {/* Navbar */}
       <nav className="h3-nav relative z-30 flex items-center justify-between px-8 md:px-16 pt-8">
-        <span className="text-[#F5EDE0] text-sm font-medium tracking-widest">withstellie.co</span>
+        <a href="/"><img src="/logo.png" alt="WithStellie.co" className="h-5 w-auto object-contain brightness-0 invert" /></a>
         <div className="hidden md:flex items-center gap-8 text-[#F5EDE0]/70 text-sm">
           <a href="/" className="hover:text-[#F5EDE0] transition-colors">Accueil</a>
           <a href="/about" className="hover:text-[#F5EDE0] transition-colors">À propos</a>
