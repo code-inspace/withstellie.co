@@ -7,14 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        eclipse: '#1A0000',
-        aura: '#8B2500',
-        sunbeam: '#DA7134',
-        bliss: '#E89154',
-        ardent: '#F5E6D0',
+        earth: '#3A2315',
+        rust: '#662D14',
+        terracotta: '#A85A32',
+        copper: '#D4844D',
+        sand: '#FDF8F0',
+        clay: '#E5A974',
+        offwhite: '#F3EBE1',
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
         serif: ['Cormorant Garamond', 'serif'],
         display: ['Tan Nightingale', 'Cormorant Garamond', 'serif'],
       },
@@ -22,6 +24,7 @@ export default {
         '2xl': '2rem',
         '3xl': '2.5rem',
         '4xl': '3rem',
+        'full': '9999px',
       },
       transitionTimingFunction: {
         'magnetic': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
