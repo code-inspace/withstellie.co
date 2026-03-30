@@ -27,18 +27,12 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <a href="https://instagram.com/shift.withstellie" target="_blank" rel="noreferrer"
-                className="flex items-center gap-2.5 text-sm font-medium text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors group">
-                <span className="p-2 rounded-full border border-[#1a1a1a]/15 group-hover:border-[#1a1a1a]/40 transition-colors">
-                  <IconInstagram />
-                </span>
-                @shift.withstellie
+                className="p-2 rounded-full border border-[#1a1a1a]/15 hover:border-[#1a1a1a]/40 text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors">
+                <IconInstagram />
               </a>
               <a href="https://tiktok.com/@shift.withstellie" target="_blank" rel="noreferrer"
-                className="flex items-center gap-2.5 text-sm font-medium text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors group">
-                <span className="p-2 rounded-full border border-[#1a1a1a]/15 group-hover:border-[#1a1a1a]/40 transition-colors">
-                  <IconTikTok />
-                </span>
-                @shift.withstellie
+                className="p-2 rounded-full border border-[#1a1a1a]/15 hover:border-[#1a1a1a]/40 text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors">
+                <IconTikTok />
               </a>
             </div>
             <a href="mailto:chrystelbrc.pro@gmail.com"
