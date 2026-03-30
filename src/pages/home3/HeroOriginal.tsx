@@ -87,7 +87,7 @@ export const HeroOriginal: React.FC = () => {
           href="/reserver"
           className="h3-cta px-8 py-3.5 bg-[#C85A3A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D96A48] transition-colors duration-300"
         >
-          Commençons
+          Réserver mon appel découverte
         </a>
       </div>
     </section>
