@@ -1,4 +1,7 @@
 import { useLayoutEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home2 from './pages/home2/Home2';
+import Home3 from './pages/home3/Home3';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
@@ -13,24 +16,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
-  
-  // Custom cursor logic could go here if requested, 
-  // but we keep the DOM clean for the cinematic experience.
-  
+function HomePage() {
   useLayoutEffect(() => {
-    // Refresh ScrollTrigger instances when layout changes
     const timeout = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 500);
-    
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div className="bg-[#f4f7f4] text-[#1a1a1a] selection:bg-[#1a3a32]/10 selection:text-[#1a1a1a] min-h-screen font-sans">
+    <div className="bg-sand text-earth selection:bg-terracotta/20 selection:text-rust min-h-screen font-sans">
       <Navbar />
-      
       <main className="w-full relative z-10 overflow-hidden">
         <Hero />
         <Hook />
@@ -39,9 +35,20 @@ function App() {
         <Testimonials />
         <CTA />
       </main>
-      
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home2" element={<Home2 />} />
+        <Route path="/home3" element={<Home3 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

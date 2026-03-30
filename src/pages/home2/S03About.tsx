@@ -1,86 +1,79 @@
 import React, { useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const S03About: React.FC = () => {
   const container = useRef<HTMLElement>(null);
-  const imgRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Parallax on the photo
-    gsap.to('.about2-img-inner', {
-      yPercent: -20,
-      ease: 'none',
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
+        start: 'top 70%',
+        toggleActions: 'play none none reverse',
       }
     });
 
-    // Text reveal
-    gsap.fromTo('.about2-text > *',
-      { opacity: 0, x: 30 },
-      {
-        opacity: 1,
-        x: 0,
-        stagger: 0.12,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 65%',
-          toggleActions: 'play none none reverse',
-        }
-      }
+    tl.fromTo('.a2-image',
+      { opacity: 0, scale: 0.9, rotate: -2 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 1.5, ease: 'power3.out' }
+    )
+    .fromTo('.a2-title',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' },
+      '-=1'
+    )
+    .fromTo('.a2-text',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power2.out' },
+      '-=0.5'
+    )
+    .fromTo('.a2-link',
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' },
+      '-=0.3'
     );
   }, { scope: container });
 
   return (
-    <section
-      ref={container}
-      className="relative min-h-screen flex flex-col md:flex-row overflow-hidden"
-    >
-      {/* Left: Photo with parallax */}
-      <div ref={imgRef} className="w-full md:w-1/2 relative bg-[#1A0000] min-h-[50vh] md:min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[#8B2500]/30 mix-blend-multiply z-10"></div>
-        <img
-          src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?q=80&w=1600&auto=format&fit=crop"
-          alt="Stellie lifestyle"
-          className="about2-img-inner absolute inset-0 w-full h-[130%] object-cover grayscale-[10%] brightness-[0.7]"
-          style={{ top: '-15%' }}
-        />
-      </div>
+    <section ref={container} className="py-32 px-6 md:px-12 bg-[#040D18] relative">
+      <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div className="a2-image relative w-full max-w-md mx-auto md:max-w-none order-2 md:order-1">
+          <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden relative"
+               style={{ boxShadow: '0 20px 60px -20px rgba(74,187,200,0.25)' }}>
+            <div className="absolute inset-0 bg-[#4ABBC8]/10 z-10 mix-blend-overlay"></div>
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"
+              alt="Portrait de Stellie"
+              className="w-full h-full object-cover"
+              style={{ filter: 'brightness(0.8) saturate(0.9) hue-rotate(160deg)' }}
+            />
+          </div>
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-[#4ABBC8]/30 flex items-center justify-center bg-[#040D18] z-20">
+            <span className="font-display italic text-[#4ABBC8] text-2xl rotate-[-10deg]">Stellie</span>
+          </div>
+        </div>
 
-      {/* Right: Text block on Ardent */}
-      <div className="w-full md:w-1/2 bg-[#F5E6D0] flex items-center px-10 md:px-16 py-24">
-        <div className="about2-text max-w-md">
-          <span className="text-[#8B2500] uppercase tracking-[0.4em] text-xs font-bold mb-8 block">
-            Qui suis-je
-          </span>
-
-          <h2 className="font-display text-[#1A0000] text-5xl md:text-6xl leading-[0.9] mb-8 tracking-tight">
-            Je suis <em className="text-[#DA7134]">Stellie.</em>
+        <div className="order-1 md:order-2">
+          <h2 className="a2-title text-4xl md:text-5xl lg:text-6xl font-display text-[#EAF4F7] mb-10">
+            Je suis Stellie.
           </h2>
 
-          <p className="text-[#1A0000]/80 text-lg leading-relaxed mb-6 font-light">
-            Je ne suis pas là pour te guérir. Je suis là pour tenir l'espace pendant que tu te rappelles qui tu es.
-          </p>
+          <div className="space-y-6 text-lg md:text-xl font-light text-[#B8D8E0]/80 leading-relaxed max-w-lg mb-12">
+            <p className="a2-text">
+              Je suis coach somatique. Je travaille avec des femmes qui savent qu'elles sont capables de plus, mais qui n'arrivent plus à s'entendre elles-mêmes.
+            </p>
+            <p className="a2-text">
+              Je ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà.
+            </p>
+          </div>
 
-          <p className="text-[#1A0000]/70 leading-relaxed mb-10 font-light">
-            Chaque femme que j'accompagne porte déjà la réponse. Mon rôle, c'est d'aider son corps à la dire.
-          </p>
-
-          <a
-            href="/about"
-            className="inline-flex items-center gap-3 text-[#8B2500] text-sm uppercase tracking-[0.2em] font-medium border-b border-[#8B2500]/40 pb-1 hover:border-[#8B2500] transition-all group"
-          >
-            En savoir plus sur Stellie
-            <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
+          <a href="/about" className="a2-link inline-flex items-center gap-4 text-[#4ABBC8] hover:text-[#7ECCD8] uppercase tracking-widest text-sm font-medium transition-colors group">
+            En savoir plus sur mon parcours
+            <span className="p-3 rounded-full border border-[#4ABBC8]/30 group-hover:bg-[#4ABBC8]/10 transition-all group-hover:translate-x-2 duration-300">
+              <ArrowRight size={18} />
+            </span>
           </a>
         </div>
       </div>

@@ -1,36 +1,30 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    quote: 'Pour la première fois, j\'ai arrêté de me battre contre moi-même. Mon corps m\'a enfin dit quelque chose de vrai.',
-    name: 'Inès',
-    context: '28 ans, chargée de projet en reconversion',
+    quote: "Pour la première fois, j'ai arrêté de me battre contre moi-même. Mon corps m'a enfin dit quelque chose de vrai.",
+    author: "Inès",
+    age: "28 ans",
+    role: "chargée de projet en reconversion"
   },
   {
-    quote: 'Je croyais que je devais tout gérer avec ma tête. Travailler avec Stellie m\'a appris à habiter mon corps différemment — doucement mais profondément.',
-    name: 'Marion',
-    context: '34 ans, entrepreneuse en burnout silencieux',
-  },
+    quote: "Je pensais que j'avais juste besoin de motivation. Ce dont j'avais besoin, c'était de me réentendre.",
+    author: "Camille",
+    age: "31 ans",
+    role: "après une rupture professionnelle"
+  }
 ];
 
 export const S05Testimonials: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    // Gentle fade in
-    gsap.fromTo('.testimonial-card',
-      { opacity: 0, y: 20 },
+    gsap.fromTo('.t2-card',
+      { opacity: 0, scale: 0.9, y: 50 },
       {
-        opacity: 1,
-        y: 0,
-        stagger: 0.25,
-        duration: 1.2,
-        ease: 'power2.out',
+        opacity: 1, scale: 1, y: 0, duration: 1.2, stagger: 0.2, ease: 'power3.out',
         scrollTrigger: {
           trigger: container.current,
           start: 'top 70%',
@@ -38,51 +32,29 @@ export const S05Testimonials: React.FC = () => {
         }
       }
     );
-
-    // Background color transition from Ardent → dark Aura on scroll
-    ScrollTrigger.create({
-      trigger: container.current,
-      start: 'top 80%',
-      end: 'bottom top',
-      scrub: true,
-      onUpdate: (self) => {
-        const p = self.progress;
-        const el = container.current;
-        if (!el) return;
-        // F5E6D0 → 1A0000
-        const r = Math.round(245 - (245 - 26) * p * 0.6);
-        const g = Math.round(230 - (230 - 0) * p * 0.6);
-        const b = Math.round(208 - (208 - 0) * p * 0.6);
-        el.style.backgroundColor = `rgb(${r},${g},${b})`;
-      }
-    });
   }, { scope: container });
 
   return (
-    <section
-      ref={container}
-      className="relative min-h-[80vh] flex flex-col items-center justify-center py-32 px-6 overflow-hidden"
-      style={{ backgroundColor: '#F5E6D0' }}
-    >
-      {/* Top label */}
-      <span className="text-[#8B2500] uppercase tracking-[0.4em] text-xs font-bold mb-16 block text-center">
-        Elles ont traversé
-      </span>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+    <section ref={container} className="py-24 px-6 md:px-12 bg-[#040D18]">
+      <div className="container mx-auto grid md:grid-cols-2 gap-10 max-w-6xl">
         {testimonials.map((t, i) => (
           <div
             key={i}
-            className="testimonial-card bg-white/40 backdrop-blur-sm border border-[#8B2500]/10 p-10 flex flex-col justify-between"
+            className="t2-card rounded-[3rem] p-10 md:p-14 relative flex flex-col border border-[#4ABBC8]/10 bg-[#0A1F2E]/40"
           >
-            <blockquote className="font-display italic text-[#1A0000] text-xl md:text-2xl leading-[1.4] mb-10">
-              "{t.quote}"
-            </blockquote>
-            <footer>
-              <div className="w-8 h-px bg-[#8B2500]/40 mb-4"></div>
-              <p className="text-[#8B2500] font-bold text-sm">{t.name}</p>
-              <p className="text-[#1A0000]/50 text-xs mt-1">{t.context}</p>
-            </footer>
+            <span className="absolute top-10 right-10 text-[6rem] font-display text-[#4ABBC8]/10 leading-none">"</span>
+
+            <p className="text-2xl md:text-3xl font-display italic leading-tight text-[#EAF4F7] mb-12 relative z-10">
+              {t.quote}
+            </p>
+
+            <div className="mt-auto border-t border-[#4ABBC8]/10 pt-6">
+              <p className="font-medium text-[#4ABBC8] flex items-center gap-3">
+                <span className="w-4 h-[1px] bg-[#4ABBC8]"></span>
+                {t.author}, {t.age}
+              </p>
+              <p className="text-sm font-light text-[#B8D8E0]/50 mt-1 pl-7">{t.role}</p>
+            </div>
           </div>
         ))}
       </div>
