@@ -22,14 +22,14 @@ export const HookOriginal: React.FC = () => {
           <p className="h3-hook-line">Tu travailles dur.</p>
           <p className="h3-hook-line">Tu fais tout bien.</p>
           <p className="h3-hook-line">Tu coches toutes les cases.</p>
-          <p className="h3-hook-line font-display italic text-[#C85A3A] mt-6 pt-4">
+          <p className="h3-hook-line font-display font-normal italic text-[#C85A3A] mt-6 pt-4">
             Et pourtant, quelque chose en toi ne se sent pas à sa place.
           </p>
         </div>
 
         <div className="w-16 h-px bg-[#C85A3A]/40 mx-auto mb-16" />
 
-        <blockquote className="h3-hook-line text-3xl md:text-4xl font-display italic leading-tight text-[#2A1A0E] mb-8 max-w-3xl mx-auto">
+        <blockquote className="h3-hook-line text-3xl md:text-4xl font-display font-normal italic leading-tight text-[#2A1A0E] mb-8 max-w-3xl mx-auto">
           "L'identité, ce n'est pas ce qu'on t'a dit d'être. C'est ce que tu choisis de devenir, un souffle à la fois."
         </blockquote>
 

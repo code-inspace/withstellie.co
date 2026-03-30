@@ -18,7 +18,7 @@ export default {
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
         serif: ['Cormorant Garamond', 'serif'],
-        display: ['Tan Nightingale', 'Cormorant Garamond', 'serif'],
+        display: ['Cormorant Garamond', 'serif'],
       },
       borderRadius: {
         '2xl': '2rem',

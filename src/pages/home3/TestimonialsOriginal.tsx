@@ -28,11 +28,13 @@ export const TestimonialsOriginal: React.FC = () => {
 
   return (
     <section ref={container} className="py-24 px-6 md:px-12 bg-[#F9F3EC]">
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 max-w-6xl">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="t3-card font-display text-4xl md:text-5xl text-[#2A1A0E] mb-16">Des voix qui ont osé se retrouver.</h2>
+      <div className="grid md:grid-cols-2 gap-10">
         {testimonials.map((t, i) => (
           <div key={i} className="t3-card border border-[#2A1A0E]/10 rounded-[3rem] p-10 md:p-14 bg-white/60 relative flex flex-col shadow-sm">
             <span className="absolute top-10 right-10 text-[6rem] font-display text-[#C85A3A]/10 leading-none">"</span>
-            <p className="text-2xl md:text-3xl font-display italic leading-tight text-[#2A1A0E] mb-12 relative z-10">{t.quote}</p>
+            <p className="text-2xl md:text-3xl font-display font-normal italic leading-tight text-[#2A1A0E] mb-12 relative z-10">{t.quote}</p>
             <div className="mt-auto border-t border-[#2A1A0E]/10 pt-6">
               <p className="font-medium text-[#C85A3A] flex items-center gap-3">
                 <span className="w-4 h-px bg-[#C85A3A]"></span>
@@ -42,6 +44,7 @@ export const TestimonialsOriginal: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

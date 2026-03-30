@@ -59,7 +59,7 @@ export const About: React.FC = () => {
           
           <div className="space-y-6 text-lg md:text-xl font-light text-[#1a1a1a]/80 leading-relaxed max-w-lg mb-12">
             <p className="about-text">
-              Je suis coach somatique. Je travaille avec des femmes qui savent qu'elles sont capables de plus, mais qui n'arrivent plus à s'entendre elles-mêmes.
+              Je suis coach somatique. Je travaille avec des personnes qui savent être capables de plus, mais qui n'arrivent plus à s'entendre.
             </p>
             <p className="about-text">
               Je ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà.

@@ -38,8 +38,9 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section ref={container} className="py-24 px-6 md:px-12 relative overflow-hidden bg-white/40">
-      
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 max-w-6xl">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="testi-card font-display text-4xl md:text-5xl text-[#1a1a1a] mb-16">Des voix qui ont osé se retrouver.</h2>
+      <div className="grid md:grid-cols-2 gap-10 max-w-6xl">
         {testimonials.map((t, i) => (
           <div 
             key={i}
@@ -48,7 +49,7 @@ export const Testimonials: React.FC = () => {
             {/* Quote decoration */}
             <span className="absolute top-10 right-10 text-[6rem] font-display text-aura/10 leading-none">"</span>
             
-            <p className="text-2xl md:text-3xl font-display italic leading-tight text-[#1a1a1a] mb-12 relative z-10 text-balance">
+            <p className="text-2xl md:text-3xl font-display font-normal italic leading-tight text-[#1a1a1a] mb-12 relative z-10 text-balance">
               {t.quote}
             </p>
             
@@ -61,6 +62,7 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

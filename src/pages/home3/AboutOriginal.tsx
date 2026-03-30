@@ -35,7 +35,7 @@ export const AboutOriginal: React.FC = () => {
             Je suis Stellie.
           </h2>
           <div className="space-y-6 text-lg font-light text-[#2A1A0E]/70 leading-relaxed max-w-lg mb-12">
-            <p className="a3-text">Je suis coach somatique. Je travaille avec des femmes qui savent qu'elles sont capables de plus, mais qui n'arrivent plus à s'entendre elles-mêmes.</p>
+            <p className="a3-text">Je suis coach somatique. Je travaille avec des personnes qui savent être capables de plus, mais qui n'arrivent plus à s'entendre.</p>
             <p className="a3-text">Je ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà.</p>
           </div>
           <a href="/about" className="a3-text inline-flex items-center gap-4 text-[#C85A3A] hover:text-[#D96A48] uppercase tracking-widest text-sm font-medium transition-colors group">

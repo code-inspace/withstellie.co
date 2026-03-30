@@ -12,6 +12,10 @@
   body {
     @apply antialiased font-sans flex flex-col min-h-screen relative overflow-x-hidden;
   }
+
+  .font-display {
+    font-weight: 700;
+  }
   
   ::selection {
     background-color: #a6532b;

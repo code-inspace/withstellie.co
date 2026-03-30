@@ -60,7 +60,7 @@ export const Hook: React.FC = () => {
           <p className="hook-line">Tu fais tout bien.</p>
           <p className="hook-line">Tu coches toutes les cases.</p>
           
-          <p className="hook-highlight font-display italic text-aura font-medium mt-8 pt-4">
+          <p className="hook-highlight font-display font-normal italic text-aura font-medium mt-8 pt-4">
             Et pourtant, quelque chose en toi ne se sent pas à sa place.
           </p>
         </div>
@@ -68,7 +68,7 @@ export const Hook: React.FC = () => {
         <div className="hook-divider h-[1px] bg-eclipse mb-16"></div>
 
         <div className="w-full max-w-3xl mx-auto">
-          <h2 className="hook-quote text-3xl md:text-5xl font-display leading-tight text-eclipse mb-8">
+          <h2 className="hook-quote text-3xl md:text-5xl font-display font-normal leading-tight text-eclipse mb-8">
             <TextReveal className="hook-quote-reveal">
               "L'identité, ce n'est pas ce qu'on t'a dit d'être. C'est ce que tu choisis de devenir, un souffle à la fois."
             </TextReveal>
