@@ -109,7 +109,7 @@ export const CTA2: React.FC = () => {
           <div className="cta2-cta-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C85A3A]/20 blur-[120px] rounded-full pointer-events-none"></div>
           
           <div className="cta2-cta-content relative max-w-3xl flex flex-col items-center text-center pointer-events-auto text-[#F5EDE0] z-10">
-            <h2 className="text-5xl md:text-7xl font-display mb-8 text-[#F5EDE0]">Prête à te retrouver ?</h2>
+            <h2 className="text-5xl md:text-7xl font-display mb-8 text-[#F5EDE0]">Prêt·e à te retrouver ?</h2>
             <p className="text-xl md:text-2xl font-light text-[#F5EDE0]/70 mb-12">
               Tu n'as pas besoin d'avoir tout compris. Tu as juste besoin de te dire oui.
             </p>

@@ -20,7 +20,7 @@ export const CTA: React.FC = () => {
       </div>
 
       <div className="c3-content container mx-auto text-center max-w-3xl flex flex-col items-center py-20">
-        <h2 className="text-5xl md:text-7xl font-sans text-[#F5EDE0] mb-8">Prête à te retrouver ?</h2>
+        <h2 className="text-5xl md:text-7xl font-sans text-[#F5EDE0] mb-8">Prêt·e à te retrouver ?</h2>
         <p className="text-xl md:text-2xl font-light text-[#F5EDE0]/70 mb-12">
           Tu n'as pas besoin d'avoir tout compris. Tu as juste besoin de te dire oui.
         </p>
