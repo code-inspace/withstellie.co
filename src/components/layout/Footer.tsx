@@ -1,45 +1,68 @@
 import React from 'react';
 
+const IconInstagram = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+  </svg>
+);
+
+const IconTikTok = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+  </svg>
+);
+
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#f4f7f4] text-[#1a1a1a] pt-24 pb-12 px-6 md:px-12 border-t border-[#1a1a1a]/10 relative overflow-hidden">
+    <footer className="bg-transparent text-[#1a1a1a] pt-24 pb-12 px-6 md:px-12 border-t border-[#1a1a1a]/10">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div>
             <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4" />
             <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">Coaching de shift identitaire</p>
           </div>
-          
-          <div className="flex flex-col gap-2 text-sm md:text-base font-medium opacity-80">
-            <a href="https://instagram.com/shift.withstellie" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-colors flex items-center gap-2 group">
-              <span className="w-8 h-[1px] bg-[#1a1a1a] group-hover:w-12 transition-all duration-300"></span>
-              Instagram @shift.withstellie
-            </a>
-            <a href="https://tiktok.com/@shift.withstellie" target="_blank" rel="noreferrer" className="hover:opacity-60 transition-colors flex items-center gap-2 group">
-              <span className="w-8 h-[1px] bg-[#1a1a1a] group-hover:w-12 transition-all duration-300"></span>
-              TikTok @shift.withstellie
-            </a>
-            <a href="mailto:chrystelbrc.pro@gmail.com" className="hover:opacity-60 transition-colors flex items-center gap-2 group mt-2">
-              <span className="w-8 h-[1px] bg-[#1a1a1a] group-hover:w-12 transition-all duration-300"></span>
+
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com/shift.withstellie" target="_blank" rel="noreferrer"
+                className="flex items-center gap-2.5 text-sm font-medium text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors group">
+                <span className="p-2 rounded-full border border-[#1a1a1a]/15 group-hover:border-[#1a1a1a]/40 transition-colors">
+                  <IconInstagram />
+                </span>
+                @shift.withstellie
+              </a>
+              <a href="https://tiktok.com/@shift.withstellie" target="_blank" rel="noreferrer"
+                className="flex items-center gap-2.5 text-sm font-medium text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors group">
+                <span className="p-2 rounded-full border border-[#1a1a1a]/15 group-hover:border-[#1a1a1a]/40 transition-colors">
+                  <IconTikTok />
+                </span>
+                @shift.withstellie
+              </a>
+            </div>
+            <a href="mailto:chrystelbrc.pro@gmail.com"
+              className="text-sm font-medium text-[#1a1a1a]/50 hover:text-[#1a1a1a]/80 transition-colors">
               chrystelbrc.pro@gmail.com
             </a>
           </div>
         </div>
-        
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs opacity-50 pt-8 border-t border-[#1a1a1a]/20 gap-4">
+
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#1a1a1a]/40 pt-8 border-t border-[#1a1a1a]/10 gap-4">
           <div className="flex gap-4">
-            <a href="/mentions-legales" className="hover:opacity-100 transition-colors">Mentions légales</a>
+            <a href="/mentions-legales" className="hover:text-[#1a1a1a]/70 transition-colors">Mentions légales</a>
             <span>·</span>
-            <a href="/confidentialite" className="hover:opacity-100 transition-colors">Politique de confidentialité</a>
+            <a href="/confidentialite" className="hover:text-[#1a1a1a]/70 transition-colors">Politique de confidentialité</a>
           </div>
-          <p>© 2026 withstellie.co</p>
+          <div className="flex items-center gap-4">
+            <p>© 2026 withstellie.co</p>
+            <span>·</span>
+            <a href="https://axelcoudair.com" target="_blank" rel="noreferrer" className="hover:text-[#1a1a1a]/70 transition-colors">
+              Fait par Axel Coudair
+            </a>
+          </div>
         </div>
       </div>
-      
-      {/* Decorative large font in background */}
-      <h1 className="absolute -bottom-10 md:-bottom-24 left-1/2 -translate-x-1/2 text-[15vw] font-display text-[#1a1a1a] opacity-5 whitespace-nowrap pointer-events-none select-none italic">
-        stellie
-      </h1>
     </footer>
   );
 };
