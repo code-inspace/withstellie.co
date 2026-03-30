@@ -74,7 +74,7 @@ export const HeroOriginal: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-30 flex-1 flex flex-col justify-center items-center text-center px-6 pb-24">
-        <h1 className="h3-title font-display text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
+        <h1 className="h3-title font-sans text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
           Re.invent Yourself
         </h1>
 

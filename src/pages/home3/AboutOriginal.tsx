@@ -26,12 +26,12 @@ export const AboutOriginal: React.FC = () => {
             />
           </div>
           <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-full border border-[#C85A3A]/30 flex items-center justify-center bg-[#F9F3EC] z-20">
-            <span className="font-display italic text-[#C85A3A] text-xl rotate-[-10deg]">Stellie</span>
+            <span className="font-sans italic text-[#C85A3A] text-xl rotate-[-10deg]">Stellie</span>
           </div>
         </div>
 
         <div className="order-1 md:order-2">
-          <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-display text-[#2A1A0E] mb-10">
+          <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-sans text-[#2A1A0E] mb-10">
             Je suis Stellie.
           </h2>
           <div className="space-y-6 text-lg font-light text-[#2A1A0E]/70 leading-relaxed max-w-lg mb-12">
