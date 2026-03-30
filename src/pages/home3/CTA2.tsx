@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const CTA2Original: React.FC = () => {
+export const CTA2: React.FC = () => {
   const container = useRef<HTMLElement>(null);
   const pinWrap = useRef<HTMLDivElement>(null);
   const starburst = useRef<SVGSVGElement>(null);

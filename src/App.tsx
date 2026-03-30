@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home3 from './pages/home3/Home3';
+import Home3 from './pages/home3/index';
 
 function App() {
   return (

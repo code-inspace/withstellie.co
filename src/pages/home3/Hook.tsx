@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HookOriginal: React.FC = () => {
+export const Hook: React.FC = () => {
   const container = useRef<HTMLElement>(null);
   const pinWrap = useRef<HTMLDivElement>(null);
 

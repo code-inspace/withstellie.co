@@ -9,7 +9,7 @@ const cards = [
   { letter: 'S', title: 'Soul', desc: 'Retrouver ton centre. Pas une direction imposée de l\'extérieur. La tienne.' },
 ];
 
-export const MethodOriginal: React.FC = () => {
+export const Method: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const CTAOriginal: React.FC = () => {
+export const CTA: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {

@@ -13,7 +13,7 @@ const testimonials = [
   }
 ];
 
-export const TestimonialsOriginal: React.FC = () => {
+export const Testimonials: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {

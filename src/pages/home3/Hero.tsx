@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const HeroOriginal: React.FC = () => {
+export const Hero: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const AboutOriginal: React.FC = () => {
+export const About: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
