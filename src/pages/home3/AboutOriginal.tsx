@@ -25,9 +25,6 @@ export const AboutOriginal: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-full border border-[#C85A3A]/30 flex items-center justify-center bg-[#F9F3EC] z-20">
-            <span className="font-sans italic text-[#C85A3A] text-xl rotate-[-10deg]">Stellie</span>
-          </div>
         </div>
 
         <div className="order-1 md:order-2">

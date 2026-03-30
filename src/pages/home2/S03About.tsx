@@ -50,9 +50,6 @@ export const S03About: React.FC = () => {
               style={{ filter: 'brightness(0.8) saturate(0.9) hue-rotate(160deg)' }}
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-[#4ABBC8]/30 flex items-center justify-center bg-[#040D18] z-20">
-            <span className="font-display italic text-[#4ABBC8] text-2xl rotate-[-10deg]">Stellie</span>
-          </div>
         </div>
 
         <div className="order-1 md:order-2">

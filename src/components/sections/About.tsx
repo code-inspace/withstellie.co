@@ -49,9 +49,6 @@ export const About: React.FC = () => {
               className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-sunbeam/30 flex items-center justify-center bg-[#f4f7f4] z-20">
-            <span className="font-display italic text-aura text-2xl rotate-[-10deg]">Stellie</span>
-          </div>
         </div>
 
         <div className="order-1 md:order-2">
