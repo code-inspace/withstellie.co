@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div>
-            <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4" />
+            <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0" />
             <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">Coaching de shift identitaire</p>
           </div>
 

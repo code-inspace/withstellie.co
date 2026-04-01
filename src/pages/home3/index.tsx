@@ -5,12 +5,13 @@ import { About } from "./About";
 import { Method } from "./Method";
 import { Testimonials } from "./Testimonials";
 import { CTA } from "./CTA";
-import { CTA2 } from "./CTA2";
 import { Footer } from "../../components/layout/Footer";
+import { Navbar } from "../../components/layout/Navbar";
 
 const Home3: React.FC = () => {
   return (
-    <div className="bg-[#F9F3EC] min-h-screen font-nightingale">
+    <div className="bg-[#F9F3EC] min-h-screen">
+      <Navbar />
       <Hero />
       <Hook />
       <About />

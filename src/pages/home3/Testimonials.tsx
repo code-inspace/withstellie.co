@@ -55,7 +55,7 @@ export const Testimonials: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="bg-[#F9F3EC] overflow-hidden">
+    <section ref={container} data-navbar-theme="light" className="bg-[#F9F3EC] overflow-hidden">
       <div className="h-screen flex flex-col">
         {/* Titre */}
         <div className="pt-24 pb-12 px-10 md:px-16 flex-shrink-0">
@@ -73,13 +73,13 @@ export const Testimonials: React.FC = () => {
                 className="flex-shrink-0 border border-[#2A1A0E]/10 rounded-[3rem] p-10 md:p-14 bg-white/60 relative flex flex-col shadow-sm"
                 style={{ width: 'calc(50vw - 2.5rem)' }}
               >
-                <span className="absolute top-10 right-10 text-[6rem] font-display text-[#C85A3A]/10 leading-none">"</span>
+                <span className="absolute top-10 right-10 text-[6rem] font-display text-[#C24C2A]/10 leading-none">"</span>
                 <p className="text-2xl md:text-3xl font-display font-normal italic leading-tight text-[#2A1A0E] mb-12 relative z-10">
                   {t.quote}
                 </p>
                 <div className="mt-auto border-t border-[#2A1A0E]/10 pt-6">
-                  <p className="font-medium text-[#C85A3A] flex items-center gap-3">
-                    <span className="w-4 h-px bg-[#C85A3A]"></span>
+                  <p className="font-medium text-[#C24C2A] flex items-center gap-3">
+                    <span className="w-4 h-px bg-[#C24C2A]"></span>
                     {t.author}, {t.age}
                   </p>
                   <p className="text-sm font-light text-[#2A1A0E]/50 mt-1 pl-7">{t.role}</p>

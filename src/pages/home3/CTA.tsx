@@ -14,9 +14,9 @@ export const CTA: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-12 bg-[#F9F3EC] relative flex justify-center items-center isolate">
+    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC] relative flex justify-center items-center isolate">
       <div className="c3-bg absolute inset-0 mx-4 md:mx-12 my-12 bg-[#2A1A0E] rounded-[3rem] -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C85A3A]/20 blur-[120px] rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C24C2A]/20 blur-[120px] rounded-full"></div>
       </div>
 
       <div className="c3-content container mx-auto text-center max-w-3xl flex flex-col items-center py-20">
@@ -27,7 +27,7 @@ export const CTA: React.FC = () => {
         <div className="flex flex-col items-center gap-6">
           <a
             href="/reserver"
-            className="px-10 py-4 bg-[#C85A3A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D96A48] transition-colors duration-300 shadow-xl shadow-[#C85A3A]/20"
+            className="px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
           >
             Réserver mon appel découverte
           </a>

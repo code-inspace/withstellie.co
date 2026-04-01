@@ -21,10 +21,10 @@ export const Method: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
+    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto">
         <h2 className="m3-title text-5xl md:text-7xl font-sans text-center mb-24 text-[#2A1A0E]">
-          La méthode <span className="text-[#C85A3A] italic">MBS</span>
+          La méthode <span className="text-[#C24C2A] italic">MBS</span>
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
@@ -33,14 +33,14 @@ export const Method: React.FC = () => {
               <div className="absolute -right-10 -top-10 text-[12rem] font-sans text-[#F5EDE0]/5 font-bold leading-none select-none pointer-events-none">
                 {card.letter}
               </div>
-              <div className="text-6xl font-sans italic text-[#C85A3A] mb-6">{card.title}</div>
+              <div className="text-6xl font-sans italic text-[#C24C2A] mb-6">{card.title}</div>
               <p className="text-lg leading-relaxed font-light mt-auto w-[90%] text-[#F5EDE0]/80">{card.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <a href="/methode" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C85A3A] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <a href="/methode" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
             Découvrir comment on travaille ensemble
             <span className="p-3 rounded-full border border-[#2A1A0E]/30 group-hover:bg-[#2A1A0E]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />

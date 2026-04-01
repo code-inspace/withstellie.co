@@ -15,7 +15,7 @@ export const About: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
+    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-16 md:gap-24 items-center">
         <div className="a3-img relative w-full max-w-md mx-auto md:max-w-none order-2 md:order-1">
           <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-20px_rgba(200,90,58,0.2)]">
@@ -35,9 +35,9 @@ export const About: React.FC = () => {
             <p className="a3-text">Je suis coach somatique. Je travaille avec des personnes qui savent être capables de plus, mais qui n'arrivent plus à s'entendre.</p>
             <p className="a3-text">Je ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà.</p>
           </div>
-          <a href="/about" className="a3-text inline-flex items-center gap-4 text-[#C85A3A] hover:text-[#D96A48] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <a href="/about" className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
             En savoir plus sur mon parcours
-            <span className="p-3 rounded-full border border-[#C85A3A]/30 group-hover:bg-[#C85A3A]/10 transition-all group-hover:translate-x-2 duration-300">
+            <span className="p-3 rounded-full border border-[#C24C2A]/30 group-hover:bg-[#C24C2A]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>
           </a>

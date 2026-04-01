@@ -106,7 +106,7 @@ export const CTA2: React.FC = () => {
 
         {/* Section CTA (Écran de transition) - absolue pour remonter par-dessus */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
-          <div className="cta2-cta-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C85A3A]/20 blur-[120px] rounded-full pointer-events-none"></div>
+          <div className="cta2-cta-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C24C2A]/20 blur-[120px] rounded-full pointer-events-none"></div>
           
           <div className="cta2-cta-content relative max-w-3xl flex flex-col items-center text-center pointer-events-auto text-[#F5EDE0] z-10">
             <h2 className="text-5xl md:text-7xl font-display mb-8 text-[#F5EDE0]">Prêt·e à te retrouver ?</h2>
@@ -116,7 +116,7 @@ export const CTA2: React.FC = () => {
             <div className="flex flex-col items-center gap-6">
               <a
                 href="/reserver"
-                className="inline-block px-10 py-4 bg-[#C85A3A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D96A48] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C85A3A]/20"
+                className="inline-block px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
               >
                 Réserver mon appel découverte
               </a>
