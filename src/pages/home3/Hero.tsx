@@ -70,11 +70,11 @@ export const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-30 flex-1 flex flex-col justify-center items-center text-center px-6 pb-24">
-        <h1 className="h3-title font-sans text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
+        <h1 className="h3-title opacity-0 font-sans text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
           Re.invent Yourself
         </h1>
 
-        <p className="h3-sub text-[#F5EDE0]/75 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light">
+        <p className="h3-sub opacity-0 text-[#F5EDE0]/75 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light">
           Coaching de shift identitaire pour les femmes et personnes queer
           <br />
           prêtes à réécrire leur histoire.
@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
 
         <a
           href="/reserver"
-          className="h3-cta px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
+          className="h3-cta opacity-0 px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
         >
           Réserver mon appel découverte
         </a>
