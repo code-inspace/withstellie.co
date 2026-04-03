@@ -30,7 +30,7 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
         </div>
 
         <div className="order-1 md:order-2">
-          <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-sans text-[#2A1A0E] mb-10">
+          <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-display text-[#2A1A0E] mb-10">
             {data?.[`title_${lang}`] || "Je suis Stellie."}
           </h2>
           <div className="space-y-6 text-lg font-light text-[#2A1A0E]/70 leading-relaxed max-w-lg mb-12">

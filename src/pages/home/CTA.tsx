@@ -22,7 +22,7 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
       </div>
 
       <div className="c3-content container mx-auto text-center max-w-3xl flex flex-col items-center py-20 px-6 md:px-10">
-        <h2 className="text-5xl md:text-7xl font-sans text-[#F5EDE0] mb-8">
+        <h2 className="text-5xl md:text-7xl font-display text-[#F5EDE0] mb-8">
           {data?.[`title_${lang}`] || "Prêt·e à te retrouver ?"}
         </h2>
         <p className="text-xl md:text-2xl font-light text-[#F5EDE0]/70 mb-12">
