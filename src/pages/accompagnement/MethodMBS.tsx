@@ -17,7 +17,7 @@ const dimensions = [
   }
 ];
 
-export const MethodMBS: React.FC = () => {
+export const MethodMBS: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -34,10 +34,9 @@ export const MethodMBS: React.FC = () => {
     <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-t-[3rem]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
-          <h2 className="mbs-title font-display text-5xl md:text-7xl mb-8">Comment je travaille</h2>
-          <p className="mbs-intro text-xl md:text-2xl font-light text-[#F5EDE0]/80 max-w-4xl mx-auto leading-relaxed">
-            Je n'applique pas une formule. Je construis quelque chose avec toi, à partir de là où tu en es.<br/>
-            Ma méthode repose sur trois dimensions. Pas parce que c'est joli sur le papier, mais parce que c'est comme ça que le changement tient vraiment.
+          <h2 className="mbs-title font-display text-5xl md:text-7xl mb-8">{data?.[`title_${lang}`] || 'Comment je travaille'}</h2>
+          <p className="mbs-intro text-xl md:text-2xl font-light text-[#F5EDE0]/80 max-w-4xl mx-auto leading-relaxed whitespace-pre-line">
+            {data?.[`subtitle_${lang}`] || "Je n'applique pas une formule. Je construis quelque chose avec toi, à partir de là où tu en es.\nMa méthode repose sur trois dimensions. Pas parce que c'est joli sur le papier, mais parce que c'est comme ça que le changement tient vraiment."}
           </p>
         </div>
 

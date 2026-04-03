@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const Headline: React.FC = () => {
+export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -17,13 +17,13 @@ export const Headline: React.FC = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C24C2A]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h1 className="con-head font-display text-6xl md:text-8xl lg:text-[7rem] tracking-tight leading-[0.95] mb-12">
-          Parlons.
+          {data?.[`title_${lang}`] || "Parlons."}
         </h1>
-        <p className="con-head text-2xl md:text-3xl font-light text-[#F5EDE0]/90 leading-relaxed mb-10 max-w-3xl mx-auto">
-          Que tu aies une question sur l'accompagnement, une hésitation, ou que tu veuilles simplement dire bonjour avant de te lancer, je suis là.
+        <p className="con-head text-2xl md:text-3xl font-light text-[#F5EDE0]/90 leading-relaxed mb-10 max-w-3xl mx-auto whitespace-pre-line">
+          {data?.[`subtitle_${lang}`] || "Que tu aies une question sur l'accompagnement, une hésitation, ou que tu veuilles simplement dire bonjour avant de te lancer, je suis là."}
         </p>
         <p className="con-head text-sm uppercase tracking-widest font-medium text-[#C24C2A] bg-[#C24C2A]/10 inline-block px-6 py-3 rounded-full">
-          Je réponds en général sous 24h.
+          {data?.[`subline_${lang}`] || "Je réponds en général sous 24h."}
         </p>
       </div>
     </section>

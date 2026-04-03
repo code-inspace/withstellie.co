@@ -16,7 +16,7 @@ const testimonials = [
   }
 ];
 
-export const Testimonials: React.FC = () => {
+export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -29,7 +29,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-b-[3rem] mb-12">
       <div className="max-w-6xl mx-auto">
-        <h2 className="sr-only">Témoignages</h2>
+        <h2 className="sr-only">{data?.[`title_${lang}`] || "Témoignages"}</h2>
         
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
           {testimonials.map((testi, i) => (

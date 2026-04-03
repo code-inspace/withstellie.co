@@ -53,7 +53,7 @@ const offers = [
   }
 ];
 
-export const Offers: React.FC = () => {
+export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -69,10 +69,10 @@ export const Offers: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center offers-header mb-20">
           <h2 className="font-display text-5xl md:text-7xl text-[#2A1A0E] mb-6">
-            Trois façons de commencer
+            {data?.[`title_${lang}`] || "Trois façons de commencer"}
           </h2>
-          <p className="text-xl font-light text-[#2A1A0E]/60 max-w-2xl mx-auto">
-            Tout est personnalisé. Le format change, l'intention reste la même.
+          <p className="text-xl font-light text-[#2A1A0E]/60 max-w-2xl mx-auto whitespace-pre-line">
+            {data?.[`subtitle_${lang}`] || "Tout est personnalisé. Le format change, l'intention reste la même."}
           </p>
         </div>
 

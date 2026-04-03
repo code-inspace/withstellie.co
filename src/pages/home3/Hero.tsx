@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
+import { urlFor } from "../../lib/sanity";
 import { useGSAP } from "@gsap/react";
 
-export const Hero: React.FC = () => {
+export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -61,7 +62,7 @@ export const Hero: React.FC = () => {
         {/* Fade bas */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A0A02]/70 via-transparent to-[#1A0A02]/20 z-10"></div>
         <img
-          src="/hero2.png"
+          src={data?.backgroundImage ? urlFor(data.backgroundImage).url() : "/hero2.png"}
           alt="Hero background"
           className="h3-bg w-full h-full object-cover object-center"
           style={{ filter: "brightness(0.65) contrast(1.08) saturate(1.15)" }}
@@ -71,20 +72,18 @@ export const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-30 flex-1 flex flex-col justify-center items-center text-center px-6 pb-24">
         <h1 className="h3-title opacity-0 font-sans text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
-          Re.invent Yourself
+          {data?.[`title_${lang}`] || "Re.invent Yourself"}
         </h1>
 
-        <p className="h3-sub opacity-0 text-[#F5EDE0]/75 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light">
-          Coaching de shift identitaire pour les femmes et personnes queer
-          <br />
-          prêtes à réécrire leur histoire.
+        <p className="h3-sub opacity-0 text-[#F5EDE0]/75 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light whitespace-pre-line">
+          {data?.[`subtitle_${lang}`] || "Coaching de shift identitaire pour les femmes et personnes queer\nprêtes à réécrire leur histoire."}
         </p>
 
         <a
           href="/reserver"
           className="h3-cta opacity-0 px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
         >
-          Réserver mon appel découverte
+          {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}
         </a>
       </div>
     </section>

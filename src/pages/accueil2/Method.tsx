@@ -9,7 +9,7 @@ const cards = [
   { letter: 'S', title: 'Soul', desc: 'Retrouver ton centre. Pas une direction imposée de l\'extérieur. La tienne. Yoga et introspection.' },
 ];
 
-export const Method: React.FC = () => {
+export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -20,13 +20,17 @@ export const Method: React.FC = () => {
       .fromTo('.m-card', { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.15, ease: 'power3.out' }, '-=0.5');
   }, { scope: container });
 
+  const title = data[`title_${lang}`] || "Comment je travaille";
+  const subtitle = data[`subtitle_${lang}`] || "Pas une formule. Quelque chose construit entièrement autour de toi.";
+  const cta = data[`cta_${lang}`] || "Découvrir l'accompagnement";
+
   return (
     <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-[3rem] mx-4 md:mx-8 mb-12 shadow-2xl relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24 m-head opacity-0">
-          <h2 className="font-display text-5xl md:text-7xl mb-8">Comment je travaille</h2>
-          <p className="text-xl md:text-3xl font-light text-[#C24C2A] italic max-w-2xl mx-auto">
-            Pas une formule. Quelque chose construit entièrement autour de toi.
+          <h2 className="font-display text-5xl md:text-7xl mb-8">{title}</h2>
+          <p className="text-xl md:text-3xl font-light text-[#C24C2A] italic max-w-2xl mx-auto whitespace-pre-line">
+            {subtitle}
           </p>
         </div>
 
@@ -44,7 +48,7 @@ export const Method: React.FC = () => {
 
         <div className="text-center m-head opacity-0">
           <a href="/accompagnement" className="inline-flex items-center gap-4 text-[#F5EDE0] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
-            Découvrir l'accompagnement
+            {cta}
             <span className="p-3 rounded-full border border-[#F5EDE0]/30 group-hover:bg-[#C24C2A] group-hover:border-transparent transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} className="group-hover:text-[#F5EDE0]" />
             </span>

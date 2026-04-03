@@ -22,7 +22,7 @@ const faqs = [
   }
 ];
 
-export const FAQ: React.FC = () => {
+export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -42,7 +42,7 @@ export const FAQ: React.FC = () => {
     <section data-navbar-theme="light" ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-3xl mx-auto">
         <h2 className="faq-title font-display text-5xl md:text-6xl text-center text-[#2A1A0E] mb-16">
-          Questions fréquentes
+          {data?.[`title_${lang}`] || "Questions fréquentes"}
         </h2>
 
         <div className="space-y-4">

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const Quote: React.FC = () => {
+export const Quote: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -17,8 +17,8 @@ export const Quote: React.FC = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C24C2A]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <p className="quote-text font-display italic text-4xl md:text-5xl lg:text-7xl leading-tight">
-          "L'identité, ce n'est pas ce qu'on t'a dit d'être.<br/>
-          <span className="text-[#C24C2A] block mt-8">C'est ce que tu choisis de devenir, un souffle à la fois."</span>
+          {data?.[`text1_${lang}`] || "\"L'identité, ce n'est pas ce qu'on t'a dit d'être."}<br/>
+          <span className="text-[#C24C2A] block mt-8">{data?.[`text2_${lang}`] || "C'est ce que tu choisis de devenir, un souffle à la fois.\""}</span>
         </p>
       </div>
     </section>

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const Why: React.FC = () => {
+export const Why: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -17,20 +17,17 @@ export const Why: React.FC = () => {
     <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="why-title font-display text-5xl md:text-6xl text-[#2A1A0E] mb-16">
-          Pourquoi je fais ça
+          {data?.[`title_${lang}`] || "Pourquoi je fais ça"}
         </h2>
         
-        <p className="why-text text-2xl md:text-3xl font-medium text-[#C24C2A] mb-12">
-          Je l'ai fait seule. Dans le silence. Sans soutien.<br/>
-          <span className="italic block mt-4 text-[#2A1A0E]">Je ne veux pas ça pour toi.</span>
-        </p>
+        <p className="why-text text-2xl md:text-3xl font-medium text-[#C24C2A] mb-12" dangerouslySetInnerHTML={{ __html: data?.[`subtitle_${lang}`] || "Je l'ai fait seule. Dans le silence. Sans soutien.<br/><span class=\"italic block mt-4 text-[#2A1A0E]\">Je ne veux pas ça pour toi.</span>" }}></p>
         
-        <p className="why-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed mb-12">
-          Tu n'as pas à te reconstruire dans l'obscurité, à tâtons, en espérant que quelque chose finisse par tenir. Tu mérites un espace où tu peux te regarder honnêtement, sans jugement, avec quelqu'un qui est déjà passée par là.
+        <p className="why-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed mb-12 whitespace-pre-line">
+          {data?.[`text1_${lang}`] || "Tu n'as pas à te reconstruire dans l'obscurité, à tâtons, en espérant que quelque chose finisse par tenir. Tu mérites un espace où tu peux te regarder honnêtement, sans jugement, avec quelqu'un qui est déjà passée par là."}
         </p>
 
-        <p className="why-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed bg-[#F4E8D9] p-10 md:p-14 rounded-[2.5rem]">
-          Mon rôle n'est pas de te dire qui être. C'est de t'accompagner à retrouver ce que tu sais déjà, et d'ancrer ce changement pour qu'il devienne vraiment le tien, bien au-delà de notre travail ensemble.
+        <p className="why-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed bg-[#F4E8D9] p-10 md:p-14 rounded-[2.5rem] whitespace-pre-line">
+          {data?.[`text2_${lang}`] || "Mon rôle n'est pas de te dire qui être. C'est de t'accompagner à retrouver ce que tu sais déjà, et d'ancrer ce changement pour qu'il devienne vraiment le tien, bien au-delà de notre travail ensemble."}
         </p>
       </div>
     </section>

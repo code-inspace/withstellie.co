@@ -24,7 +24,7 @@ const testimonials = [
   }
 ];
 
-export const Testimonials: React.FC = () => {
+export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
   const track = useRef<HTMLDivElement>(null);
 
@@ -60,7 +60,7 @@ export const Testimonials: React.FC = () => {
         {/* Titre */}
         <div className="pt-24 pb-12 px-10 md:px-16 flex-shrink-0">
           <h2 className="testi-title font-display text-5xl md:text-7xl text-[#2A1A0E] text-center">
-            Des voix qui ont osé se retrouver.
+            {data?.[`title_${lang}`] || "Des voix qui ont osé se retrouver."}
           </h2>
         </div>
 

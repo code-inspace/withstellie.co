@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { Info } from 'lucide-react';
 import Cal, { getCalApi } from "@calcom/embed-react";
 
-export const CalWidget: React.FC = () => {
+export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -36,7 +36,7 @@ export const CalWidget: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <div className="text-center cal-header mb-12">
           <h2 className="font-display text-4xl md:text-5xl text-[#2A1A0E] mb-4">
-            Choisis le créneau qui te convient.
+            {data?.[`title_${lang}`] || "Choisis le créneau qui te convient."}
           </h2>
         </div>
 

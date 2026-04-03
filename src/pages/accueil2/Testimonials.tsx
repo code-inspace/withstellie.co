@@ -16,7 +16,7 @@ const testimonials = [
   }
 ];
 
-export const Testimonials: React.FC = () => {
+export const Testimonials: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -27,11 +27,13 @@ export const Testimonials: React.FC = () => {
       .fromTo('.t-card', { opacity: 0, scale: 0.95, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }, '-=0.5');
   }, { scope: container });
 
+  const title = data[`title_${lang}`] || "Ce qu'elles en disent";
+
   return (
-    <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-6xl mx-auto">
         <h2 className="t-title opacity-0 font-display text-5xl md:text-6xl text-center text-[#2A1A0E] mb-20 italic">
-          Ce qu'elles en disent
+          {title}
         </h2>
         
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-export const CTA: React.FC = () => {
+export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -20,7 +20,9 @@ export const CTA: React.FC = () => {
       </div>
 
       <div className="c3-content container mx-auto text-center max-w-3xl flex flex-col items-center py-20">
-        <h2 className="text-5xl md:text-7xl font-sans text-[#F5EDE0] mb-8">Prêt·e à te retrouver ?</h2>
+        <h2 className="text-5xl md:text-7xl font-sans text-[#F5EDE0] mb-8">
+          {data?.[`title_${lang}`] || "Prêt·e à te retrouver ?"}
+        </h2>
         <p className="text-xl md:text-2xl font-light text-[#F5EDE0]/70 mb-12">
           Tu n'as pas besoin d'avoir tout compris. Tu as juste besoin de te dire oui.
         </p>
@@ -29,7 +31,7 @@ export const CTA: React.FC = () => {
             href="/reserver"
             className="px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
           >
-            Réserver mon appel découverte
+            {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}
           </a>
           <p className="text-sm font-medium tracking-widest uppercase text-[#F5EDE0]/40">
             Sans engagement · 30 minutes · Entièrement gratuit

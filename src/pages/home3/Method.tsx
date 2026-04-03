@@ -9,7 +9,7 @@ const cards = [
   { letter: 'S', title: 'Soul', desc: 'Retrouver ton centre. Pas une direction imposée de l\'extérieur. La tienne.' },
 ];
 
-export const Method: React.FC = () => {
+export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -24,7 +24,7 @@ export const Method: React.FC = () => {
     <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto">
         <h2 className="m3-title text-5xl md:text-7xl font-sans text-center mb-24 text-[#2A1A0E]">
-          La méthode <span className="text-[#C24C2A] italic">MBS</span>
+          <span dangerouslySetInnerHTML={{ __html: data?.[`title_${lang}`] || 'La méthode <span class="text-[#C24C2A] italic">MBS</span>' }} />
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
@@ -41,7 +41,7 @@ export const Method: React.FC = () => {
 
         <div className="text-center">
           <a href="/methode" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
-            Découvrir comment on travaille ensemble
+            {data?.[`subtitle_${lang}`] || "Découvrir comment on travaille ensemble"}
             <span className="p-3 rounded-full border border-[#2A1A0E]/30 group-hover:bg-[#2A1A0E]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>
