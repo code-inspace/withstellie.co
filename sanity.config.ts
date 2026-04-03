@@ -25,7 +25,33 @@ export default defineConfig({
               .child(S.document().schemaType('pageAbout').documentId('pageAbout')),
             S.listItem()
               .title('Coaching')
-              .child(S.document().schemaType('pageCoaching').documentId('pageCoaching')),
+              .child(
+                S.list()
+                  .title('Coaching — Sections')
+                  .items([
+                    S.listItem()
+                      .title('Headline')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('Méthode (Mind · Body · Soul)')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('Pour qui ?')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('Témoignages')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('Offres')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('FAQ')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                    S.listItem()
+                      .title('Appel découverte')
+                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                  ])
+              ),
             S.listItem()
               .title('Contact')
               .child(S.document().schemaType('pageContact').documentId('pageContact')),
@@ -48,6 +74,9 @@ export default defineConfig({
             S.listItem()
               .title('Footer (Global)')
               .child(S.document().schemaType('globalFooter').documentId('globalFooter')),
+            S.listItem()
+              .title('Banner (Global)')
+              .child(S.document().schemaType('globalBanner').documentId('globalBanner')),
           ]),
     }),
   ],

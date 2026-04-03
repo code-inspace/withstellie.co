@@ -4,7 +4,7 @@ import { contactHeadline, contactContactForm, contactAlternatives, contactRedire
 import { bookingHeadline, bookingProgram, bookingCalWidget, bookingContactAlt, pageBooking } from './booking';
 import { coachingHeadline, coachingMethodMBS, coachingForWho, coachingTestimonials, coachingOffers, coachingFAQ, coachingDiscoveryCall, pageCoaching } from './coaching';
 import { homeHero, homeHook, homePresentation, homeFocus, homeMethod, homeTestimonials, homeCTA, homePricing, homeFAQ, homeCTA2, homeAbout, pageHome } from './home';
-import { globalNav, globalFooter } from './global';
+import { globalNav, globalFooter, globalBanner } from './global';
 import { pageLegalNotice, pagePrivacyPolicy } from './legal';
 
 export const schemaTypes = [
@@ -55,6 +55,7 @@ export const schemaTypes = [
   pageHome,
   globalNav,
   globalFooter,
+  globalBanner,
   pageLegalNotice,
   pagePrivacyPolicy
 ];
