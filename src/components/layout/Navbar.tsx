@@ -1,10 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const Navbar: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
   const [visible, setVisible] = useState(true);
   const [atTop, setAtTop] = useState(true);
   const lastY = useRef(0);
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   useEffect(() => {
     const NAV_MID = 32; // px — milieu vertical de la navbar
@@ -64,9 +70,19 @@ export const Navbar: React.FC = () => {
         </div>
 
         <div className={`text-sm flex items-center gap-2 transition-colors duration-300 ${textCls}`}>
-          <button className="hover:opacity-100 transition-opacity">EN</button>
-          <span>/</span>
-          <button className="font-medium hover:opacity-100 transition-opacity">FR</button>
+          <button 
+            onClick={() => changeLanguage('en')}
+            className={i18n.language === 'en' ? 'font-medium opacity-100' : 'opacity-60 hover:opacity-100 transition-opacity'}
+          >
+            EN
+          </button>
+          <span className="opacity-40">/</span>
+          <button 
+            onClick={() => changeLanguage('fr')}
+            className={i18n.language === 'fr' || !i18n.language ? 'font-medium opacity-100' : 'opacity-60 hover:opacity-100 transition-opacity'}
+          >
+            FR
+          </button>
         </div>
       </div>
     </header>
