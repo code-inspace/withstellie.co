@@ -60,11 +60,11 @@ export const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#1a1a1a]/40 pt-8 border-t border-[#1a1a1a]/10 gap-4">
           <div className="flex gap-4">
-            <a href="/mentions-legales" className="hover:text-[#1a1a1a]/70 transition-colors">
+            <a href="/legal-notice" className="hover:text-[#1a1a1a]/70 transition-colors">
                {data?.[`legal1_${lang}`] || (lang === 'en' ? 'Legal Notice' : 'Mentions légales')}
             </a>
             <span>·</span>
-            <a href="/confidentialite" className="hover:text-[#1a1a1a]/70 transition-colors">
+            <a href="/privacy-policy" className="hover:text-[#1a1a1a]/70 transition-colors">
                {data?.[`legal2_${lang}`] || (lang === 'en' ? 'Privacy Policy' : 'Politique de confidentialité')}
             </a>
           </div>

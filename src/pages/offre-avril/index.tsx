@@ -158,9 +158,9 @@ const OffreAvril: React.FC = () => {
 
       {/* Footer minimaliste */}
       <div className="border-t border-[#2A1A0E]/8 py-8 px-6 flex justify-center gap-6 text-xs text-[#2A1A0E]/30">
-        <a href="/mentions-legales" className="hover:text-[#2A1A0E]/60 transition-colors">Mentions légales</a>
+        <a href="/legal-notice" className="hover:text-[#2A1A0E]/60 transition-colors">Mentions légales</a>
         <span>·</span>
-        <a href="/confidentialite" className="hover:text-[#2A1A0E]/60 transition-colors">Confidentialité</a>
+        <a href="/privacy-policy" className="hover:text-[#2A1A0E]/60 transition-colors">Confidentialité</a>
       </div>
 
     </div>

@@ -47,7 +47,7 @@ export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang
         </div>
 
         <div className="text-center m-head opacity-0">
-          <a href="/accompagnement" className="inline-flex items-center gap-4 text-[#F5EDE0] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <a href="/coaching" className="inline-flex items-center gap-4 text-[#F5EDE0] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
             {cta}
             <span className="p-3 rounded-full border border-[#F5EDE0]/30 group-hover:bg-[#C24C2A] group-hover:border-transparent transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} className="group-hover:text-[#F5EDE0]" />

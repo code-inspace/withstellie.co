@@ -1,7 +1,7 @@
 import { defineType, defineField } from 'sanity';
 
-export const pageMentionsLegales = defineType({
-  name: 'pageMentionsLegales',
+export const pageLegalNotice = defineType({
+  name: 'pageLegalNotice',
   title: 'Page: Mentions Légales',
   type: 'document',
   fields: [
@@ -41,8 +41,8 @@ export const pageMentionsLegales = defineType({
   ]
 });
 
-export const pageConfidentialite = defineType({
-  name: 'pageConfidentialite',
+export const pagePrivacyPolicy = defineType({
+  name: 'pagePrivacyPolicy',
   title: 'Page: Confidentialité',
   type: 'document',
   fields: [

@@ -37,7 +37,7 @@ export const CTA: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang })
         </p>
         
         <div className="relative z-10 flex flex-col items-center">
-          <a href="/reserver" className="bg-[#F5EDE0] text-[#2A1A0E] px-12 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#2A1A0E] hover:text-[#F5EDE0] hover:scale-105 group mb-8 shadow-xl">
+          <a href="/booking" className="bg-[#F5EDE0] text-[#2A1A0E] px-12 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#2A1A0E] hover:text-[#F5EDE0] hover:scale-105 group mb-8 shadow-xl">
             {cta}
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>

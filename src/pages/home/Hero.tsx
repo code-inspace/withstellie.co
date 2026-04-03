@@ -80,7 +80,7 @@ export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr
         </p>
 
         <a
-          href="/reserver"
+          href="/booking"
           className="h3-cta opacity-0 px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
         >
           {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}

@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const reserverHeadline = defineType({
-  name: 'reserverHeadline',
-  title: 'Reserver - Headline',
+export const bookingHeadline = defineType({
+  name: 'bookingHeadline',
+  title: 'Booking - Headline',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -15,9 +15,9 @@ export const reserverHeadline = defineType({
   ]
 });
 
-export const reserverProgram = defineType({
-  name: 'reserverProgram',
-  title: 'Reserver - Program',
+export const bookingProgram = defineType({
+  name: 'bookingProgram',
+  title: 'Booking - Program',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -34,9 +34,9 @@ export const reserverProgram = defineType({
   ]
 });
 
-export const reserverCalWidget = defineType({
-  name: 'reserverCalWidget',
-  title: 'Reserver - CalWidget',
+export const bookingCalWidget = defineType({
+  name: 'bookingCalWidget',
+  title: 'Booking - CalWidget',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -45,9 +45,9 @@ export const reserverCalWidget = defineType({
   ]
 });
 
-export const reserverContactAlt = defineType({
-  name: 'reserverContactAlt',
-  title: 'Reserver - ContactAlt',
+export const bookingContactAlt = defineType({
+  name: 'bookingContactAlt',
+  title: 'Booking - ContactAlt',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -60,14 +60,14 @@ export const reserverContactAlt = defineType({
   ]
 });
 
-export const pageReserver = defineType({
-  name: 'pageReserver',
-  title: 'Page: Reserver',
+export const pageBooking = defineType({
+  name: 'pageBooking',
+  title: 'Page: Booking',
   type: 'document',
   fields: [
-    defineField({ name: 'reserverHeadline', type: 'reserverHeadline', title: 'reserverHeadline' }),
-    defineField({ name: 'reserverProgram', type: 'reserverProgram', title: 'reserverProgram' }),
-    defineField({ name: 'reserverCalWidget', type: 'reserverCalWidget', title: 'reserverCalWidget' }),
-    defineField({ name: 'reserverContactAlt', type: 'reserverContactAlt', title: 'reserverContactAlt' }),
+    defineField({ name: 'bookingHeadline', type: 'bookingHeadline', title: 'bookingHeadline' }),
+    defineField({ name: 'bookingProgram', type: 'bookingProgram', title: 'bookingProgram' }),
+    defineField({ name: 'bookingCalWidget', type: 'bookingCalWidget', title: 'bookingCalWidget' }),
+    defineField({ name: 'bookingContactAlt', type: 'bookingContactAlt', title: 'bookingContactAlt' }),
   ]
 });

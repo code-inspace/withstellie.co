@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const accompagnementHeadline = defineType({
-  name: 'accompagnementHeadline',
-  title: 'Accompagnement - Headline',
+export const coachingHeadline = defineType({
+  name: 'coachingHeadline',
+  title: 'Coaching - Headline',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -15,9 +15,9 @@ export const accompagnementHeadline = defineType({
   ]
 });
 
-export const accompagnementMethodMBS = defineType({
-  name: 'accompagnementMethodMBS',
-  title: 'Accompagnement - MethodMBS',
+export const coachingMethodMBS = defineType({
+  name: 'coachingMethodMBS',
+  title: 'Coaching - MethodMBS',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -28,9 +28,9 @@ export const accompagnementMethodMBS = defineType({
   ]
 });
 
-export const accompagnementForWho = defineType({
-  name: 'accompagnementForWho',
-  title: 'Accompagnement - ForWho',
+export const coachingForWho = defineType({
+  name: 'coachingForWho',
+  title: 'Coaching - ForWho',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -43,9 +43,9 @@ export const accompagnementForWho = defineType({
   ]
 });
 
-export const accompagnementTestimonials = defineType({
-  name: 'accompagnementTestimonials',
-  title: 'Accompagnement - Testimonials',
+export const coachingTestimonials = defineType({
+  name: 'coachingTestimonials',
+  title: 'Coaching - Testimonials',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -54,9 +54,9 @@ export const accompagnementTestimonials = defineType({
   ]
 });
 
-export const accompagnementOffers = defineType({
-  name: 'accompagnementOffers',
-  title: 'Accompagnement - Offers',
+export const coachingOffers = defineType({
+  name: 'coachingOffers',
+  title: 'Coaching - Offers',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -67,9 +67,9 @@ export const accompagnementOffers = defineType({
   ]
 });
 
-export const accompagnementFAQ = defineType({
-  name: 'accompagnementFAQ',
-  title: 'Accompagnement - FAQ',
+export const coachingFAQ = defineType({
+  name: 'coachingFAQ',
+  title: 'Coaching - FAQ',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -78,9 +78,9 @@ export const accompagnementFAQ = defineType({
   ]
 });
 
-export const accompagnementDiscoveryCall = defineType({
-  name: 'accompagnementDiscoveryCall',
-  title: 'Accompagnement - DiscoveryCall',
+export const coachingDiscoveryCall = defineType({
+  name: 'coachingDiscoveryCall',
+  title: 'Coaching - DiscoveryCall',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -93,17 +93,17 @@ export const accompagnementDiscoveryCall = defineType({
   ]
 });
 
-export const pageAccompagnement = defineType({
-  name: 'pageAccompagnement',
-  title: 'Page: Accompagnement',
+export const pageCoaching = defineType({
+  name: 'pageCoaching',
+  title: 'Page: Coaching',
   type: 'document',
   fields: [
-    defineField({ name: 'accompagnementHeadline', type: 'accompagnementHeadline', title: 'accompagnementHeadline' }),
-    defineField({ name: 'accompagnementMethodMBS', type: 'accompagnementMethodMBS', title: 'accompagnementMethodMBS' }),
-    defineField({ name: 'accompagnementForWho', type: 'accompagnementForWho', title: 'accompagnementForWho' }),
-    defineField({ name: 'accompagnementTestimonials', type: 'accompagnementTestimonials', title: 'accompagnementTestimonials' }),
-    defineField({ name: 'accompagnementOffers', type: 'accompagnementOffers', title: 'accompagnementOffers' }),
-    defineField({ name: 'accompagnementFAQ', type: 'accompagnementFAQ', title: 'accompagnementFAQ' }),
-    defineField({ name: 'accompagnementDiscoveryCall', type: 'accompagnementDiscoveryCall', title: 'accompagnementDiscoveryCall' }),
+    defineField({ name: 'coachingHeadline', type: 'coachingHeadline', title: 'coachingHeadline' }),
+    defineField({ name: 'coachingMethodMBS', type: 'coachingMethodMBS', title: 'coachingMethodMBS' }),
+    defineField({ name: 'coachingForWho', type: 'coachingForWho', title: 'coachingForWho' }),
+    defineField({ name: 'coachingTestimonials', type: 'coachingTestimonials', title: 'coachingTestimonials' }),
+    defineField({ name: 'coachingOffers', type: 'coachingOffers', title: 'coachingOffers' }),
+    defineField({ name: 'coachingFAQ', type: 'coachingFAQ', title: 'coachingFAQ' }),
+    defineField({ name: 'coachingDiscoveryCall', type: 'coachingDiscoveryCall', title: 'coachingDiscoveryCall' }),
   ]
 });

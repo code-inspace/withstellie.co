@@ -1,19 +1,19 @@
-import { accueil2Hero, accueil2StellieIntro, accueil2Method, accueil2Testimonials, accueil2CTA, pageAccueil2 } from './accueil2';
+import { home2Hero, home2StellieIntro, home2Method, home2Testimonials, home2CTA, pageHome2 } from './home2';
 import { aboutHeadline, aboutBefore, aboutTurningPoint, aboutReconstruction, aboutWhy, aboutQuote, aboutMethod, aboutCTA, pageAbout } from './about';
 import { contactHeadline, contactContactForm, contactAlternatives, contactRedirection, pageContact } from './contact';
-import { reserverHeadline, reserverProgram, reserverCalWidget, reserverContactAlt, pageReserver } from './reserver';
-import { accompagnementHeadline, accompagnementMethodMBS, accompagnementForWho, accompagnementTestimonials, accompagnementOffers, accompagnementFAQ, accompagnementDiscoveryCall, pageAccompagnement } from './accompagnement';
+import { bookingHeadline, bookingProgram, bookingCalWidget, bookingContactAlt, pageBooking } from './booking';
+import { coachingHeadline, coachingMethodMBS, coachingForWho, coachingTestimonials, coachingOffers, coachingFAQ, coachingDiscoveryCall, pageCoaching } from './coaching';
 import { homeHero, homeHook, homePresentation, homeFocus, homeMethod, homeTestimonials, homeCTA, homePricing, homeFAQ, homeCTA2, homeAbout, pageHome } from './home';
 import { globalNav, globalFooter } from './global';
-import { pageMentionsLegales, pageConfidentialite } from './legal';
+import { pageLegalNotice, pagePrivacyPolicy } from './legal';
 
 export const schemaTypes = [
-  accueil2Hero,
-  accueil2StellieIntro,
-  accueil2Method,
-  accueil2Testimonials,
-  accueil2CTA,
-  pageAccueil2,
+  home2Hero,
+  home2StellieIntro,
+  home2Method,
+  home2Testimonials,
+  home2CTA,
+  pageHome2,
   aboutHeadline,
   aboutBefore,
   aboutTurningPoint,
@@ -28,19 +28,19 @@ export const schemaTypes = [
   contactAlternatives,
   contactRedirection,
   pageContact,
-  reserverHeadline,
-  reserverProgram,
-  reserverCalWidget,
-  reserverContactAlt,
-  pageReserver,
-  accompagnementHeadline,
-  accompagnementMethodMBS,
-  accompagnementForWho,
-  accompagnementTestimonials,
-  accompagnementOffers,
-  accompagnementFAQ,
-  accompagnementDiscoveryCall,
-  pageAccompagnement,
+  bookingHeadline,
+  bookingProgram,
+  bookingCalWidget,
+  bookingContactAlt,
+  pageBooking,
+  coachingHeadline,
+  coachingMethodMBS,
+  coachingForWho,
+  coachingTestimonials,
+  coachingOffers,
+  coachingFAQ,
+  coachingDiscoveryCall,
+  pageCoaching,
   homeHero,
   homeHook,
   homePresentation,
@@ -55,6 +55,6 @@ export const schemaTypes = [
   pageHome,
   globalNav,
   globalFooter,
-  pageMentionsLegales,
-  pageConfidentialite
+  pageLegalNotice,
+  pagePrivacyPolicy
 ];

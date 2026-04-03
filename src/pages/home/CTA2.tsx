@@ -115,7 +115,7 @@ export const CTA2: React.FC = () => {
             </p>
             <div className="flex flex-col items-center gap-6">
               <a
-                href="/reserver"
+                href="/booking"
                 className="inline-block px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
               >
                 Réserver mon appel découverte

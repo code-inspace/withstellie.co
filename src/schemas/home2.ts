@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const accueil2Hero = defineType({
-  name: 'accueil2Hero',
-  title: 'Accueil2 - Hero',
+export const home2Hero = defineType({
+  name: 'home2Hero',
+  title: 'Home2 - Hero',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -18,9 +18,9 @@ export const accueil2Hero = defineType({
   ]
 });
 
-export const accueil2StellieIntro = defineType({
-  name: 'accueil2StellieIntro',
-  title: 'Accueil2 - StellieIntro',
+export const home2StellieIntro = defineType({
+  name: 'home2StellieIntro',
+  title: 'Home2 - StellieIntro',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -37,9 +37,9 @@ export const accueil2StellieIntro = defineType({
   ]
 });
 
-export const accueil2Method = defineType({
-  name: 'accueil2Method',
-  title: 'Accueil2 - Method',
+export const home2Method = defineType({
+  name: 'home2Method',
+  title: 'Home2 - Method',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -52,9 +52,9 @@ export const accueil2Method = defineType({
   ]
 });
 
-export const accueil2Testimonials = defineType({
-  name: 'accueil2Testimonials',
-  title: 'Accueil2 - Testimonials',
+export const home2Testimonials = defineType({
+  name: 'home2Testimonials',
+  title: 'Home2 - Testimonials',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -63,9 +63,9 @@ export const accueil2Testimonials = defineType({
   ]
 });
 
-export const accueil2CTA = defineType({
-  name: 'accueil2CTA',
-  title: 'Accueil2 - CTA',
+export const home2CTA = defineType({
+  name: 'home2CTA',
+  title: 'Home2 - CTA',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -84,15 +84,15 @@ export const accueil2CTA = defineType({
   ]
 });
 
-export const pageAccueil2 = defineType({
-  name: 'pageAccueil2',
-  title: 'Page: Accueil2',
+export const pageHome2 = defineType({
+  name: 'pageHome2',
+  title: 'Page: Home2',
   type: 'document',
   fields: [
-    defineField({ name: 'accueil2Hero', type: 'accueil2Hero', title: 'accueil2Hero' }),
-    defineField({ name: 'accueil2StellieIntro', type: 'accueil2StellieIntro', title: 'accueil2StellieIntro' }),
-    defineField({ name: 'accueil2Method', type: 'accueil2Method', title: 'accueil2Method' }),
-    defineField({ name: 'accueil2Testimonials', type: 'accueil2Testimonials', title: 'accueil2Testimonials' }),
-    defineField({ name: 'accueil2CTA', type: 'accueil2CTA', title: 'accueil2CTA' }),
+    defineField({ name: 'home2Hero', type: 'home2Hero', title: 'home2Hero' }),
+    defineField({ name: 'home2StellieIntro', type: 'home2StellieIntro', title: 'home2StellieIntro' }),
+    defineField({ name: 'home2Method', type: 'home2Method', title: 'home2Method' }),
+    defineField({ name: 'home2Testimonials', type: 'home2Testimonials', title: 'home2Testimonials' }),
+    defineField({ name: 'home2CTA', type: 'home2CTA', title: 'home2CTA' }),
   ]
 });

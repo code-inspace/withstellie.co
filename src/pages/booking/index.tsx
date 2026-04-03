@@ -8,13 +8,13 @@ import { ContactAlt } from './ContactAlt';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
 
-const Reserver: React.FC = () => {
+const Booking: React.FC = () => {
   const { i18n } = useTranslation();
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageReserver"][0]`).then((res) => {
+    client.fetch(`*[_type == "pageBooking"][0]`).then((res) => {
       setData(res || {});
     }).catch(() => {
       setData({});
@@ -26,13 +26,13 @@ const Reserver: React.FC = () => {
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.reserverHeadline?.visible !== false && <Headline data={data.reserverHeadline} lang={i18n.language} />}
-      {data.reserverProgram?.visible !== false && <Program data={data.reserverProgram} lang={i18n.language} />}
-      {data.reserverCalWidget?.visible !== false && <CalWidget data={data.reserverCalWidget} lang={i18n.language} />}
-      {data.reserverContactAlt?.visible !== false && <ContactAlt data={data.reserverContactAlt} lang={i18n.language} />}
+      {data.bookingHeadline?.visible !== false && <Headline data={data.bookingHeadline} lang={i18n.language} />}
+      {data.bookingProgram?.visible !== false && <Program data={data.bookingProgram} lang={i18n.language} />}
+      {data.bookingCalWidget?.visible !== false && <CalWidget data={data.bookingCalWidget} lang={i18n.language} />}
+      {data.bookingContactAlt?.visible !== false && <ContactAlt data={data.bookingContactAlt} lang={i18n.language} />}
       <Footer />
     </div>
   );
 };
 
-export default Reserver;
+export default Booking;

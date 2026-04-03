@@ -4,13 +4,13 @@ import { Footer } from "../../components/layout/Footer";
 import { useTranslation } from "react-i18next";
 import { client } from "../../lib/sanity";
 
-const MentionsLegales: React.FC = () => {
+const LegalNotice: React.FC = () => {
   const [data, setData] = useState<any>({});
   const { i18n } = useTranslation();
   const lang = i18n.language || 'fr';
 
   useEffect(() => {
-    client.fetch(`*[_type == "pageMentionsLegales"][0]`)
+    client.fetch(`*[_type == "pageLegalNotice"][0]`)
       .then((res) => {
         if (res) setData(res);
       })
@@ -105,4 +105,4 @@ const MentionsLegales: React.FC = () => {
   );
 };
 
-export default MentionsLegales;
+export default LegalNotice;

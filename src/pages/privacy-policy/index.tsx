@@ -4,13 +4,13 @@ import { Footer } from "../../components/layout/Footer";
 import { useTranslation } from "react-i18next";
 import { client } from "../../lib/sanity";
 
-const Confidentialite: React.FC = () => {
+const PrivacyPolicy: React.FC = () => {
   const [data, setData] = useState<any>({});
   const { i18n } = useTranslation();
   const lang = i18n.language || 'fr';
 
   useEffect(() => {
-    client.fetch(`*[_type == "pageConfidentialite"][0]`)
+    client.fetch(`*[_type == "pagePrivacyPolicy"][0]`)
       .then((res) => {
         if (res) setData(res);
       })
@@ -138,4 +138,4 @@ const Confidentialite: React.FC = () => {
   );
 };
 
-export default Confidentialite;
+export default PrivacyPolicy;
