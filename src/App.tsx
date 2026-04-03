@@ -7,6 +7,7 @@ import OffreAvril from './pages/offre-avril/index';
 import Accompagnement from './pages/accompagnement/index';
 import Reserver from './pages/reserver/index';
 import AboutNew from './pages/about/index';
+import Contact from './pages/contact/index';
 import { PromoBanner } from './components/layout/PromoBanner';
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         <Route path="/en/book" element={<Reserver />} />
         <Route path="/a-propos" element={<AboutNew />} />
         <Route path="/en/about" element={<AboutNew />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/en/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
