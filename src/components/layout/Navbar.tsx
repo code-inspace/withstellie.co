@@ -41,41 +41,36 @@ export const Navbar: React.FC = () => {
     localStorage.setItem('i18nextLng', lng);
   };
 
+  const headerRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     client.fetch(`*[_type == "globalNav"][0]`)
-      .then((res) => {
-        if (res) setData(res);
-      })
+      .then((res) => { if (res) setData(res); })
       .catch((err) => console.error("Sanity nav fetch error", err));
 
-    const NAV_MID = 32;
-
-    // Cache des positions — recalculé après init GSAP et au resize
-    type Bound = { top: number; bottom: number; theme: string };
-    const bounds: Bound[] = [];
-
-    const refreshBounds = () => {
-      bounds.length = 0;
-      const sections = document.querySelectorAll<HTMLElement>('[data-navbar-theme]');
-      sections.forEach(section => {
-        // Si GSAP a wrappé la section dans un pin-spacer, utiliser le spacer
-        // mais seulement sa position de départ (offsetTop), pas sa hauteur totale
-        const spacer = section.parentElement?.classList.contains('pin-spacer')
-          ? section.parentElement
-          : null;
-        const top = spacer ? spacer.offsetTop : section.offsetTop;
-        // Pour la hauteur, toujours utiliser la section elle-même (h-screen)
-        // sauf si elle est fixed (pinned) → lire offsetHeight du spacer
-        const bottom = spacer
-          ? spacer.offsetTop + spacer.offsetHeight
-          : section.offsetTop + section.offsetHeight;
-        bounds.push({ top, bottom, theme: section.dataset.navbarTheme ?? 'dark' });
-      });
+    // Retourne la couleur de fond réelle derrière la navbar au point (x, y)
+    const getBgBehindNav = (x: number, y: number): string | null => {
+      const header = headerRef.current;
+      const elements = document.elementsFromPoint(x, y) as HTMLElement[];
+      for (const el of elements) {
+        // Ignorer la navbar et ses enfants
+        if (header && (el === header || header.contains(el))) continue;
+        // Ignorer les overlays transparents (menus, etc.)
+        const bg = getComputedStyle(el).backgroundColor;
+        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') return bg;
+      }
+      return null;
     };
 
-    // Laisser GSAP s'initialiser avant de lire les positions
-    const initTimer = setTimeout(refreshBounds, 300);
-    window.addEventListener('resize', refreshBounds);
+    // Détermine si une couleur rgb(...) est sombre
+    const isDarkColor = (rgb: string): boolean => {
+      const match = rgb.match(/\d+/g);
+      if (!match) return true;
+      const [r, g, b] = match.map(Number);
+      // Luminance relative (formule W3C)
+      const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
+      return luminance < 140;
+    };
 
     const detect = () => {
       const currentY = window.scrollY;
@@ -85,21 +80,21 @@ export const Navbar: React.FC = () => {
       setAtTop(currentY < 80);
       setVisible(currentY < 80 || scrollingUp);
 
-      const navPos = currentY + NAV_MID;
-      let theme = 'dark';
-      for (const { top, bottom, theme: t } of bounds) {
-        if (navPos >= top && navPos < bottom) { theme = t; break; }
-      }
-      setIsDark(theme === 'dark');
+      // Sonder la couleur au centre de la navbar
+      const navY = (headerRef.current?.getBoundingClientRect().top ?? 0)
+        + (headerRef.current?.offsetHeight ?? 64) / 2;
+      const navX = window.innerWidth / 2;
+
+      const bg = getBgBehindNav(navX, navY);
+      if (bg) setIsDark(isDarkColor(bg));
     };
 
-    refreshBounds();
     detect();
     window.addEventListener('scroll', detect, { passive: true });
+    window.addEventListener('resize', detect);
     return () => {
-      clearTimeout(initTimer);
       window.removeEventListener('scroll', detect);
-      window.removeEventListener('resize', refreshBounds);
+      window.removeEventListener('resize', detect);
     };
   }, []);
 
@@ -111,6 +106,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
+        ref={headerRef}
         className={`fixed left-0 right-0 z-[100] py-6 transition-all duration-500 ${
           atTop && !menuOpen ? '' : !menuOpen ? 'backdrop-blur-md' : ''
         } ${visible || menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-0 opacity-100 md:-translate-y-full md:opacity-0'}`}
