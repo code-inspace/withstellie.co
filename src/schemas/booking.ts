@@ -1,9 +1,7 @@
 import { defineType, defineField } from 'sanity';
 
 export const bookingHeadline = defineType({
-  name: 'bookingHeadline',
-  title: 'Booking - Headline',
-  type: 'object',
+  name: 'bookingHeadline', title: 'Booking - Headline', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -12,13 +10,12 @@ export const bookingHeadline = defineType({
     defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
     defineField({ name: 'text_fr', type: 'text', title: 'Text (FR)' }),
     defineField({ name: 'text_en', type: 'text', title: 'Text (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Booking — Headline' }) }
 });
 
 export const bookingProgram = defineType({
-  name: 'bookingProgram',
-  title: 'Booking - Program',
-  type: 'object',
+  name: 'bookingProgram', title: 'Booking - Programme', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -31,13 +28,12 @@ export const bookingProgram = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Booking — Programme' }) }
 });
 
 export const bookingCalWidget = defineType({
-  name: 'bookingCalWidget',
-  title: 'Booking - CalWidget',
-  type: 'object',
+  name: 'bookingCalWidget', title: 'Booking - Calendrier', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -46,13 +42,12 @@ export const bookingCalWidget = defineType({
     defineField({ name: 'info1_en', type: 'string', title: 'Info 1 (EN)' }),
     defineField({ name: 'info2_fr', type: 'string', title: 'Info 2 (FR)' }),
     defineField({ name: 'info2_en', type: 'string', title: 'Info 2 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Booking — Calendrier' }) }
 });
 
 export const bookingContactAlt = defineType({
-  name: 'bookingContactAlt',
-  title: 'Booking - ContactAlt',
-  type: 'object',
+  name: 'bookingContactAlt', title: 'Booking - Contact alternatif', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -65,20 +60,6 @@ export const bookingContactAlt = defineType({
     defineField({ name: 'instagram_en', type: 'string', title: 'Instagram (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
-  ]
-});
-
-export const pageBooking = defineType({
-  name: 'pageBooking',
-  title: 'Page: Booking',
-  type: 'document',
-  fields: [
-    defineField({ name: 'bookingHeadline', type: 'bookingHeadline', title: 'bookingHeadline' }),
-    defineField({ name: 'bookingProgram', type: 'bookingProgram', title: 'bookingProgram' }),
-    defineField({ name: 'bookingCalWidget', type: 'bookingCalWidget', title: 'bookingCalWidget' }),
-    defineField({ name: 'bookingContactAlt', type: 'bookingContactAlt', title: 'bookingContactAlt' }),
   ],
-  preview: {
-    prepare: () => ({ title: 'BookingHeadline' })
-  }
+  preview: { prepare: () => ({ title: 'Booking — Contact alternatif' }) }
 });

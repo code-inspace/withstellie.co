@@ -11,27 +11,38 @@ import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
   const { i18n } = useTranslation();
-  const [data, setData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sections, setSections] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageHome"][0]`).then((res) => {
-      setData(res || {});
-    }).catch(() => {
-      setData({});
-    });
+    client.fetch(`{
+      "hero":         coalesce(*[_type == "homeHero"][0],         *[_type == "pageHome"][0].homeHero),
+      "hook":         coalesce(*[_type == "homeHook"][0],         *[_type == "pageHome"][0].homeHook),
+      "presentation": coalesce(*[_type == "homePresentation"][0], *[_type == "pageHome"][0].homePresentation),
+      "focus":        coalesce(*[_type == "homeFocus"][0],        *[_type == "pageHome"][0].homeFocus),
+      "method":       coalesce(*[_type == "homeMethod"][0],       *[_type == "pageHome"][0].homeMethod),
+      "testimonials": coalesce(*[_type == "homeTestimonials"][0], *[_type == "pageHome"][0].homeTestimonials),
+      "cta":          coalesce(*[_type == "homeCTA"][0],          *[_type == "pageHome"][0].homeCTA),
+      "pricing":      coalesce(*[_type == "homePricing"][0],      *[_type == "pageHome"][0].homePricing),
+      "faq":          coalesce(*[_type == "homeFAQ"][0],          *[_type == "pageHome"][0].homeFAQ),
+      "cta2":         coalesce(*[_type == "homeCTA2"][0],         *[_type == "pageHome"][0].homeCTA2),
+      "about":        coalesce(*[_type == "homeAbout"][0],        *[_type == "pageHome"][0].homeAbout)
+    }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!data) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+
+  const lang = i18n.language;
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.homeHero?.visible !== false && <Hero data={data.homeHero} lang={i18n.language} />}
-      {data.homeAbout?.visible !== false && <About data={data.homeAbout} lang={i18n.language} />}
-      {data.homeMethod?.visible !== false && <Method data={data.homeMethod} lang={i18n.language} />}
-      {data.homeTestimonials?.visible !== false && <Testimonials data={data.homeTestimonials} lang={i18n.language} />}
-      {data.homeCTA?.visible !== false && <CTA data={data.homeCTA} lang={i18n.language} />}
+      {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
+      {sections.about?.visible !== false && <About data={sections.about} lang={lang} />}
+      {sections.method?.visible !== false && <Method data={sections.method} lang={lang} />}
+      {sections.testimonials?.visible !== false && <Testimonials data={sections.testimonials} lang={lang} />}
+      {sections.cta?.visible !== false && <CTA data={sections.cta} lang={lang} />}
       <Footer />
     </div>
   );

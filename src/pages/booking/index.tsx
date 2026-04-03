@@ -10,26 +10,30 @@ import { useTranslation } from 'react-i18next';
 
 const Booking: React.FC = () => {
   const { i18n } = useTranslation();
-  const [data, setData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sections, setSections] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageBooking"][0]`).then((res) => {
-      setData(res || {});
-    }).catch(() => {
-      setData({});
-    });
+    client.fetch(`{
+      "headline":   coalesce(*[_type == "bookingHeadline"][0],   *[_type == "pageBooking"][0].bookingHeadline),
+      "program":    coalesce(*[_type == "bookingProgram"][0],    *[_type == "pageBooking"][0].bookingProgram),
+      "calWidget":  coalesce(*[_type == "bookingCalWidget"][0],  *[_type == "pageBooking"][0].bookingCalWidget),
+      "contactAlt": coalesce(*[_type == "bookingContactAlt"][0], *[_type == "pageBooking"][0].bookingContactAlt)
+    }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!data) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+
+  const lang = i18n.language;
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.bookingHeadline?.visible !== false && <Headline data={data.bookingHeadline} lang={i18n.language} />}
-      {data.bookingProgram?.visible !== false && <Program data={data.bookingProgram} lang={i18n.language} />}
-      {data.bookingCalWidget?.visible !== false && <CalWidget data={data.bookingCalWidget} lang={i18n.language} />}
-      {data.bookingContactAlt?.visible !== false && <ContactAlt data={data.bookingContactAlt} lang={i18n.language} />}
+      {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
+      {sections.program?.visible !== false && <Program data={sections.program} lang={lang} />}
+      {sections.calWidget?.visible !== false && <CalWidget data={sections.calWidget} lang={lang} />}
+      {sections.contactAlt?.visible !== false && <ContactAlt data={sections.contactAlt} lang={lang} />}
       <Footer />
     </div>
   );

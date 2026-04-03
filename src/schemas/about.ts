@@ -1,26 +1,23 @@
 import { defineType, defineField } from 'sanity';
 
 export const aboutHeadline = defineType({
-  name: 'aboutHeadline',
-  title: 'About - Headline',
-  type: 'object',
+  name: 'aboutHeadline', title: 'About - Headline', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'subtitle_fr', type: 'string', title: 'Subtitle (FR)' }),
     defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
-    defineField({ name: 'warningTitle_fr', type: 'string', title: 'Warningtitle (FR)' }),
-    defineField({ name: 'warningTitle_en', type: 'string', title: 'Warningtitle (EN)' }),
-    defineField({ name: 'warningText_fr', type: 'text', title: 'Warningtext (FR)' }),
-    defineField({ name: 'warningText_en', type: 'text', title: 'Warningtext (EN)' }),
-  ]
+    defineField({ name: 'warningTitle_fr', type: 'string', title: 'Warning Title (FR)' }),
+    defineField({ name: 'warningTitle_en', type: 'string', title: 'Warning Title (EN)' }),
+    defineField({ name: 'warningText_fr', type: 'text', title: 'Warning Text (FR)' }),
+    defineField({ name: 'warningText_en', type: 'text', title: 'Warning Text (EN)' }),
+  ],
+  preview: { prepare: () => ({ title: 'About — Headline' }) }
 });
 
 export const aboutBefore = defineType({
-  name: 'aboutBefore',
-  title: 'About - Before',
-  type: 'object',
+  name: 'aboutBefore', title: 'About - Before', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -31,13 +28,12 @@ export const aboutBefore = defineType({
     defineField({ name: 'text2_en', type: 'text', title: 'Text2 (EN)' }),
     defineField({ name: 'text3_fr', type: 'text', title: 'Text3 (FR)' }),
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Before' }) }
 });
 
 export const aboutTurningPoint = defineType({
-  name: 'aboutTurningPoint',
-  title: 'About - TurningPoint',
-  type: 'object',
+  name: 'aboutTurningPoint', title: 'About - Turning Point', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -50,13 +46,12 @@ export const aboutTurningPoint = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'quote_fr', type: 'string', title: 'Quote (FR)' }),
     defineField({ name: 'quote_en', type: 'string', title: 'Quote (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Turning Point' }) }
 });
 
 export const aboutReconstruction = defineType({
-  name: 'aboutReconstruction',
-  title: 'About - Reconstruction',
-  type: 'object',
+  name: 'aboutReconstruction', title: 'About - Reconstruction', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -71,13 +66,12 @@ export const aboutReconstruction = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'text4_fr', type: 'text', title: 'Text4 (FR)' }),
     defineField({ name: 'text4_en', type: 'text', title: 'Text4 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Reconstruction' }) }
 });
 
 export const aboutWhy = defineType({
-  name: 'aboutWhy',
-  title: 'About - Why',
-  type: 'object',
+  name: 'aboutWhy', title: 'About - Why', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -88,26 +82,24 @@ export const aboutWhy = defineType({
     defineField({ name: 'text1_en', type: 'text', title: 'Text1 (EN)' }),
     defineField({ name: 'text2_fr', type: 'text', title: 'Text2 (FR)' }),
     defineField({ name: 'text2_en', type: 'text', title: 'Text2 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Why' }) }
 });
 
 export const aboutQuote = defineType({
-  name: 'aboutQuote',
-  title: 'About - Quote',
-  type: 'object',
+  name: 'aboutQuote', title: 'About - Quote', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'text1_fr', type: 'string', title: 'Text1 (FR)' }),
     defineField({ name: 'text1_en', type: 'string', title: 'Text1 (EN)' }),
     defineField({ name: 'text2_fr', type: 'string', title: 'Text2 (FR)' }),
     defineField({ name: 'text2_en', type: 'string', title: 'Text2 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Quote' }) }
 });
 
 export const aboutMethod = defineType({
-  name: 'aboutMethod',
-  title: 'About - Method',
-  type: 'object',
+  name: 'aboutMethod', title: 'About - Method', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -118,13 +110,12 @@ export const aboutMethod = defineType({
     defineField({ name: 'desc_en', type: 'text', title: 'Desc (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'About — Method' }) }
 });
 
 export const aboutCTA = defineType({
-  name: 'aboutCTA',
-  title: 'About - CTA',
-  type: 'object',
+  name: 'aboutCTA', title: 'About - CTA', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -139,24 +130,6 @@ export const aboutCTA = defineType({
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
-  ]
-});
-
-export const pageAbout = defineType({
-  name: 'pageAbout',
-  title: 'Page: About',
-  type: 'document',
-  fields: [
-    defineField({ name: 'aboutHeadline', type: 'aboutHeadline', title: 'aboutHeadline' }),
-    defineField({ name: 'aboutBefore', type: 'aboutBefore', title: 'aboutBefore' }),
-    defineField({ name: 'aboutTurningPoint', type: 'aboutTurningPoint', title: 'aboutTurningPoint' }),
-    defineField({ name: 'aboutReconstruction', type: 'aboutReconstruction', title: 'aboutReconstruction' }),
-    defineField({ name: 'aboutWhy', type: 'aboutWhy', title: 'aboutWhy' }),
-    defineField({ name: 'aboutQuote', type: 'aboutQuote', title: 'aboutQuote' }),
-    defineField({ name: 'aboutMethod', type: 'aboutMethod', title: 'aboutMethod' }),
-    defineField({ name: 'aboutCTA', type: 'aboutCTA', title: 'aboutCTA' }),
   ],
-  preview: {
-    prepare: () => ({ title: 'AboutHeadline' })
-  }
+  preview: { prepare: () => ({ title: 'About — CTA' }) }
 });

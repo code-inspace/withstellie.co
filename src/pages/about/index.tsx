@@ -14,30 +14,38 @@ import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
   const { i18n } = useTranslation();
-  const [data, setData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sections, setSections] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageAbout"][0]`).then((res) => {
-      setData(res || {});
-    }).catch(() => {
-      setData({});
-    });
+    client.fetch(`{
+      "headline":       coalesce(*[_type == "aboutHeadline"][0],       *[_type == "pageAbout"][0].aboutHeadline),
+      "before":         coalesce(*[_type == "aboutBefore"][0],         *[_type == "pageAbout"][0].aboutBefore),
+      "turningPoint":   coalesce(*[_type == "aboutTurningPoint"][0],   *[_type == "pageAbout"][0].aboutTurningPoint),
+      "reconstruction": coalesce(*[_type == "aboutReconstruction"][0], *[_type == "pageAbout"][0].aboutReconstruction),
+      "why":            coalesce(*[_type == "aboutWhy"][0],            *[_type == "pageAbout"][0].aboutWhy),
+      "quote":          coalesce(*[_type == "aboutQuote"][0],          *[_type == "pageAbout"][0].aboutQuote),
+      "method":         coalesce(*[_type == "aboutMethod"][0],         *[_type == "pageAbout"][0].aboutMethod),
+      "cta":            coalesce(*[_type == "aboutCTA"][0],            *[_type == "pageAbout"][0].aboutCTA)
+    }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!data) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+
+  const lang = i18n.language;
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.aboutHeadline?.visible !== false && <Headline data={data.aboutHeadline} lang={i18n.language} />}
-      {data.aboutBefore?.visible !== false && <Before data={data.aboutBefore} lang={i18n.language} />}
-      {data.aboutTurningPoint?.visible !== false && <TurningPoint data={data.aboutTurningPoint} lang={i18n.language} />}
-      {data.aboutReconstruction?.visible !== false && <Reconstruction data={data.aboutReconstruction} lang={i18n.language} />}
-      {data.aboutWhy?.visible !== false && <Why data={data.aboutWhy} lang={i18n.language} />}
-      {data.aboutQuote?.visible !== false && <Quote data={data.aboutQuote} lang={i18n.language} />}
-      {data.aboutMethod?.visible !== false && <Method data={data.aboutMethod} lang={i18n.language} />}
-      {data.aboutCTA?.visible !== false && <CTA data={data.aboutCTA} lang={i18n.language} />}
+      {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
+      {sections.before?.visible !== false && <Before data={sections.before} lang={lang} />}
+      {sections.turningPoint?.visible !== false && <TurningPoint data={sections.turningPoint} lang={lang} />}
+      {sections.reconstruction?.visible !== false && <Reconstruction data={sections.reconstruction} lang={lang} />}
+      {sections.why?.visible !== false && <Why data={sections.why} lang={lang} />}
+      {sections.quote?.visible !== false && <Quote data={sections.quote} lang={lang} />}
+      {sections.method?.visible !== false && <Method data={sections.method} lang={lang} />}
+      {sections.cta?.visible !== false && <CTA data={sections.cta} lang={lang} />}
       <Footer />
     </div>
   );

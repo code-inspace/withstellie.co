@@ -11,26 +11,32 @@ import { useTranslation } from 'react-i18next';
 
 const Home2: React.FC = () => {
   const { i18n } = useTranslation();
-  const [data, setData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sections, setSections] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageHome2"][0]`).then((res) => {
-      setData(res || {}); // Fallback to empty object if no doc
-    });
+    client.fetch(`{
+      "hero":         coalesce(*[_type == "home2Hero"][0],         *[_type == "pageHome2"][0].home2Hero),
+      "stellieIntro": coalesce(*[_type == "home2StellieIntro"][0], *[_type == "pageHome2"][0].home2StellieIntro),
+      "method":       coalesce(*[_type == "home2Method"][0],       *[_type == "pageHome2"][0].home2Method),
+      "testimonials": coalesce(*[_type == "home2Testimonials"][0], *[_type == "pageHome2"][0].home2Testimonials),
+      "cta":          coalesce(*[_type == "home2CTA"][0],          *[_type == "pageHome2"][0].home2CTA)
+    }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  // Display a fallback while loading
-  if (!data) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+
+  const lang = i18n.language;
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.home2Hero?.visible !== false && <Hero data={data.home2Hero} lang={i18n.language} />}
-      {data.home2StellieIntro?.visible !== false && <StellieIntro data={data.home2StellieIntro} lang={i18n.language} />}
-      {data.home2Method?.visible !== false && <Method data={data.home2Method} lang={i18n.language} />}
-      {data.home2Testimonials?.visible !== false && <Testimonials data={data.home2Testimonials} lang={i18n.language} />}
-      {data.home2CTA?.visible !== false && <CTA data={data.home2CTA} lang={i18n.language} />}
+      {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
+      {sections.stellieIntro?.visible !== false && <StellieIntro data={sections.stellieIntro} lang={lang} />}
+      {sections.method?.visible !== false && <Method data={sections.method} lang={lang} />}
+      {sections.testimonials?.visible !== false && <Testimonials data={sections.testimonials} lang={lang} />}
+      {sections.cta?.visible !== false && <CTA data={sections.cta} lang={lang} />}
       <Footer />
     </div>
   );

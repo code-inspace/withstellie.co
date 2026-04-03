@@ -1,9 +1,7 @@
 import { defineType, defineField } from 'sanity';
 
 export const homeHero = defineType({
-  name: 'homeHero',
-  title: 'Home - Hero',
-  type: 'object',
+  name: 'homeHero', title: 'Home - Hero', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -12,27 +10,25 @@ export const homeHero = defineType({
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
-    defineField({ name: 'backgroundImage', type: 'image', title: 'Backgroundimage', options: { hotspot: true } }),
-  ]
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
+  ],
+  preview: { prepare: () => ({ title: 'Home — Hero' }) }
 });
 
 export const homeHook = defineType({
-  name: 'homeHook',
-  title: 'Home - Hook',
-  type: 'object',
+  name: 'homeHook', title: 'Home - Hook', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'quote_fr', type: 'text', title: 'Quote (FR)' }),
     defineField({ name: 'quote_en', type: 'text', title: 'Quote (EN)' }),
     defineField({ name: 'author_fr', type: 'string', title: 'Author (FR)' }),
     defineField({ name: 'author_en', type: 'string', title: 'Author (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Hook' }) }
 });
 
 export const homePresentation = defineType({
-  name: 'homePresentation',
-  title: 'Home - Presentation',
-  type: 'object',
+  name: 'homePresentation', title: 'Home - Presentation', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -41,103 +37,88 @@ export const homePresentation = defineType({
     defineField({ name: 'text1_en', type: 'text', title: 'Text1 (EN)' }),
     defineField({ name: 'text2_fr', type: 'text', title: 'Text2 (FR)' }),
     defineField({ name: 'text2_en', type: 'text', title: 'Text2 (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Presentation' }) }
 });
 
 export const homeFocus = defineType({
-  name: 'homeFocus',
-  title: 'Home - Focus',
-  type: 'object',
+  name: 'homeFocus', title: 'Home - Focus', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Focus' }) }
 });
 
 export const homeMethod = defineType({
-  name: 'homeMethod',
-  title: 'Home - Method',
-  type: 'object',
+  name: 'homeMethod', title: 'Home - Method', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle (FR)' }),
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Method' }) }
 });
 
 export const homeTestimonials = defineType({
-  name: 'homeTestimonials',
-  title: 'Home - Testimonials',
-  type: 'object',
+  name: 'homeTestimonials', title: 'Home - Testimonials', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({
-      name: 'list',
-      type: 'array',
-      title: 'Testimonials List',
-      of: [
-        defineField({
-          name: 'testimonialItem',
-          type: 'object',
-          fields: [
-            defineField({ name: 'quote_fr', type: 'text', title: 'Quote (FR)' }),
-            defineField({ name: 'quote_en', type: 'text', title: 'Quote (EN)' }),
-            defineField({ name: 'author', type: 'string', title: 'Author Name' }),
-            defineField({ name: 'age_fr', type: 'string', title: 'Age (FR)' }),
-            defineField({ name: 'age_en', type: 'string', title: 'Age (EN)' }),
-            defineField({ name: 'role_fr', type: 'string', title: 'Role (FR)' }),
-            defineField({ name: 'role_en', type: 'string', title: 'Role (EN)' }),
-          ]
-        })
-      ]
+      name: 'list', type: 'array', title: 'Testimonials List',
+      of: [defineField({ name: 'testimonialItem', type: 'object', fields: [
+        defineField({ name: 'quote_fr', type: 'text', title: 'Quote (FR)' }),
+        defineField({ name: 'quote_en', type: 'text', title: 'Quote (EN)' }),
+        defineField({ name: 'author', type: 'string', title: 'Author Name' }),
+        defineField({ name: 'age_fr', type: 'string', title: 'Age (FR)' }),
+        defineField({ name: 'age_en', type: 'string', title: 'Age (EN)' }),
+        defineField({ name: 'role_fr', type: 'string', title: 'Role (FR)' }),
+        defineField({ name: 'role_en', type: 'string', title: 'Role (EN)' }),
+      ]})]
     })
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Testimonials' }) }
 });
 
 export const homeCTA = defineType({
-  name: 'homeCTA',
-  title: 'Home - CTA',
-  type: 'object',
+  name: 'homeCTA', title: 'Home - CTA', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — CTA' }) }
 });
 
 export const homePricing = defineType({
-  name: 'homePricing',
-  title: 'Home - Pricing',
-  type: 'object',
+  name: 'homePricing', title: 'Home - Pricing', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — Pricing' }) }
 });
 
 export const homeFAQ = defineType({
-  name: 'homeFAQ',
-  title: 'Home - FAQ',
-  type: 'object',
+  name: 'homeFAQ', title: 'Home - FAQ', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — FAQ' }) }
 });
 
 export const homeCTA2 = defineType({
-  name: 'homeCTA2',
-  title: 'Home - CTA2',
-  type: 'object',
+  name: 'homeCTA2', title: 'Home - CTA2', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -146,13 +127,12 @@ export const homeCTA2 = defineType({
     defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Home — CTA2' }) }
 });
 
 export const homeAbout = defineType({
-  name: 'homeAbout',
-  title: 'Home - About',
-  type: 'object',
+  name: 'homeAbout', title: 'Home - About', type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -161,27 +141,6 @@ export const homeAbout = defineType({
     defineField({ name: 'desc_en', type: 'text', title: 'Desc (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
-  ]
-});
-
-export const pageHome = defineType({
-  name: 'pageHome',
-  title: 'Page: Home',
-  type: 'document',
-  fields: [
-    defineField({ name: 'homeHero', type: 'homeHero', title: 'homeHero' }),
-    defineField({ name: 'homeHook', type: 'homeHook', title: 'homeHook' }),
-    defineField({ name: 'homePresentation', type: 'homePresentation', title: 'homePresentation' }),
-    defineField({ name: 'homeFocus', type: 'homeFocus', title: 'homeFocus' }),
-    defineField({ name: 'homeMethod', type: 'homeMethod', title: 'homeMethod' }),
-    defineField({ name: 'homeTestimonials', type: 'homeTestimonials', title: 'homeTestimonials' }),
-    defineField({ name: 'homeCTA', type: 'homeCTA', title: 'homeCTA' }),
-    defineField({ name: 'homePricing', type: 'homePricing', title: 'homePricing' }),
-    defineField({ name: 'homeFAQ', type: 'homeFAQ', title: 'homeFAQ' }),
-    defineField({ name: 'homeCTA2', type: 'homeCTA2', title: 'homeCTA2' }),
-    defineField({ name: 'homeAbout', type: 'homeAbout', title: 'homeAbout' }),
   ],
-  preview: {
-    prepare: () => ({ title: 'HomeHero' })
-  }
+  preview: { prepare: () => ({ title: 'Home — About' }) }
 });
