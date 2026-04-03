@@ -57,8 +57,17 @@ export const homeMethod = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
-    defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle (FR)' }),
-    defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
+    defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle CTA link (FR)' }),
+    defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle CTA link (EN)' }),
+    defineField({
+      name: 'cards', type: 'array', title: 'Cartes Mind / Body / Soul',
+      of: [defineField({ name: 'methodCard', type: 'object', fields: [
+        defineField({ name: 'title', type: 'string', title: 'Titre (invariable)' }),
+        defineField({ name: 'letter', type: 'string', title: 'Lettre (M/B/S)' }),
+        defineField({ name: 'desc_fr', type: 'text', title: 'Description (FR)' }),
+        defineField({ name: 'desc_en', type: 'text', title: 'Description (EN)' }),
+      ]})]
+    }),
   ],
   preview: { prepare: () => ({ title: 'Home — Method' }) }
 });
@@ -91,8 +100,12 @@ export const homeCTA = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({ name: 'body_fr', type: 'text', title: 'Body text (FR)' }),
+    defineField({ name: 'body_en', type: 'text', title: 'Body text (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
+    defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
+    defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
   ],
   preview: { prepare: () => ({ title: 'Home — CTA' }) }
 });

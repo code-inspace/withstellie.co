@@ -46,6 +46,9 @@ export const globalFooter = defineType({
   fields: [
     defineField({ name: 'subtitle_fr', type: 'string', title: 'Subtitle (FR)', initialValue: 'Coaching de shift identitaire' }),
     defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)', initialValue: 'Identity shift coaching' }),
+    defineField({ name: 'email', type: 'string', title: 'Email de contact' }),
+    defineField({ name: 'instagram', type: 'string', title: 'Lien Instagram' }),
+    defineField({ name: 'tiktok', type: 'string', title: 'Lien TikTok' }),
     defineField({ name: 'legal1_fr', type: 'string', title: 'Legal Link 1 (FR)', initialValue: 'Mentions légales' }),
     defineField({ name: 'legal1_en', type: 'string', title: 'Legal Link 1 (EN)', initialValue: 'Legal Notice' }),
     defineField({ name: 'legal2_fr', type: 'string', title: 'Legal Link 2 (FR)', initialValue: 'Politique de confidentialité' }),
