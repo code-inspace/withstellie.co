@@ -6,6 +6,7 @@ import { coachingHeadline, coachingMethodMBS, coachingForWho, coachingTestimonia
 import { homeHero, homeHook, homePresentation, homeFocus, homeMethod, homeTestimonials, homeCTA, homePricing, homeFAQ, homeCTA2, homeAbout } from './home';
 import { globalNav, globalFooter, globalBanner } from './global';
 import { pageLegalNotice, pagePrivacyPolicy } from './legal';
+import { pageOffer } from './offer';
 
 export const schemaTypes = [
   home2Hero,
@@ -51,5 +52,6 @@ export const schemaTypes = [
   globalFooter,
   globalBanner,
   pageLegalNotice,
-  pagePrivacyPolicy
+  pagePrivacyPolicy,
+  pageOffer,
 ];

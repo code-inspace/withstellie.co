@@ -105,6 +105,11 @@ export default defineConfig({
                   ])
               ),
             S.listItem()
+              .title('Offres')
+              .child(
+                S.documentTypeList('pageOffer').title('Offres — Toutes les pages')
+              ),
+            S.listItem()
               .title('Legal Notice')
               .child(S.document().schemaType('pageLegalNotice').documentId('pageLegalNotice')),
             S.listItem()
