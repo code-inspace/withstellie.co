@@ -14,7 +14,7 @@ export const Redirection: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="pb-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="pb-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto redir-content bg-[#C24C2A] text-[#F5EDE0] rounded-[3rem] p-12 md:p-16 text-center shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl pointer-events-none" />
         <h2 className="font-display text-3xl md:text-5xl mb-10 relative z-10">

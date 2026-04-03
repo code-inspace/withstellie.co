@@ -14,7 +14,7 @@ export const Alternatives: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="pb-24 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="pb-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-3xl mx-auto alt-content text-center">
         <h2 className="font-display text-4xl mb-12 text-[#2A1A0E] italic">Tu préfères passer par les réseaux ?</h2>
 

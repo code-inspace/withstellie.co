@@ -14,7 +14,7 @@ export const DiscoveryCall: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto dc-content bg-[#F4E8D9] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-sm">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/30 to-transparent pointer-events-none" />
         

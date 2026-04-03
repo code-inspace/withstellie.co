@@ -68,7 +68,7 @@ export const CTA2: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative h-[400vh] w-full bg-[#F9F7F2]">
+    <section data-navbar-theme="light" ref={container} className="relative h-[400vh] w-full bg-[#F9F7F2]">
       <div ref={pinWrap} className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#F9F7F2]">
         
         {/* SVG Soleil (Starburst) Bleu ciel - positionné derrière le texte */}

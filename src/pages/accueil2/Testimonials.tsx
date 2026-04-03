@@ -28,7 +28,7 @@ export const Testimonials: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-6xl mx-auto">
         <h2 className="t-title opacity-0 font-display text-5xl md:text-6xl text-center text-[#2A1A0E] mb-20 italic">
           Ce qu'elles en disent

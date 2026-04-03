@@ -22,7 +22,7 @@ export const Method: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20 meth-title">
           <h2 className="font-display text-5xl md:text-6xl text-[#2A1A0E] mb-8">Comment je travaille</h2>

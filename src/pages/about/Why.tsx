@@ -14,7 +14,7 @@ export const Why: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="why-title font-display text-5xl md:text-6xl text-[#2A1A0E] mb-16">
           Pourquoi je fais ça

@@ -14,7 +14,7 @@ export const CTA: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="pb-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="pb-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto c-content opacity-0 bg-[#C24C2A] text-[#F5EDE0] rounded-[3rem] p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 bg-white/10 rounded-full -translate-x-1/3 -translate-y-1/4 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-black/10 rounded-full translate-x-1/3 translate-y-1/4 blur-3xl pointer-events-none" />

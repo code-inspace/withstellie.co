@@ -55,7 +55,7 @@ export const Testimonials: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="dark" className="bg-[#F9F3EC] overflow-hidden">
+    <section ref={container} data-navbar-theme="light" className="bg-[#F9F3EC] overflow-hidden">
       <div className="h-screen flex flex-col">
         {/* Titre */}
         <div className="pt-24 pb-12 px-10 md:px-16 flex-shrink-0">

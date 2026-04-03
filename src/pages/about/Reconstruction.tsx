@@ -14,7 +14,7 @@ export const Reconstruction: React.FC = () => {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse gap-16 md:gap-24">
         <div className="md:w-1/3 text-left md:text-right">
           <h2 className="recon-title font-display text-5xl md:text-6xl text-[#2A1A0E] italic sticky top-32">
