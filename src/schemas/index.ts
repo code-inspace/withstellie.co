@@ -4,7 +4,7 @@ import { contactHeadline, contactContactForm, contactAlternatives, contactRedire
 import { bookingHeadline, bookingProgram, bookingCalWidget, bookingContactAlt } from './booking';
 import { coachingHeadline, coachingMethodMBS, coachingForWho, coachingTestimonials, coachingOffers, coachingFAQ, coachingDiscoveryCall } from './coaching';
 import { homeHero, homeHook, homePresentation, homeFocus, homeMethod, homeTestimonials, homeCTA, homePricing, homeFAQ, homeCTA2, homeAbout } from './home';
-import { globalNav, globalFooter, globalBanner } from './global';
+import { globalNav, globalFooter } from './global';
 import { pageLegalNotice, pagePrivacyPolicy } from './legal';
 import { pageOffer } from './offer';
 
@@ -50,7 +50,7 @@ export const schemaTypes = [
   homeAbout,
   globalNav,
   globalFooter,
-  globalBanner,
+
   pageLegalNotice,
   pagePrivacyPolicy,
   pageOffer,

@@ -13,16 +13,19 @@ export const PromoBanner: React.FC = () => {
   const lang = i18n.language;
 
   useEffect(() => {
-    client.fetch(`*[_type == "globalBanner"][0]`)
-      .then((res) => {
-        if (!res || !res.visible) return;
+    // Cherche une offre avec bannerVisible = true et non expirée
+    const today = new Date().toISOString().slice(0, 10);
+    client.fetch(
+      `*[_type == "pageOffer" && visible == true && bannerVisible == true && (!defined(bannerExpiry) || bannerExpiry >= $today)][0]`,
+      { today }
+    ).then((offer) => {
+      if (offer) {
         const dismissed = localStorage.getItem(STORAGE_KEY);
         if (dismissed) return;
-        if (res.expiry && new Date() > new Date(res.expiry)) return;
-        setData(res);
+        setData(offer);
         setVisible(true);
-      })
-      .catch(() => {});
+      }
+    }).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -39,23 +42,30 @@ export const PromoBanner: React.FC = () => {
 
   if (!visible || !data) return null;
 
+  const label  = data[`bannerLabel_${lang}`];
+  const text   = data[`bannerText_${lang}`];
+  const cta    = data[`bannerCta_${lang}`];
+  const link   = `/${data.slug?.current}`;
+
   return (
     <div
       className="fixed top-0 left-0 right-0 z-[120] flex items-center justify-center px-10 text-sm"
       style={{ backgroundColor: '#2A1A0E', height: `${BANNER_H}px` }}
     >
       <p style={{ color: '#F5EDE0' }} className="flex flex-wrap items-center justify-center text-center gap-2 pr-4 md:pr-0">
-        <span>{data[`label_${lang}`]}</span>
-        <span className="opacity-40 hidden sm:inline">·</span>
-        <span className="hidden sm:inline">{data[`text_${lang}`]}</span>
-        <span className="opacity-40">·</span>
-        <Link
-          to={data.link || '/offre-avril'}
-          className="font-medium hover:opacity-80 transition-opacity"
-          style={{ color: '#C24C2A' }}
-        >
-          {data[`cta_${lang}`]}
-        </Link>
+        {label && <span>{label}</span>}
+        {label && text && <span className="opacity-40 hidden sm:inline">·</span>}
+        {text && <span className="hidden sm:inline">{text}</span>}
+        {cta && <span className="opacity-40">·</span>}
+        {cta && (
+          <Link
+            to={link}
+            className="font-medium hover:opacity-80 transition-opacity"
+            style={{ color: '#C24C2A' }}
+          >
+            {cta}
+          </Link>
+        )}
       </p>
       <button
         onClick={dismiss}

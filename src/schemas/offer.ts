@@ -11,6 +11,7 @@ export const pageOffer = defineType({
     { name: 'forWho',      title: '03 · Pour qui' },
     { name: 'form',        title: '04 · Formulaire' },
     { name: 'reassurance', title: '05 · Réassurance & Footer' },
+    { name: 'banner',      title: '🎀 Banner' },
   ],
   fields: [
     // ── Meta ──
@@ -81,6 +82,16 @@ export const pageOffer = defineType({
     defineField({ name: 'footerLegal_en',  type: 'string', title: 'Lien mentions légales (EN)', group: 'reassurance', initialValue: 'Legal Notice' }),
     defineField({ name: 'footerPrivacy_fr',type: 'string', title: 'Lien confidentialité (FR)',  group: 'reassurance', initialValue: 'Confidentialité' }),
     defineField({ name: 'footerPrivacy_en',type: 'string', title: 'Lien confidentialité (EN)',  group: 'reassurance', initialValue: 'Privacy Policy' }),
+
+    // ── Banner (promo bar) ──
+    defineField({ name: 'bannerVisible',  type: 'boolean', title: 'Afficher le banner',   group: 'banner', initialValue: false }),
+    defineField({ name: 'bannerLabel_fr', type: 'string',  title: 'Label (FR)',            group: 'banner', description: "Ex: 🎁 Offre d'avril" }),
+    defineField({ name: 'bannerLabel_en', type: 'string',  title: 'Label (EN)',            group: 'banner' }),
+    defineField({ name: 'bannerText_fr',  type: 'string',  title: 'Texte (FR)',            group: 'banner' }),
+    defineField({ name: 'bannerText_en',  type: 'string',  title: 'Texte (EN)',            group: 'banner' }),
+    defineField({ name: 'bannerCta_fr',   type: 'string',  title: 'CTA bouton (FR)',       group: 'banner', description: 'Ex: Réserver ma place' }),
+    defineField({ name: 'bannerCta_en',   type: 'string',  title: 'CTA bouton (EN)',       group: 'banner' }),
+    defineField({ name: 'bannerExpiry',   type: 'date',    title: "Date d'expiration",    group: 'banner', description: 'Laisse vide pour pas de limite' }),
   ],
   preview: {
     select: { title: 'headline_fr', subtitle: 'slug.current' },

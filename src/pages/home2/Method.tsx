@@ -5,14 +5,9 @@ import { ArrowRight } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
 
-const cards = [
-  { letter: 'M', title: 'Mind', desc: 'Clarifier tes pensées. Sortir du bruit mental pour entendre ce qui compte vraiment. Neurosciences et PNL.' },
-  { letter: 'B', title: 'Body', desc: 'Écouter ton corps. Il porte ce que ta tête n\'arrive pas encore à formuler. Somatique et EFT.' },
-  { letter: 'S', title: 'Soul', desc: 'Retrouver ton centre. Pas une direction imposée de l\'extérieur. La tienne. Yoga et introspection.' },
-];
-
 export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }) => {
   const container = useRef<HTMLElement>(null);
+  const cards = data?.cards || [];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -37,13 +32,13 @@ export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
-          {cards.map((card, i) => (
+          {cards.map((card: any, i: number) => (
             <div key={i} className="m-card opacity-0 bg-[#F5EDE0]/5 rounded-[2.5rem] p-10 md:p-12 relative overflow-hidden flex flex-col transition-all duration-500 hover:bg-[#F5EDE0]/10 hover:-translate-y-2 border border-white/5">
               <div className="absolute -right-6 -top-10 text-[14rem] font-sans text-white/5 font-bold leading-none select-none pointer-events-none">
                 {card.letter}
               </div>
               <div className="text-5xl font-display italic text-[#C24C2A] mb-8 relative z-10">{card.title}</div>
-              <p className="text-lg leading-relaxed font-light mt-auto text-[#F5EDE0]/80 relative z-10">{card.desc}</p>
+              <p className="text-lg leading-relaxed font-light mt-auto text-[#F5EDE0]/80 relative z-10">{card[`desc_${lang}`] || card.desc_fr}</p>
             </div>
           ))}
         </div>

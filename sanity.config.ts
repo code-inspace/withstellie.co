@@ -122,9 +122,6 @@ export default defineConfig({
             S.listItem()
               .title('Footer (Global)')
               .child(S.document().schemaType('globalFooter').documentId('globalFooter')),
-            S.listItem()
-              .title('Banner (Global)')
-              .child(S.document().schemaType('globalBanner').documentId('globalBanner')),
           ]),
     }),
   ],

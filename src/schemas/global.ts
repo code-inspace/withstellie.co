@@ -19,25 +19,7 @@ export const globalNav = defineType({
   }
 });
 
-export const globalBanner = defineType({
-  name: 'globalBanner',
-  title: 'Global - Banner',
-  type: 'document',
-  fields: [
-    defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
-    defineField({ name: 'label_fr', type: 'string', title: 'Label (FR)' }),
-    defineField({ name: 'label_en', type: 'string', title: 'Label (EN)' }),
-    defineField({ name: 'text_fr', type: 'string', title: 'Text (FR)' }),
-    defineField({ name: 'text_en', type: 'string', title: 'Text (EN)' }),
-    defineField({ name: 'cta_fr', type: 'string', title: 'CTA (FR)' }),
-    defineField({ name: 'cta_en', type: 'string', title: 'CTA (EN)' }),
-    defineField({ name: 'link', type: 'string', title: 'Link (slug)' }),
-    defineField({ name: 'expiry', type: 'date', title: 'Expiry date' }),
-  ],
-  preview: {
-    prepare: () => ({ title: 'GlobalBanner' })
-  }
-});
+
 
 export const globalFooter = defineType({
   name: 'globalFooter',

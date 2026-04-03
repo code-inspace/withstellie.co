@@ -45,6 +45,15 @@ export const home2Method = defineType({
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
+    defineField({
+      name: 'cards', type: 'array', title: 'Cartes M/B/S',
+      of: [defineField({ name: 'methodCard', type: 'object', fields: [
+        defineField({ name: 'letter', type: 'string', title: 'Lettre' }),
+        defineField({ name: 'title', type: 'string', title: 'Titre' }),
+        defineField({ name: 'desc_fr', type: 'text', title: 'Description (FR)' }),
+        defineField({ name: 'desc_en', type: 'text', title: 'Description (EN)' }),
+      ]})]
+    }),
   ],
   preview: { prepare: () => ({ title: 'Home2 — Method' }) }
 });
