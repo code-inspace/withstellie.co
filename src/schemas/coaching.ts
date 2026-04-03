@@ -105,5 +105,8 @@ export const pageCoaching = defineType({
     defineField({ name: 'coachingOffers', type: 'coachingOffers', title: 'coachingOffers' }),
     defineField({ name: 'coachingFAQ', type: 'coachingFAQ', title: 'coachingFAQ' }),
     defineField({ name: 'coachingDiscoveryCall', type: 'coachingDiscoveryCall', title: 'coachingDiscoveryCall' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'CoachingHeadline' })
+  }
 });

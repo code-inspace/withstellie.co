@@ -73,5 +73,8 @@ export const pageContact = defineType({
     defineField({ name: 'contactContactForm', type: 'contactContactForm', title: 'contactContactForm' }),
     defineField({ name: 'contactAlternatives', type: 'contactAlternatives', title: 'contactAlternatives' }),
     defineField({ name: 'contactRedirection', type: 'contactRedirection', title: 'contactRedirection' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'ContactHeadline' })
+  }
 });

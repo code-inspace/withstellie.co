@@ -38,7 +38,10 @@ export const pageLegalNotice = defineType({
     defineField({ name: 'section6Title_en', type: 'string', initialValue: 'Design & Development' }),
     defineField({ name: 'section6Text_fr', type: 'text', initialValue: 'Site conçu et développé par Axel Coudair.' }),
     defineField({ name: 'section6Text_en', type: 'text', initialValue: 'Site designed and developed by Axel Coudair.' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'Page LegalNotice' })
+  }
 });
 
 export const pagePrivacyPolicy = defineType({
@@ -95,5 +98,8 @@ export const pagePrivacyPolicy = defineType({
     defineField({ name: 'section9Title_en', type: 'string', initialValue: 'Updates' }),
     defineField({ name: 'section9Text_fr', type: 'text', initialValue: "Cette politique de confidentialité peut être mise à jour à tout moment. La date de dernière révision est indiquée ci-dessous.\nDernière mise à jour : avril 2026" }),
     defineField({ name: 'section9Text_en', type: 'text', initialValue: "This privacy policy may be updated at any time. The date of the last revision is indicated below.\nLast updated: April 2026" })
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'Page PrivacyPolicy' })
+  }
 });

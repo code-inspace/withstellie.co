@@ -69,5 +69,8 @@ export const pageBooking = defineType({
     defineField({ name: 'bookingProgram', type: 'bookingProgram', title: 'bookingProgram' }),
     defineField({ name: 'bookingCalWidget', type: 'bookingCalWidget', title: 'bookingCalWidget' }),
     defineField({ name: 'bookingContactAlt', type: 'bookingContactAlt', title: 'bookingContactAlt' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'BookingHeadline' })
+  }
 });

@@ -18,10 +18,10 @@ export default defineConfig({
           .title('Pages du site')
           .items([
             S.listItem()
-              .title('Home 3')
+              .title('Home')
               .child(S.document().schemaType('pageHome').documentId('pageHome')),
             S.listItem()
-              .title('À propos (About)')
+              .title('About')
               .child(S.document().schemaType('pageAbout').documentId('pageAbout')),
             S.listItem()
               .title('Coaching')
@@ -30,16 +30,16 @@ export default defineConfig({
               .title('Contact')
               .child(S.document().schemaType('pageContact').documentId('pageContact')),
             S.listItem()
-              .title('Réserver')
+              .title('Booking')
               .child(S.document().schemaType('pageBooking').documentId('pageBooking')),
             S.listItem()
-              .title('Accueil 2')
+              .title('Home 2')
               .child(S.document().schemaType('pageHome2').documentId('pageHome2')),
             S.listItem()
-              .title('Mentions légales')
+              .title('Legal Notice')
               .child(S.document().schemaType('pageLegalNotice').documentId('pageLegalNotice')),
             S.listItem()
-              .title('Confidentialité')
+              .title('Privacy Policy')
               .child(S.document().schemaType('pagePrivacyPolicy').documentId('pagePrivacyPolicy')),
             S.divider(),
             S.listItem()

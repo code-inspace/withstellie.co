@@ -155,5 +155,8 @@ export const pageAbout = defineType({
     defineField({ name: 'aboutQuote', type: 'aboutQuote', title: 'aboutQuote' }),
     defineField({ name: 'aboutMethod', type: 'aboutMethod', title: 'aboutMethod' }),
     defineField({ name: 'aboutCTA', type: 'aboutCTA', title: 'aboutCTA' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'AboutHeadline' })
+  }
 });

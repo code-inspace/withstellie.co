@@ -160,5 +160,8 @@ export const pageHome = defineType({
     defineField({ name: 'homeFAQ', type: 'homeFAQ', title: 'homeFAQ' }),
     defineField({ name: 'homeCTA2', type: 'homeCTA2', title: 'homeCTA2' }),
     defineField({ name: 'homeAbout', type: 'homeAbout', title: 'homeAbout' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'HomeHero' })
+  }
 });

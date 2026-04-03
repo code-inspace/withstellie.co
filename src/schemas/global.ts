@@ -13,7 +13,10 @@ export const globalNav = defineType({
     defineField({ name: 'link3_en', type: 'string', title: 'Link 3 (EN)', initialValue: 'Book' }),
     defineField({ name: 'link4_fr', type: 'string', title: 'Link 4 (FR)', initialValue: 'Contact' }),
     defineField({ name: 'link4_en', type: 'string', title: 'Link 4 (EN)', initialValue: 'Contact' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'GlobalNav' })
+  }
 });
 
 export const globalFooter = defineType({
@@ -29,5 +32,8 @@ export const globalFooter = defineType({
     defineField({ name: 'legal2_en', type: 'string', title: 'Legal Link 2 (EN)', initialValue: 'Privacy Policy' }),
     defineField({ name: 'madeBy_fr', type: 'string', title: 'Made By (FR)', initialValue: 'Fait par Axel Coudair' }),
     defineField({ name: 'madeBy_en', type: 'string', title: 'Made By (EN)', initialValue: 'Made by Axel Coudair' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'GlobalFooter' })
+  }
 });

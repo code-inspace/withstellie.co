@@ -94,5 +94,8 @@ export const pageHome2 = defineType({
     defineField({ name: 'home2Method', type: 'home2Method', title: 'home2Method' }),
     defineField({ name: 'home2Testimonials', type: 'home2Testimonials', title: 'home2Testimonials' }),
     defineField({ name: 'home2CTA', type: 'home2CTA', title: 'home2CTA' }),
-  ]
+  ],
+  preview: {
+    prepare: () => ({ title: 'Home2Hero' })
+  }
 });
