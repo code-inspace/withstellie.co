@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
         {/* Fade bas */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1A0A02]/70 via-transparent to-[#1A0A02]/20 z-10"></div>
         <img
-          src="/hero.jpg"
+          src="/hero2.png"
           alt="Hero background"
           className="h3-bg w-full h-full object-cover object-center"
           style={{ filter: "brightness(0.65) contrast(1.08) saturate(1.15)" }}
