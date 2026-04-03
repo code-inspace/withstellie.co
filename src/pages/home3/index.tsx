@@ -1,6 +1,5 @@
 import React from "react";
 import { Hero } from "./Hero";
-import { Hook } from "./Hook";
 import { About } from "./About";
 import { Method } from "./Method";
 import { Testimonials } from "./Testimonials";
@@ -13,7 +12,6 @@ const Home3: React.FC = () => {
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
       <Hero />
-      <Hook />
       <About />
       <Method />
       <Testimonials />
