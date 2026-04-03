@@ -6,12 +6,38 @@ export default defineConfig({
   name: 'default',
   title: 'With Stellie CMS',
   
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID || 'dummy-project-id',
-  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+  projectId: 'wls4qthn',
+  dataset: 'production',
   
   basePath: '/studio',
 
-  plugins: [structureTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Pages du site')
+          .items([
+            S.listItem()
+              .title('Home 3')
+              .child(S.document().schemaType('pageHome3').documentId('pageHome3')),
+            S.listItem()
+              .title('À propos (About)')
+              .child(S.document().schemaType('pageAbout').documentId('pageAbout')),
+            S.listItem()
+              .title('Accompagnement')
+              .child(S.document().schemaType('pageAccompagnement').documentId('pageAccompagnement')),
+            S.listItem()
+              .title('Contact')
+              .child(S.document().schemaType('pageContact').documentId('pageContact')),
+            S.listItem()
+              .title('Réserver')
+              .child(S.document().schemaType('pageReserver').documentId('pageReserver')),
+            S.listItem()
+              .title('Accueil 2')
+              .child(S.document().schemaType('pageAccueil2').documentId('pageAccueil2')),
+          ]),
+    }),
+  ],
 
   schema: {
     types: schemaTypes,
