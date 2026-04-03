@@ -18,7 +18,7 @@ export const ContactAlt: React.FC<{ data?: any; lang?: string }> = ({ data, lang
       <div className="max-w-3xl mx-auto alt-content text-center bg-[#F4E8D9] rounded-[3rem] p-12 md:p-16 border border-[#2A1A0E]/5">
         <h2 className="font-display text-4xl md:text-5xl mb-6 text-[#2A1A0E]">{data?.[`title_${lang}`] || "Tu préfères écrire d'abord ?"}</h2>
         <p className="text-xl font-light text-[#2A1A0E]/70 mb-12">
-          Pas de problème. Tu peux m'envoyer un message directement.
+          {data?.[`subtitle_${lang}`] || "Pas de problème. Tu peux m'envoyer un message directement."}
         </p>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
@@ -33,7 +33,7 @@ export const ContactAlt: React.FC<{ data?: any; lang?: string }> = ({ data, lang
         </div>
 
         <p className="text-sm uppercase tracking-widest font-medium text-[#2A1A0E]/40">
-          Je réponds en général sous 24h.
+          {data?.[`subline_${lang}`] || "Je réponds en général sous 24h."}
         </p>
       </div>
     </section>

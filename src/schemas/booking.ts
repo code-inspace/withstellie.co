@@ -42,6 +42,10 @@ export const bookingCalWidget = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({ name: 'info1_fr', type: 'string', title: 'Info 1 (FR)' }),
+    defineField({ name: 'info1_en', type: 'string', title: 'Info 1 (EN)' }),
+    defineField({ name: 'info2_fr', type: 'string', title: 'Info 2 (FR)' }),
+    defineField({ name: 'info2_en', type: 'string', title: 'Info 2 (EN)' }),
   ]
 });
 
@@ -53,10 +57,14 @@ export const bookingContactAlt = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({ name: 'subtitle_fr', type: 'string', title: 'Subtitle (FR)' }),
+    defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
     defineField({ name: 'email_fr', type: 'string', title: 'Email (FR)' }),
     defineField({ name: 'email_en', type: 'string', title: 'Email (EN)' }),
     defineField({ name: 'instagram_fr', type: 'string', title: 'Instagram (FR)' }),
     defineField({ name: 'instagram_en', type: 'string', title: 'Instagram (EN)' }),
+    defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
+    defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
   ]
 });
 

@@ -17,13 +17,15 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang =
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C24C2A]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h1 className="con-head font-display text-6xl md:text-8xl lg:text-[7rem] tracking-tight leading-[0.95] mb-12">
-          {data?.[`title_${lang}`] || "Parlons."}
+          {data?.[`title_${lang}`] || (lang === 'en' ? "Let's talk." : "Parlons.")}
         </h1>
         <p className="con-head text-2xl md:text-3xl font-light text-[#F5EDE0]/90 leading-relaxed mb-10 max-w-3xl mx-auto whitespace-pre-line">
-          {data?.[`subtitle_${lang}`] || "Que tu aies une question sur l'accompagnement, une hésitation, ou que tu veuilles simplement dire bonjour avant de te lancer, je suis là."}
+          {data?.[`subtitle_${lang}`] || (lang === 'en'
+            ? "Whether you have a question about the coaching, a doubt, or you just want to say hello before getting started — I'm here."
+            : "Que tu aies une question sur l'accompagnement, une hésitation, ou que tu veuilles simplement dire bonjour avant de te lancer, je suis là.")}
         </p>
         <p className="con-head text-sm uppercase tracking-widest font-medium text-[#C24C2A] bg-[#C24C2A]/10 inline-block px-6 py-3 rounded-full">
-          {data?.[`subline_${lang}`] || "Je réponds en général sous 24h."}
+          {data?.[`subline_${lang}`] || (lang === 'en' ? "I usually respond within 24 hours." : "Je réponds en général sous 24h.")}
         </p>
       </div>
     </section>

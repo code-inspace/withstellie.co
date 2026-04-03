@@ -11,8 +11,7 @@ const defaultCriteria = [
 
 export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
-  const contentStr = data?.[`desc_${lang}`];
-  const criteriaArray = contentStr ? contentStr.split('\n').filter(Boolean) : defaultCriteria;
+  const items = data?.[`items_${lang}`] || defaultCriteria;
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -33,7 +32,7 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         </div>
         <div className="md:w-2/3">
           <div className="space-y-12 mb-20">
-            {criteriaArray.map((item: string, i: number) => (
+            {items.map((item: string, i: number) => (
               <div key={i} className="fw-item flex items-start gap-8 group">
                 <div className="w-2 h-2 mt-4 rounded-full bg-[#C24C2A] shrink-0 transition-transform duration-300 group-hover:scale-150" />
                 <p className="text-2xl md:text-3xl font-light text-[#F5EDE0]/80 leading-relaxed group-hover:text-[#F5EDE0] transition-colors duration-300">{item}</p>

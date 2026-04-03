@@ -23,7 +23,7 @@ export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, l
         </h2>
         
         <p className="text-2xl font-light text-[#C24C2A] italic mb-6 relative z-10">
-          C'est ok. Tu n'as pas besoin de savoir tout de suite.
+          {data?.[`subtitle_${lang}`] || "C'est ok. Tu n'as pas besoin de savoir tout de suite."}
         </p>
         
         <p className="text-lg md:text-xl text-[#2A1A0E]/70 font-light max-w-2xl mx-auto leading-relaxed mb-12 relative z-10 whitespace-pre-line">
@@ -37,7 +37,7 @@ export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, l
           </button>
           
           <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#2A1A0E]/50">
-            Appel de 30 minutes <span className="mx-2">·</span> Gratuit <span className="mx-2">·</span> Sans engagement
+            {data?.[`subline_${lang}`] || <React.Fragment>Appel de 30 minutes <span className="mx-2">·</span> Gratuit <span className="mx-2">·</span> Sans engagement</React.Fragment>}
           </p>
         </div>
       </div>

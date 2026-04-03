@@ -25,6 +25,7 @@ const faqs = [
 export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqList = data?.list || faqs;
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -46,7 +47,7 @@ export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
         </h2>
 
         <div className="space-y-4">
-          {faqs.map((faq, i) => (
+          {faqList.map((faq: any, i: number) => (
             <div 
               key={i} 
               className="faq-item border-b border-[#2A1A0E]/10"
@@ -56,7 +57,7 @@ export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
                 className="w-full text-left py-6 flex justify-between items-center group"
               >
                 <span className={`text-xl font-medium transition-colors duration-300 ${openIndex === i ? 'text-[#C24C2A]' : 'text-[#2A1A0E] group-hover:text-[#C24C2A]'}`}>
-                  {faq.q}
+                  {faq[`q_${lang}`] || faq.q_fr || faq.q}
                 </span>
                 <ChevronDown 
                   className={`text-[#2A1A0E]/40 transition-transform duration-300 shrink-0 ml-4 ${openIndex === i ? 'rotate-180 text-[#C24C2A]' : ''}`} 
@@ -68,7 +69,7 @@ export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === i ? 'max-h-96 opacity-100 pb-8' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-lg font-light text-[#2A1A0E]/70 leading-relaxed pl-4 border-l-2 border-[#C24C2A]/30">
-                  {faq.a}
+                  {faq[`a_${lang}`] || faq.a_fr || faq.a}
                 </p>
               </div>
             </div>

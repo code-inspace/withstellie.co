@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-transparent text-[#1a1a1a] pt-24 pb-12 px-6 md:px-12 border-t border-[#1a1a1a]/10">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
           <div>
             <Link to="/">
               <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0 hover:opacity-80 transition-opacity" />
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 items-center md:items-end">
             <div className="flex items-center gap-4">
               <a href="https://instagram.com/shift.withstellie" target="_blank" rel="noreferrer"
                 className="p-2 rounded-full border border-[#1a1a1a]/15 hover:border-[#1a1a1a]/40 text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors">

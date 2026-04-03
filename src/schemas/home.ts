@@ -76,6 +76,26 @@ export const homeTestimonials = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({
+      name: 'list',
+      type: 'array',
+      title: 'Testimonials List',
+      of: [
+        defineField({
+          name: 'testimonialItem',
+          type: 'object',
+          fields: [
+            defineField({ name: 'quote_fr', type: 'text', title: 'Quote (FR)' }),
+            defineField({ name: 'quote_en', type: 'text', title: 'Quote (EN)' }),
+            defineField({ name: 'author', type: 'string', title: 'Author Name' }),
+            defineField({ name: 'age_fr', type: 'string', title: 'Age (FR)' }),
+            defineField({ name: 'age_en', type: 'string', title: 'Age (EN)' }),
+            defineField({ name: 'role_fr', type: 'string', title: 'Role (FR)' }),
+            defineField({ name: 'role_en', type: 'string', title: 'Role (EN)' }),
+          ]
+        })
+      ]
+    })
   ]
 });
 

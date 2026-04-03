@@ -51,7 +51,7 @@ export const MethodMBS: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
 
         <div className="mbs-footer text-center mt-16 pb-8 border-b border-[#F5EDE0]/10">
           <p className="text-sm uppercase tracking-[0.3em] font-medium text-[#F5EDE0]/40">
-            Neurosciences <span className="text-[#C24C2A] mx-2">·</span> PNL <span className="text-[#C24C2A] mx-2">·</span> Somatique <span className="text-[#C24C2A] mx-2">·</span> EFT <span className="text-[#C24C2A] mx-2">·</span> Yoga
+            {data?.[`labels_${lang}`] || <React.Fragment>Neurosciences <span className="text-[#C24C2A] mx-2">·</span> PNL <span className="text-[#C24C2A] mx-2">·</span> Somatique <span className="text-[#C24C2A] mx-2">·</span> EFT <span className="text-[#C24C2A] mx-2">·</span> Yoga</React.Fragment>}
           </p>
         </div>
       </div>

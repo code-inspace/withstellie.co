@@ -48,7 +48,34 @@ export const Navbar: React.FC = () => {
       })
       .catch((err) => console.error("Sanity nav fetch error", err));
 
-    const NAV_MID = 32; // px — milieu vertical de la navbar
+    const NAV_MID = 32;
+
+    // Cache des positions — recalculé après init GSAP et au resize
+    type Bound = { top: number; bottom: number; theme: string };
+    const bounds: Bound[] = [];
+
+    const refreshBounds = () => {
+      bounds.length = 0;
+      const sections = document.querySelectorAll<HTMLElement>('[data-navbar-theme]');
+      sections.forEach(section => {
+        // Si GSAP a wrappé la section dans un pin-spacer, utiliser le spacer
+        // mais seulement sa position de départ (offsetTop), pas sa hauteur totale
+        const spacer = section.parentElement?.classList.contains('pin-spacer')
+          ? section.parentElement
+          : null;
+        const top = spacer ? spacer.offsetTop : section.offsetTop;
+        // Pour la hauteur, toujours utiliser la section elle-même (h-screen)
+        // sauf si elle est fixed (pinned) → lire offsetHeight du spacer
+        const bottom = spacer
+          ? spacer.offsetTop + spacer.offsetHeight
+          : section.offsetTop + section.offsetHeight;
+        bounds.push({ top, bottom, theme: section.dataset.navbarTheme ?? 'dark' });
+      });
+    };
+
+    // Laisser GSAP s'initialiser avant de lire les positions
+    const initTimer = setTimeout(refreshBounds, 300);
+    window.addEventListener('resize', refreshBounds);
 
     const detect = () => {
       const currentY = window.scrollY;
@@ -58,24 +85,22 @@ export const Navbar: React.FC = () => {
       setAtTop(currentY < 80);
       setVisible(currentY < 80 || scrollingUp);
 
-      // offsetTop = position dans le doc, non affectée par GSAP pin
       const navPos = currentY + NAV_MID;
-      const sections = document.querySelectorAll<HTMLElement>('[data-navbar-theme]');
       let theme = 'dark';
-      for (const section of sections) {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (navPos >= top && navPos < bottom) {
-          theme = section.dataset.navbarTheme ?? 'dark';
-          break;
-        }
+      for (const { top, bottom, theme: t } of bounds) {
+        if (navPos >= top && navPos < bottom) { theme = t; break; }
       }
       setIsDark(theme === 'dark');
     };
 
+    refreshBounds();
     detect();
     window.addEventListener('scroll', detect, { passive: true });
-    return () => window.removeEventListener('scroll', detect);
+    return () => {
+      clearTimeout(initTimer);
+      window.removeEventListener('scroll', detect);
+      window.removeEventListener('resize', refreshBounds);
+    };
   }, []);
 
   const forceLight = menuOpen || isDark;
@@ -88,7 +113,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed left-0 right-0 z-[100] py-6 transition-all duration-500 ${
           atTop && !menuOpen ? '' : !menuOpen ? 'backdrop-blur-md' : ''
-        } ${visible || menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
+        } ${visible || menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-0 opacity-100 md:-translate-y-full md:opacity-0'}`}
         style={{ top: 'var(--banner-h, 0px)' }}
       >
       <div className="flex items-center justify-between px-8 md:px-16 w-full relative z-[110]">
@@ -145,7 +170,7 @@ export const Navbar: React.FC = () => {
         className="fixed inset-0 z-[95] bg-[#2A1A0E] flex flex-col justify-center items-center pointer-events-none md:hidden w-screen h-screen"
         style={{ clipPath: 'circle(0% at 50% 50%)' }}
       >
-        <div className={`flex flex-col items-center gap-8 ${menuOpen ? 'pointer-events-auto' : ''}`}>
+        <div className={`flex flex-col items-center gap-8 px-8 w-full text-center ${menuOpen ? 'pointer-events-auto' : ''}`}>
           <Link to="/a-propos" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link1_${i18n.language}`] || (i18n.language === 'en' ? 'About' : 'À propos')}</Link>
           <Link to="/coaching" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link2_${i18n.language}`] || (i18n.language === 'en' ? 'Work with me' : 'L\'accompagnement')}</Link>
           <Link to="/booking" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link3_${i18n.language}`] || (i18n.language === 'en' ? 'Book' : 'Réserver')}</Link>

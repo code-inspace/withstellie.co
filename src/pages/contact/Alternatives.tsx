@@ -16,7 +16,7 @@ export const Alternatives: React.FC<{ data?: any; lang?: string }> = ({ data, la
   return (
     <section data-navbar-theme="light" ref={container} className="pb-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-3xl mx-auto alt-content text-center">
-        <h2 className="font-display text-4xl mb-12 text-[#2A1A0E] italic">{data?.[`title_${lang}`] || "Tu préfères passer par les réseaux ?"}</h2>
+        <h2 className="font-display text-4xl mb-12 text-[#2A1A0E] italic">{data?.[`title_${lang}`] || (lang === 'en' ? "Prefer to reach out on social media?" : "Tu préfères passer par les réseaux ?")}</h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <a href="https://instagram.com/shift.withstellie" target="_blank" rel="noreferrer" className="flex items-center gap-4 bg-white px-8 py-5 rounded-full shadow-sm hover:shadow-md transition-all group hover:-translate-y-1">

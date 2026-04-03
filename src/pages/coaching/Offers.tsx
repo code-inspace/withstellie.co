@@ -55,8 +55,11 @@ const offers = [
   }
 ];
 
+const fallbackOffers = offers;
+
 export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
+  const offersList = data?.list || fallbackOffers;
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -79,7 +82,7 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-10 items-stretch pt-12 pb-16">
-          {offers.map((offer, i) => (
+          {offersList.map((offer: any, i: number) => (
             <div key={i} className={`offer-card relative rounded-3xl p-8 md:p-12 flex flex-col h-full transition-transform duration-500 ${
               offer.highlighted ? 'bg-[#2A1A0E] text-[#F5EDE0] lg:scale-105 shadow-2xl z-10' : 'bg-white text-[#2A1A0E] shadow-xl my-4'
             }`}>
@@ -94,14 +97,14 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
                   {offer.name}
                 </h3>
                 <div className={`text-sm uppercase tracking-widest font-medium mb-6 ${offer.highlighted ? 'text-[#F5EDE0]/60' : 'text-[#2A1A0E]/50'}`}>
-                  {offer.duration} <span className="mx-2">·</span> À partir de {offer.price}
+                  {offer[`duration_${lang}`] || offer.duration_fr || offer.duration} <span className="mx-2">·</span> À partir de {offer.price}
                 </div>
                 <p className={`font-medium italic leading-relaxed ${offer.highlighted ? 'text-[#F5EDE0]' : 'text-[#2A1A0E]'}`}>
-                  {offer.subtitle}
+                  {offer[`subtitle_${lang}`] || offer.subtitle_fr || offer.subtitle}
                 </p>
-                {offer.description && (
+                {(offer[`description_${lang}`] || offer.description_fr || offer.description) && (
                   <p className={`mt-4 text-sm font-light leading-relaxed opacity-80`}>
-                    {offer.description}
+                    {offer[`description_${lang}`] || offer.description_fr || offer.description}
                   </p>
                 )}
               </div>
@@ -109,7 +112,7 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
               <div className="flex-grow mt-auto mb-10">
                 <div className={`text-xs uppercase tracking-widest mb-6 font-semibold opacity-50`}>Ce que tu as :</div>
                 <ul className="space-y-4">
-                  {offer.features.map((feature, j) => (
+                  {(offer[`features_${lang}`] || offer.features_fr || offer.features || []).map((feature: string, j: number) => (
                     <li key={j} className="flex items-start gap-4 text-sm leading-relaxed font-light">
                       <div className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${offer.highlighted ? 'bg-[#C24C2A]' : 'bg-[#2A1A0E]'}`} />
                       <span>{feature}</span>
@@ -121,7 +124,7 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
               <Link to="/booking" className={`w-full py-4 rounded-full flex items-center justify-center gap-3 font-medium uppercase tracking-widest text-xs transition-all duration-300 group mt-auto ${
                 offer.highlighted ? 'bg-[#C24C2A] text-white hover:bg-[#F5EDE0] hover:text-[#2A1A0E]' : 'bg-[#2A1A0E] text-white hover:bg-[#C24C2A]'
               }`}>
-                {offer.cta}
+                {offer[`cta_${lang}`] || offer.cta_fr || offer.cta}
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
