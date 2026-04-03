@@ -57,9 +57,9 @@ export const Navbar: React.FC = () => {
         </a>
 
         <div className={`hidden md:flex items-center gap-8 text-sm transition-colors duration-300 ${textCls}`}>
-          <a href="/" className="hover:opacity-100 transition-opacity">Accueil</a>
-          <a href="/about" className="hover:opacity-100 transition-opacity">À propos</a>
-          <a href="/methode" className="hover:opacity-100 transition-opacity">L'accompagnement</a>
+          <a href="/about2" className="hover:opacity-100 transition-opacity">À propos</a>
+          <a href="/accompagnement" className="hover:opacity-100 transition-opacity">L'accompagnement</a>
+          <a href="/reserver" className="hover:opacity-100 transition-opacity">Réserver</a>
           <a href="/contact" className="hover:opacity-100 transition-opacity">Contact</a>
         </div>
 
