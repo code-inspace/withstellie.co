@@ -41,7 +41,7 @@ export const PromoBanner: React.FC = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center px-10 text-sm"
+      className="fixed top-0 left-0 right-0 z-[120] flex items-center justify-center px-10 text-sm"
       style={{ backgroundColor: '#2A1A0E', height: `${BANNER_H}px` }}
     >
       <p style={{ color: '#F5EDE0' }} className="flex flex-wrap items-center justify-center text-center gap-2 pr-4 md:pr-0">

@@ -70,11 +70,11 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
                 </ul>
               </div>
 
-              <Link to="/booking" className={`w-full py-4 rounded-full flex items-center justify-center gap-3 font-medium uppercase tracking-widest text-xs transition-all duration-300 group mt-auto ${
+              <Link to="/booking" className={`w-full py-3 rounded-full flex items-center justify-center gap-2 font-medium uppercase tracking-wide text-[11px] transition-all duration-300 group mt-auto ${
                 offer.highlighted ? 'bg-[#C24C2A] text-white hover:bg-[#F5EDE0] hover:text-[#2A1A0E]' : 'bg-[#2A1A0E] text-white hover:bg-[#C24C2A]'
               }`}>
                 {offer[`cta_${lang}`]}
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </Link>
             </div>
           ))}
