@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
 export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
@@ -30,10 +32,10 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
         </p>
         
         <div className="relative z-10 flex flex-col items-center">
-          <a href="/booking" className="bg-[#F5EDE0] text-[#2A1A0E] px-10 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#2A1A0E] hover:text-[#F5EDE0] hover:scale-105 group mb-8 shadow-xl">
+          <Link to="/booking" className="bg-[#F5EDE0] text-[#2A1A0E] px-10 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#2A1A0E] hover:text-[#F5EDE0] hover:scale-105 group mb-8 shadow-xl">
             {data?.[`cta_${lang}`] || "Réserver mon appel découverte gratuit"}
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
           
           <p className="text-sm uppercase tracking-[0.2em] font-medium text-[#F5EDE0]/60 flex flex-col md:flex-row items-center gap-2 md:gap-4">
             {data?.[`subline_${lang}`] || "30 minutes · Gratuit · Sans engagement"}

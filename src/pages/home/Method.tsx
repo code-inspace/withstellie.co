@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { Link } from 'react-router-dom';
+
 const cards = [
   { letter: 'M', title: 'Mind', desc: 'Clarifier tes pensées. Sortir du bruit mental pour entendre ce qui compte vraiment.' },
   { letter: 'B', title: 'Body', desc: 'Écouter ton corps. Il porte ce que ta tête n\'arrive pas encore à formuler.' },
@@ -40,12 +42,12 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         </div>
 
         <div className="text-center">
-          <a href="/methode" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <Link to="/methode" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
             {data?.[`subtitle_${lang}`] || "Découvrir comment on travaille ensemble"}
             <span className="p-3 rounded-full border border-[#2A1A0E]/30 group-hover:bg-[#2A1A0E]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

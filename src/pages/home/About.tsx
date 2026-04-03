@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { Link } from 'react-router-dom';
+
 export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
@@ -36,12 +38,12 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
               {data?.[`desc_${lang}`] || "Je suis coach somatique. Je travaille avec des personnes qui savent être capables de plus, mais qui n'arrivent plus à s'entendre.\n\nJe ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà."}
             </p>
           </div>
-          <a href="/about" className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <Link to="/about" className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
             {data?.[`cta_${lang}`] || "En savoir plus sur mon parcours"}
             <span className="p-3 rounded-full border border-[#C24C2A]/30 group-hover:bg-[#C24C2A]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

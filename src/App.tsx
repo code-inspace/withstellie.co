@@ -11,10 +11,12 @@ import Contact from './pages/contact/index';
 import NotFound from './pages/notfound/index';
 import Home2 from './pages/home2/index';
 import { PromoBanner } from './components/layout/PromoBanner';
+import { ScrollToTop } from './components/layout/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <PromoBanner />
       <Routes>
         <Route path="/" element={<Home />} />

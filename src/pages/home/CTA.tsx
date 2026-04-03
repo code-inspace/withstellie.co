@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { Link } from 'react-router-dom';
+
 export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
@@ -27,12 +29,12 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
           Tu n'as pas besoin d'avoir tout compris. Tu as juste besoin de te dire oui.
         </p>
         <div className="flex flex-col items-center gap-6">
-          <a
-            href="/booking"
+          <Link
+            to="/booking"
             className="px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
           >
             {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}
-          </a>
+          </Link>
           <p className="text-sm font-medium tracking-widest uppercase text-[#F5EDE0]/40">
             Sans engagement · 30 minutes · Entièrement gratuit
           </p>

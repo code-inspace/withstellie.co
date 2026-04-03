@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { urlFor } from "../../lib/sanity";
 import { useGSAP } from "@gsap/react";
 
+import { Link } from 'react-router-dom';
+
 export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
 
@@ -79,12 +81,12 @@ export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr
           {data?.[`subtitle_${lang}`] || "Coaching de shift identitaire pour les femmes et personnes queer\nprêtes à réécrire leur histoire."}
         </p>
 
-        <a
-          href="/booking"
+        <Link
+          to="/booking"
           className="h3-cta opacity-0 px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
         >
           {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}
-        </a>
+        </Link>
       </div>
     </section>
   );

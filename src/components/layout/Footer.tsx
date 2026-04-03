@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { client } from '../../lib/sanity';
 
+import { Link } from 'react-router-dom';
+
 const IconInstagram = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -34,7 +36,9 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div>
-            <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0" />
+            <Link to="/">
+              <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0 hover:opacity-80 transition-opacity" />
+            </Link>
             <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">
               {data?.[`subtitle_${lang}`] || (lang === 'en' ? 'Identity shift coaching' : 'Coaching de shift identitaire')}
             </p>
@@ -60,13 +64,13 @@ export const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#1a1a1a]/40 pt-8 border-t border-[#1a1a1a]/10 gap-4">
           <div className="flex gap-4">
-            <a href="/legal-notice" className="hover:text-[#1a1a1a]/70 transition-colors">
+            <Link to="/legal-notice" className="hover:text-[#1a1a1a]/70 transition-colors">
                {data?.[`legal1_${lang}`] || (lang === 'en' ? 'Legal Notice' : 'Mentions légales')}
-            </a>
+            </Link>
             <span>·</span>
-            <a href="/privacy-policy" className="hover:text-[#1a1a1a]/70 transition-colors">
+            <Link to="/privacy-policy" className="hover:text-[#1a1a1a]/70 transition-colors">
                {data?.[`legal2_${lang}`] || (lang === 'en' ? 'Privacy Policy' : 'Politique de confidentialité')}
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <p>© 2026 withstellie.co</p>

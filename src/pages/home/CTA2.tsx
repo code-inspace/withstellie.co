@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { Link } from 'react-router-dom';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export const CTA2: React.FC = () => {
@@ -114,12 +116,12 @@ export const CTA2: React.FC = () => {
               Tu n'as pas besoin d'avoir tout compris. Tu as juste besoin de te dire oui.
             </p>
             <div className="flex flex-col items-center gap-6">
-              <a
-                href="/booking"
+              <Link
+                to="/booking"
                 className="inline-block px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
               >
                 Réserver mon appel découverte
-              </a>
+              </Link>
               <p className="text-sm font-medium tracking-widest uppercase text-[#F5EDE0]/40">
                 Sans engagement · 30 minutes · Entièrement gratuit
               </p>

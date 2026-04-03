@@ -29,20 +29,30 @@ export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({ data, la
   const track = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const cardWidth = 50; // vw — 2 cards visible
-    const totalScroll = (testimonials.length - 2) * cardWidth; // 2 cards * 50vw = 100vw
+    let mm = gsap.matchMedia(container);
 
-    gsap.to(track.current, {
-      x: () => `-${totalScroll}vw`,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: container.current,
-        start: 'top top',
-        end: () => `+=${totalScroll * window.innerWidth / 100}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      }
+    mm.add({
+      isMobile: "(max-width: 768px)",
+      isDesktop: "(min-width: 769px)"
+    }, (context) => {
+      let { isMobile } = context.conditions as any;
+      
+      const cardWidth = isMobile ? 85 : 50; 
+      const cardsVisible = isMobile ? 1.1 : 2; 
+      const totalScroll = Math.max(0, testimonials.length - cardsVisible) * cardWidth;
+
+      gsap.to(track.current, {
+        x: () => `-${totalScroll}vw`,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top top',
+          end: () => `+=${totalScroll * window.innerWidth / 100}`,
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        }
+      });
     });
 
     gsap.fromTo('.testi-title',
@@ -65,23 +75,22 @@ export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({ data, la
         </div>
 
         {/* Cartes horizontales */}
-        <div className="flex-1 flex items-center overflow-hidden px-10 md:px-16">
-          <div ref={track} className="flex gap-8 will-change-transform" style={{ width: `${testimonials.length * 50}vw` }}>
+        <div className="flex-1 flex items-center overflow-hidden px-8 md:px-16">
+          <div ref={track} className="flex gap-4 md:gap-8 will-change-transform w-max pr-[15vw] md:pr-[50vw]">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 border border-[#2A1A0E]/10 rounded-[3rem] p-10 md:p-14 bg-white/60 relative flex flex-col shadow-sm"
-                style={{ width: 'calc(50vw - 2.5rem)' }}
+                className="flex-shrink-0 border border-[#2A1A0E]/10 rounded-[2rem] md:rounded-[3rem] p-8 md:p-14 bg-white/60 relative flex flex-col shadow-sm w-[85vw] md:w-[calc(50vw-2.5rem)]"
               >
-                <span className="absolute top-10 right-10 text-[6rem] font-display text-[#C24C2A]/10 leading-none">"</span>
-                <p className="text-2xl md:text-3xl font-display font-normal italic leading-tight text-[#2A1A0E] mb-12 relative z-10">
+                <span className="absolute top-6 md:top-10 right-6 md:right-10 text-[4rem] md:text-[6rem] font-display text-[#C24C2A]/10 leading-none">"</span>
+                <p className="text-xl md:text-3xl font-display font-normal italic leading-tight text-[#2A1A0E] mb-8 md:mb-12 relative z-10">
                   {t.quote}
                 </p>
                 <div className="mt-auto border-t border-[#2A1A0E]/10 pt-6">
-                  <p className="font-medium text-[#C24C2A]">
+                  <p className="font-medium text-[#C24C2A] text-sm md:text-base">
                     {t.author}, {t.age}
                   </p>
-                  <p className="text-sm font-light text-[#2A1A0E]/50 mt-1">{t.role}</p>
+                  <p className="text-xs md:text-sm font-light text-[#2A1A0E]/50 mt-1">{t.role}</p>
                 </div>
               </div>
             ))}

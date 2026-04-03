@@ -5,6 +5,8 @@ import { Navbar } from '../../components/layout/Navbar';
 import { Footer } from '../../components/layout/Footer';
 import { ArrowLeft } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
 export const NotFound: React.FC = () => {
   const container = useRef<HTMLElement>(null);
 
@@ -41,10 +43,10 @@ export const NotFound: React.FC = () => {
               L'espace que tu cherches n'existe pas ou a peut-être été déplacé.
             </p>
             
-            <a href="/" className="nf-btn opacity-0 inline-flex items-center gap-4 bg-[#2A1A0E] text-[#F5EDE0] px-10 py-5 rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 shadow-xl group">
+            <Link to="/" className="nf-btn opacity-0 inline-flex items-center gap-4 bg-[#2A1A0E] text-[#F5EDE0] px-10 py-5 rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 shadow-xl group">
               <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               Retourner à l'accueil
-            </a>
+            </Link>
           </div>
         </div>
       </main>

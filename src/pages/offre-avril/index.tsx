@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from 'react-router-dom';
+
 const OffreAvril: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ prenom: "", email: "", message: "" });
@@ -24,9 +26,9 @@ const OffreAvril: React.FC = () => {
 
       {/* Logo */}
       <div className="flex justify-center pt-10 pb-0 px-6">
-        <a href="/">
+        <Link to="/">
           <img src="/logo.png" alt="WithStellie.co" className="h-5 w-auto object-contain brightness-0" />
-        </a>
+        </Link>
       </div>
 
       {/* 01 — Headline urgence douce */}
@@ -158,9 +160,9 @@ const OffreAvril: React.FC = () => {
 
       {/* Footer minimaliste */}
       <div className="border-t border-[#2A1A0E]/8 py-8 px-6 flex justify-center gap-6 text-xs text-[#2A1A0E]/30">
-        <a href="/legal-notice" className="hover:text-[#2A1A0E]/60 transition-colors">Mentions légales</a>
+        <Link to="/legal-notice" className="hover:text-[#2A1A0E]/60 transition-colors">Mentions légales</Link>
         <span>·</span>
-        <a href="/privacy-policy" className="hover:text-[#2A1A0E]/60 transition-colors">Confidentialité</a>
+        <Link to="/privacy-policy" className="hover:text-[#2A1A0E]/60 transition-colors">Confidentialité</Link>
       </div>
 
     </div>

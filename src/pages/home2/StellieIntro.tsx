@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
 export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }) => {
   const container = useRef<HTMLElement>(null);
 
@@ -45,12 +47,12 @@ export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}
           />
           
           <div className="si-text opacity-0 pt-6">
-            <a href="/a-propos" className="inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#2A1A0E] uppercase tracking-widest text-sm font-medium transition-colors group">
+            <Link to="/a-propos" className="inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#2A1A0E] uppercase tracking-widest text-sm font-medium transition-colors group">
               {cta}
               <span className="p-3 rounded-full border border-[#C24C2A]/30 group-hover:bg-[#2A1A0E]/10 transition-all group-hover:translate-x-2 duration-300">
                 <ArrowRight size={18} />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
