@@ -1,5 +1,5 @@
 import React from "react";
-import { Hook } from "../home3/Hook";
+import { Hook } from "../home/Hook";
 import { Navbar } from "../../components/layout/Navbar";
 import { Footer } from "../../components/layout/Footer";
 

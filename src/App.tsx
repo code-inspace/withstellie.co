@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home3 from './pages/home3/index';
+import Home from './pages/home/index';
 import About from './pages/about2/index';
 import MentionsLegales from './pages/mentions-legales/index';
 import Confidentialite from './pages/confidentialite/index';
@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <PromoBanner />
       <Routes>
-        <Route path="/" element={<Home3 />} />
+        <Route path="/" element={<Home />} />
         <Route path="/accueil2" element={<Accueil2 />} />
         <Route path="/about2" element={<About />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />

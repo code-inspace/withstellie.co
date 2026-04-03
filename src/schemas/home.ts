@@ -1,8 +1,8 @@
 import { defineType, defineField } from 'sanity';
 
-export const home3Hero = defineType({
-  name: 'home3Hero',
-  title: 'Home3 - Hero',
+export const homeHero = defineType({
+  name: 'homeHero',
+  title: 'Home - Hero',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -16,9 +16,9 @@ export const home3Hero = defineType({
   ]
 });
 
-export const home3Hook = defineType({
-  name: 'home3Hook',
-  title: 'Home3 - Hook',
+export const homeHook = defineType({
+  name: 'homeHook',
+  title: 'Home - Hook',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -29,9 +29,9 @@ export const home3Hook = defineType({
   ]
 });
 
-export const home3Presentation = defineType({
-  name: 'home3Presentation',
-  title: 'Home3 - Presentation',
+export const homePresentation = defineType({
+  name: 'homePresentation',
+  title: 'Home - Presentation',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -44,9 +44,9 @@ export const home3Presentation = defineType({
   ]
 });
 
-export const home3Focus = defineType({
-  name: 'home3Focus',
-  title: 'Home3 - Focus',
+export const homeFocus = defineType({
+  name: 'homeFocus',
+  title: 'Home - Focus',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -55,9 +55,9 @@ export const home3Focus = defineType({
   ]
 });
 
-export const home3Method = defineType({
-  name: 'home3Method',
-  title: 'Home3 - Method',
+export const homeMethod = defineType({
+  name: 'homeMethod',
+  title: 'Home - Method',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -68,9 +68,9 @@ export const home3Method = defineType({
   ]
 });
 
-export const home3Testimonials = defineType({
-  name: 'home3Testimonials',
-  title: 'Home3 - Testimonials',
+export const homeTestimonials = defineType({
+  name: 'homeTestimonials',
+  title: 'Home - Testimonials',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -79,9 +79,9 @@ export const home3Testimonials = defineType({
   ]
 });
 
-export const home3CTA = defineType({
-  name: 'home3CTA',
-  title: 'Home3 - CTA',
+export const homeCTA = defineType({
+  name: 'homeCTA',
+  title: 'Home - CTA',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -92,9 +92,9 @@ export const home3CTA = defineType({
   ]
 });
 
-export const home3Pricing = defineType({
-  name: 'home3Pricing',
-  title: 'Home3 - Pricing',
+export const homePricing = defineType({
+  name: 'homePricing',
+  title: 'Home - Pricing',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -103,9 +103,9 @@ export const home3Pricing = defineType({
   ]
 });
 
-export const home3FAQ = defineType({
-  name: 'home3FAQ',
-  title: 'Home3 - FAQ',
+export const homeFAQ = defineType({
+  name: 'homeFAQ',
+  title: 'Home - FAQ',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -114,9 +114,9 @@ export const home3FAQ = defineType({
   ]
 });
 
-export const home3CTA2 = defineType({
-  name: 'home3CTA2',
-  title: 'Home3 - CTA2',
+export const homeCTA2 = defineType({
+  name: 'homeCTA2',
+  title: 'Home - CTA2',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -129,9 +129,9 @@ export const home3CTA2 = defineType({
   ]
 });
 
-export const home3About = defineType({
-  name: 'home3About',
-  title: 'Home3 - About',
+export const homeAbout = defineType({
+  name: 'homeAbout',
+  title: 'Home - About',
   type: 'object',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
@@ -144,21 +144,21 @@ export const home3About = defineType({
   ]
 });
 
-export const pageHome3 = defineType({
-  name: 'pageHome3',
-  title: 'Page: Home3',
+export const pageHome = defineType({
+  name: 'pageHome',
+  title: 'Page: Home',
   type: 'document',
   fields: [
-    defineField({ name: 'home3Hero', type: 'home3Hero', title: 'home3Hero' }),
-    defineField({ name: 'home3Hook', type: 'home3Hook', title: 'home3Hook' }),
-    defineField({ name: 'home3Presentation', type: 'home3Presentation', title: 'home3Presentation' }),
-    defineField({ name: 'home3Focus', type: 'home3Focus', title: 'home3Focus' }),
-    defineField({ name: 'home3Method', type: 'home3Method', title: 'home3Method' }),
-    defineField({ name: 'home3Testimonials', type: 'home3Testimonials', title: 'home3Testimonials' }),
-    defineField({ name: 'home3CTA', type: 'home3CTA', title: 'home3CTA' }),
-    defineField({ name: 'home3Pricing', type: 'home3Pricing', title: 'home3Pricing' }),
-    defineField({ name: 'home3FAQ', type: 'home3FAQ', title: 'home3FAQ' }),
-    defineField({ name: 'home3CTA2', type: 'home3CTA2', title: 'home3CTA2' }),
-    defineField({ name: 'home3About', type: 'home3About', title: 'home3About' }),
+    defineField({ name: 'homeHero', type: 'homeHero', title: 'homeHero' }),
+    defineField({ name: 'homeHook', type: 'homeHook', title: 'homeHook' }),
+    defineField({ name: 'homePresentation', type: 'homePresentation', title: 'homePresentation' }),
+    defineField({ name: 'homeFocus', type: 'homeFocus', title: 'homeFocus' }),
+    defineField({ name: 'homeMethod', type: 'homeMethod', title: 'homeMethod' }),
+    defineField({ name: 'homeTestimonials', type: 'homeTestimonials', title: 'homeTestimonials' }),
+    defineField({ name: 'homeCTA', type: 'homeCTA', title: 'homeCTA' }),
+    defineField({ name: 'homePricing', type: 'homePricing', title: 'homePricing' }),
+    defineField({ name: 'homeFAQ', type: 'homeFAQ', title: 'homeFAQ' }),
+    defineField({ name: 'homeCTA2', type: 'homeCTA2', title: 'homeCTA2' }),
+    defineField({ name: 'homeAbout', type: 'homeAbout', title: 'homeAbout' }),
   ]
 });

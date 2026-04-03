@@ -9,13 +9,13 @@ import { Navbar } from "../../components/layout/Navbar";
 import { client } from "../../lib/sanity";
 import { useTranslation } from "react-i18next";
 
-const Home3: React.FC = () => {
+const Home: React.FC = () => {
   const { i18n } = useTranslation();
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageHome3"][0]`).then((res) => {
+    client.fetch(`*[_type == "pageHome"][0]`).then((res) => {
       setData(res || {});
     }).catch(() => {
       setData({});
@@ -27,14 +27,14 @@ const Home3: React.FC = () => {
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.home3Hero?.visible !== false && <Hero data={data.home3Hero} lang={i18n.language} />}
-      {data.home3About?.visible !== false && <About data={data.home3About} lang={i18n.language} />}
-      {data.home3Method?.visible !== false && <Method data={data.home3Method} lang={i18n.language} />}
-      {data.home3Testimonials?.visible !== false && <Testimonials data={data.home3Testimonials} lang={i18n.language} />}
-      {data.home3CTA?.visible !== false && <CTA data={data.home3CTA} lang={i18n.language} />}
+      {data.homeHero?.visible !== false && <Hero data={data.homeHero} lang={i18n.language} />}
+      {data.homeAbout?.visible !== false && <About data={data.homeAbout} lang={i18n.language} />}
+      {data.homeMethod?.visible !== false && <Method data={data.homeMethod} lang={i18n.language} />}
+      {data.homeTestimonials?.visible !== false && <Testimonials data={data.homeTestimonials} lang={i18n.language} />}
+      {data.homeCTA?.visible !== false && <CTA data={data.homeCTA} lang={i18n.language} />}
       <Footer />
     </div>
   );
 };
 
-export default Home3;
+export default Home;

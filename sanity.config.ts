@@ -19,7 +19,7 @@ export default defineConfig({
           .items([
             S.listItem()
               .title('Home 3')
-              .child(S.document().schemaType('pageHome3').documentId('pageHome3')),
+              .child(S.document().schemaType('pageHome').documentId('pageHome')),
             S.listItem()
               .title('À propos (About)')
               .child(S.document().schemaType('pageAbout').documentId('pageAbout')),
