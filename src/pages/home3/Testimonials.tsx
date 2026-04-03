@@ -78,11 +78,10 @@ export const Testimonials: React.FC = () => {
                   {t.quote}
                 </p>
                 <div className="mt-auto border-t border-[#2A1A0E]/10 pt-6">
-                  <p className="font-medium text-[#C24C2A] flex items-center gap-3">
-                    <span className="w-4 h-px bg-[#C24C2A]"></span>
+                  <p className="font-medium text-[#C24C2A]">
                     {t.author}, {t.age}
                   </p>
-                  <p className="text-sm font-light text-[#2A1A0E]/50 mt-1 pl-7">{t.role}</p>
+                  <p className="text-sm font-light text-[#2A1A0E]/50 mt-1">{t.role}</p>
                 </div>
               </div>
             ))}

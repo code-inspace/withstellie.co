@@ -20,7 +20,7 @@ const MentionsLegales: React.FC = () => {
             <p>Le site <strong className="font-medium text-[#2A1A0E]">withstellie.co</strong> est édité par :</p>
             <p className="mt-3">
               Chrystel Bruce<br />
-              Activité de coaching — auto-entrepreneur<br />
+              Activité de coaching, auto-entrepreneur<br />
               Email : <a href="mailto:chrystelbrc.pro@gmail.com" className="underline underline-offset-4 hover:text-[#2A1A0E] transition-colors">chrystelbrc.pro@gmail.com</a>
             </p>
           </section>
