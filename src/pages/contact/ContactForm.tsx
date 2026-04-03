@@ -22,27 +22,27 @@ export const ContactForm: React.FC<{ data?: any; lang?: string }> = ({ data, lan
 
           <div className="form-elem mb-8">
             <label htmlFor="prenom" className="block text-sm uppercase tracking-widest font-medium text-[#2A1A0E] mb-3">{data?.[`firstNameLabel_${lang}`] || "Prénom"}</label>
-            <input type="text" id="prenom" name="Prénom" required className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-lg" placeholder="Ton prénom" />
+            <input type="text" id="prenom" name="Prénom" required className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-lg" placeholder={data?.[`firstNamePlaceholder_${lang}`] || (lang === 'en' ? 'Your first name' : 'Ton prénom')} />
           </div>
 
           <div className="form-elem mb-8">
             <label htmlFor="email" className="block text-sm uppercase tracking-widest font-medium text-[#2A1A0E] mb-3">{data?.[`emailLabel_${lang}`] || "Email"}</label>
-            <input type="email" id="email" name="email" required className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-lg" placeholder="Ton adresse email" />
+            <input type="email" id="email" name="email" required className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-lg" placeholder={data?.[`emailPlaceholder_${lang}`] || (lang === 'en' ? 'Your email address' : 'Ton adresse email')} />
           </div>
 
           <div className="form-elem mb-8">
             <label htmlFor="sujet" className="block text-sm uppercase tracking-widest font-medium text-[#2A1A0E] mb-3">{data?.[`subjectLabel_${lang}`] || "Sujet (optionnel)"}</label>
             <select id="sujet" name="Sujet" className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-[#2A1A0E]/80 appearance-none cursor-pointer text-lg">
-              <option value="Non précisé">Sélectionne un sujet</option>
-              <option value="Une question sur l'accompagnement">Une question sur l'accompagnement</option>
-              <option value="Je ne sais pas quelle offre choisir">Je ne sais pas quelle offre choisir</option>
-              <option value="Autre chose">Autre chose</option>
+              <option value="Non précisé">{data?.[`subjectPlaceholder_${lang}`] || (lang === 'en' ? 'Select a subject' : 'Sélectionne un sujet')}</option>
+              <option value={data?.[`subjectOpt1_${lang}`] || "Une question sur l'accompagnement"}>{data?.[`subjectOpt1_${lang}`] || (lang === 'en' ? 'A question about coaching' : "Une question sur l'accompagnement")}</option>
+              <option value={data?.[`subjectOpt2_${lang}`] || "Je ne sais pas quelle offre choisir"}>{data?.[`subjectOpt2_${lang}`] || (lang === 'en' ? "I don't know which offer to choose" : "Je ne sais pas quelle offre choisir")}</option>
+              <option value={data?.[`subjectOpt3_${lang}`] || "Autre chose"}>{data?.[`subjectOpt3_${lang}`] || (lang === 'en' ? 'Something else' : "Autre chose")}</option>
             </select>
           </div>
 
           <div className="form-elem mb-12">
             <label htmlFor="message" className="block text-sm uppercase tracking-widest font-medium text-[#2A1A0E] mb-3">{data?.[`messageLabel_${lang}`] || "Message"}</label>
-            <textarea id="message" name="Message" required rows={6} className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light resize-none text-lg" placeholder="Ton message..."></textarea>
+            <textarea id="message" name="Message" required rows={6} className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light resize-none text-lg" placeholder={data?.[`messagePlaceholder_${lang}`] || (lang === 'en' ? 'Your message...' : 'Ton message...')}></textarea>
           </div>
 
           <div className="form-elem flex flex-col items-center">

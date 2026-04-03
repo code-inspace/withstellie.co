@@ -1,6 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+const savedLang = localStorage.getItem('i18nextLng') || 'fr';
+
 i18n
   .use(initReactI18next)
   .init({
@@ -8,7 +10,7 @@ i18n
       en: { translation: {} },
       fr: { translation: {} }
     },
-    lng: 'fr', // default
+    lng: savedLang, // default to saved
     fallbackLng: 'fr',
     interpolation: {
       escapeValue: false
