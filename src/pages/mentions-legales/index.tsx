@@ -19,7 +19,7 @@ const MentionsLegales: React.FC = () => {
             <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Éditeur du site</h2>
             <p>Le site <strong className="font-medium text-[#2A1A0E]">withstellie.co</strong> est édité par :</p>
             <p className="mt-3">
-              Chrystel Bourceret<br />
+              Chrystel Bruce<br />
               Activité de coaching — auto-entrepreneur<br />
               Email : <a href="mailto:chrystelbrc.pro@gmail.com" className="underline underline-offset-4 hover:text-[#2A1A0E] transition-colors">chrystelbrc.pro@gmail.com</a>
             </p>
@@ -38,7 +38,7 @@ const MentionsLegales: React.FC = () => {
           <section>
             <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Propriété intellectuelle</h2>
             <p>
-              L'ensemble du contenu de ce site (textes, images, visuels, identité visuelle) est la propriété exclusive de Chrystel Bourceret, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite.
+              L'ensemble du contenu de ce site (textes, images, visuels, identité visuelle) est la propriété exclusive de withstellie.co, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable est interdite.
             </p>
           </section>
 
