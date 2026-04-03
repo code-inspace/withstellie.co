@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { client } from '../../lib/sanity';
 
 const IconInstagram = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -15,13 +17,27 @@ const IconTikTok = () => (
 );
 
 export const Footer: React.FC = () => {
+  const [data, setData] = useState<any>(null);
+  const { i18n } = useTranslation();
+  const lang = i18n.language || 'fr';
+
+  useEffect(() => {
+    client.fetch(`*[_type == "globalFooter"][0]`)
+      .then((res) => {
+        if (res) setData(res);
+      })
+      .catch((err) => console.error("Sanity footer fetch error", err));
+  }, []);
+
   return (
     <footer className="bg-transparent text-[#1a1a1a] pt-24 pb-12 px-6 md:px-12 border-t border-[#1a1a1a]/10">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div>
             <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0" />
-            <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">Coaching de shift identitaire</p>
+            <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">
+              {data?.[`subtitle_${lang}`] || (lang === 'en' ? 'Identity shift coaching' : 'Coaching de shift identitaire')}
+            </p>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -44,15 +60,19 @@ export const Footer: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#1a1a1a]/40 pt-8 border-t border-[#1a1a1a]/10 gap-4">
           <div className="flex gap-4">
-            <a href="/mentions-legales" className="hover:text-[#1a1a1a]/70 transition-colors">Mentions légales</a>
+            <a href="/mentions-legales" className="hover:text-[#1a1a1a]/70 transition-colors">
+               {data?.[`legal1_${lang}`] || (lang === 'en' ? 'Legal Notice' : 'Mentions légales')}
+            </a>
             <span>·</span>
-            <a href="/confidentialite" className="hover:text-[#1a1a1a]/70 transition-colors">Politique de confidentialité</a>
+            <a href="/confidentialite" className="hover:text-[#1a1a1a]/70 transition-colors">
+               {data?.[`legal2_${lang}`] || (lang === 'en' ? 'Privacy Policy' : 'Politique de confidentialité')}
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <p>© 2026 withstellie.co</p>
             <span>·</span>
             <a href="https://axelcoudair.com" target="_blank" rel="noreferrer" className="hover:text-[#1a1a1a]/70 transition-colors">
-              Fait par Axel Coudair
+               {data?.[`madeBy_${lang}`] || (lang === 'en' ? 'Made by Axel Coudair' : 'Fait par Axel Coudair')}
             </a>
           </div>
         </div>

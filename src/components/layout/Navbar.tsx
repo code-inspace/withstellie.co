@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { client } from '../../lib/sanity';
 
 export const Navbar: React.FC = () => {
+  const [data, setData] = useState<any>(null);
   const [isDark, setIsDark] = useState(true);
   const [visible, setVisible] = useState(true);
   const [atTop, setAtTop] = useState(true);
@@ -13,6 +15,12 @@ export const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
+    client.fetch(`*[_type == "globalNav"][0]`)
+      .then((res) => {
+        if (res) setData(res);
+      })
+      .catch((err) => console.error("Sanity nav fetch error", err));
+
     const NAV_MID = 32; // px — milieu vertical de la navbar
 
     const detect = () => {
@@ -63,10 +71,10 @@ export const Navbar: React.FC = () => {
         </a>
 
         <div className={`hidden md:flex items-center gap-8 text-sm transition-colors duration-300 ${textCls}`}>
-          <a href="/a-propos" className="hover:opacity-100 transition-opacity">À propos</a>
-          <a href="/accompagnement" className="hover:opacity-100 transition-opacity">L'accompagnement</a>
-          <a href="/reserver" className="hover:opacity-100 transition-opacity">Réserver</a>
-          <a href="/contact" className="hover:opacity-100 transition-opacity">Contact</a>
+          <a href="/a-propos" className="hover:opacity-100 transition-opacity">{data?.[`link1_${i18n.language}`] || (i18n.language === 'en' ? 'About' : 'À propos')}</a>
+          <a href="/accompagnement" className="hover:opacity-100 transition-opacity">{data?.[`link2_${i18n.language}`] || (i18n.language === 'en' ? 'Work with me' : 'L\'accompagnement')}</a>
+          <a href="/reserver" className="hover:opacity-100 transition-opacity">{data?.[`link3_${i18n.language}`] || (i18n.language === 'en' ? 'Book' : 'Réserver')}</a>
+          <a href="/contact" className="hover:opacity-100 transition-opacity">{data?.[`link4_${i18n.language}`] || (i18n.language === 'en' ? 'Contact' : 'Contact')}</a>
         </div>
 
         <div className={`text-sm flex items-center gap-2 transition-colors duration-300 ${textCls}`}>

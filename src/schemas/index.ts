@@ -4,6 +4,8 @@ import { contactHeadline, contactContactForm, contactAlternatives, contactRedire
 import { reserverHeadline, reserverProgram, reserverCalWidget, reserverContactAlt, pageReserver } from './reserver';
 import { accompagnementHeadline, accompagnementMethodMBS, accompagnementForWho, accompagnementTestimonials, accompagnementOffers, accompagnementFAQ, accompagnementDiscoveryCall, pageAccompagnement } from './accompagnement';
 import { home3Hero, home3Hook, home3Presentation, home3Focus, home3Method, home3Testimonials, home3CTA, home3Pricing, home3FAQ, home3CTA2, home3About, pageHome3 } from './home3';
+import { globalNav, globalFooter } from './global';
+import { pageMentionsLegales, pageConfidentialite } from './legal';
 
 export const schemaTypes = [
   accueil2Hero,
@@ -50,5 +52,9 @@ export const schemaTypes = [
   home3FAQ,
   home3CTA2,
   home3About,
-  pageHome3
+  pageHome3,
+  globalNav,
+  globalFooter,
+  pageMentionsLegales,
+  pageConfidentialite
 ];

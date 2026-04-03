@@ -35,6 +35,19 @@ export default defineConfig({
             S.listItem()
               .title('Accueil 2')
               .child(S.document().schemaType('pageAccueil2').documentId('pageAccueil2')),
+            S.listItem()
+              .title('Mentions légales')
+              .child(S.document().schemaType('pageMentionsLegales').documentId('pageMentionsLegales')),
+            S.listItem()
+              .title('Confidentialité')
+              .child(S.document().schemaType('pageConfidentialite').documentId('pageConfidentialite')),
+            S.divider(),
+            S.listItem()
+              .title('Navigation (Global)')
+              .child(S.document().schemaType('globalNav').documentId('globalNav')),
+            S.listItem()
+              .title('Footer (Global)')
+              .child(S.document().schemaType('globalFooter').documentId('globalFooter')),
           ]),
     }),
   ],
