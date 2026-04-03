@@ -15,11 +15,11 @@ export const ContactForm: React.FC = () => {
   return (
     <section ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-3xl mx-auto">
-        <form action="https://formsubmit.co/chrystelbrc.pro@gmail.com" method="POST" className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-[#2A1A0E]/5">
+        <form action="https://formsubmit.co/withstellie.co@gmail.com" method="POST" className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-[#2A1A0E]/5">
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_subject" value="Nouveau message depuis WithStellie" />
           <input type="hidden" name="_captcha" value="false" />
-          
+
           <div className="form-elem mb-8">
             <label htmlFor="prenom" className="block text-sm uppercase tracking-widest font-medium text-[#2A1A0E] mb-3">Prénom</label>
             <input type="text" id="prenom" name="Prénom" required className="w-full bg-[#F9F3EC] border border-[#2A1A0E]/10 rounded-xl px-6 py-4 outline-none focus:border-[#C24C2A] transition-colors font-light text-lg" placeholder="Ton prénom" />
@@ -50,7 +50,7 @@ export const ContactForm: React.FC = () => {
               Envoyer
             </button>
             <p className="text-xs font-medium uppercase tracking-widest text-[#2A1A0E]/40 text-center mt-2">
-              Tes informations restent confidentielles.<br/>Je ne les partage avec personne.
+              Tes informations restent confidentielles.<br />Je ne les partage avec personne.
             </p>
           </div>
         </form>
