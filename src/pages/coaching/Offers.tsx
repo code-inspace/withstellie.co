@@ -30,10 +30,10 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10 items-stretch pt-12 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 lg:gap-10 lg:items-stretch pt-12 pb-16">
           {offersList.map((offer: any, i: number) => (
-            <div key={i} className={`offer-card relative rounded-3xl p-8 md:p-12 flex flex-col h-full transition-transform duration-500 ${
-              offer.highlighted ? 'bg-[#2A1A0E] text-[#F5EDE0] lg:scale-105 shadow-2xl z-10' : 'bg-white text-[#2A1A0E] shadow-xl my-4'
+            <div key={i} className={`offer-card relative rounded-3xl p-8 md:p-12 flex flex-col transition-transform duration-500 ${
+              offer.highlighted ? 'bg-[#2A1A0E] text-[#F5EDE0] lg:scale-105 shadow-2xl z-10' : 'bg-white text-[#2A1A0E] shadow-xl lg:my-4'
             }`}>
               {offer.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C24C2A] text-white text-xs uppercase tracking-widest font-semibold py-2 px-4 rounded-full flex items-center gap-2 shadow-lg">
