@@ -27,6 +27,22 @@ export const coachingMethodMBS = defineType({
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
     defineField({ name: 'labels_fr', type: 'string', title: 'Labels string (FR)' }),
     defineField({ name: 'labels_en', type: 'string', title: 'Labels string (EN)' }),
+    defineField({
+      name: 'dimensions',
+      type: 'array',
+      title: 'Dimensions (Mind / Body / Soul)',
+      of: [
+        defineField({
+          name: 'dimensionItem',
+          type: 'object',
+          fields: [
+            defineField({ name: 'title', type: 'string', title: 'Title' }),
+            defineField({ name: 'desc_fr', type: 'text', title: 'Description (FR)' }),
+            defineField({ name: 'desc_en', type: 'text', title: 'Description (EN)' }),
+          ]
+        })
+      ]
+    }),
   ]
 });
 
@@ -55,6 +71,25 @@ export const coachingTestimonials = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({
+      name: 'list',
+      type: 'array',
+      title: 'Testimonials List',
+      of: [
+        defineField({
+          name: 'testimonialItem',
+          type: 'object',
+          fields: [
+            defineField({ name: 'quote_fr', type: 'text', title: 'Quote (FR)' }),
+            defineField({ name: 'quote_en', type: 'text', title: 'Quote (EN)' }),
+            defineField({ name: 'author_fr', type: 'string', title: 'Author (FR)' }),
+            defineField({ name: 'author_en', type: 'string', title: 'Author (EN)' }),
+            defineField({ name: 'role_fr', type: 'string', title: 'Role (FR)' }),
+            defineField({ name: 'role_en', type: 'string', title: 'Role (EN)' }),
+          ]
+        })
+      ]
+    }),
   ]
 });
 
@@ -68,6 +103,10 @@ export const coachingOffers = defineType({
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle (FR)' }),
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
+    defineField({ name: 'featuresLabel_fr', type: 'string', title: 'Features Label (FR)' }),
+    defineField({ name: 'featuresLabel_en', type: 'string', title: 'Features Label (EN)' }),
+    defineField({ name: 'startingAt_fr', type: 'string', title: 'Starting At Label (FR)' }),
+    defineField({ name: 'startingAt_en', type: 'string', title: 'Starting At Label (EN)' }),
     defineField({
       name: 'list',
       type: 'array',

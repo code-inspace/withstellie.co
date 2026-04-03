@@ -2,64 +2,13 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
-
 import { Link } from 'react-router-dom';
-
-const offers = [
-  {
-    name: 'SPARK',
-    duration: '1 mois',
-    price: '400€',
-    subtitle: 'Pour celle prête à faire le premier pas.',
-    features: [
-      '4 appels vidéo 1:1 de 60 minutes',
-      'Suivi asynchrone entre les appels, réponse sous 24h',
-      'Exercices personnalisés à ton rythme',
-      'Bilan final et guide post-coaching'
-    ],
-    cta: 'Commencer mon shift',
-    highlighted: false
-  },
-  {
-    name: 'SHIFT',
-    duration: '3 mois',
-    price: '990€',
-    subtitle: 'Pour celle prête à changer la façon dont elle se perçoit.',
-    description: '3 mois, parce que la science le confirme : il faut environ 66 jours pour ancrer une nouvelle habitude durablement. Ce programme est conçu pour qu\'à la fin, ta nouvelle identité soit ancrée, et qu\'elle continue à se déployer bien après notre travail ensemble.',
-    features: [
-      '12 appels vidéo 1:1 de 60 à 75 minutes',
-      'Suivi asynchrone continu, réponse sous 24h',
-      'Outils et contenus construits pour toi',
-      'Bilan mensuel structuré',
-      'Accès entre les appels'
-    ],
-    cta: 'Commencer ma transformation',
-    highlighted: true
-  },
-  {
-    name: 'TRANSFORM',
-    duration: '6 mois',
-    price: '2000€',
-    subtitle: 'Pour celle prête pour un changement profond et durable.',
-    description: 'Pas juste un changement. Une réinvention complète.',
-    features: [
-      '24 appels vidéo 1:1',
-      'Suivi prioritaire, réponse sous 12h',
-      'Protocole et contenu entièrement sur mesure',
-      'Bilans mensuels et plans d\'évolution',
-      'Accès d\'urgence entre les appels',
-      'Bilan final et plan post-coaching autonome'
-    ],
-    cta: 'Réserver ma place',
-    highlighted: false
-  }
-];
-
-const fallbackOffers = offers;
 
 export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
-  const offersList = data?.list || fallbackOffers;
+  const offersList = data?.list || [];
+  const featuresLabel = data?.[`featuresLabel_${lang}`];
+  const startingAt = data?.[`startingAt_${lang}`];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -74,10 +23,10 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
       <div className="max-w-7xl mx-auto">
         <div className="text-center offers-header mb-20">
           <h2 className="font-display text-5xl md:text-7xl text-[#2A1A0E] mb-6">
-            {data?.[`title_${lang}`] || "Trois façons de commencer"}
+            {data?.[`title_${lang}`]}
           </h2>
           <p className="text-xl font-light text-[#2A1A0E]/60 max-w-2xl mx-auto whitespace-pre-line">
-            {data?.[`subtitle_${lang}`] || "Tout est personnalisé. Le format change, l'intention reste la même."}
+            {data?.[`subtitle_${lang}`]}
           </p>
         </div>
 
@@ -91,28 +40,28 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
                   <Sparkles size={14} /> Best Seller
                 </div>
               )}
-              
+
               <div className="mb-8">
                 <h3 className={`font-display text-4xl mb-4 ${offer.highlighted ? 'text-[#C24C2A]' : 'text-[#2A1A0E]'}`}>
                   {offer.name}
                 </h3>
                 <div className={`text-sm uppercase tracking-widest font-medium mb-6 ${offer.highlighted ? 'text-[#F5EDE0]/60' : 'text-[#2A1A0E]/50'}`}>
-                  {offer[`duration_${lang}`] || offer.duration_fr || offer.duration} <span className="mx-2">·</span> À partir de {offer.price}
+                  {offer[`duration_${lang}`]} <span className="mx-2">·</span> {startingAt} {offer.price}
                 </div>
                 <p className={`font-medium italic leading-relaxed ${offer.highlighted ? 'text-[#F5EDE0]' : 'text-[#2A1A0E]'}`}>
-                  {offer[`subtitle_${lang}`] || offer.subtitle_fr || offer.subtitle}
+                  {offer[`subtitle_${lang}`]}
                 </p>
-                {(offer[`description_${lang}`] || offer.description_fr || offer.description) && (
-                  <p className={`mt-4 text-sm font-light leading-relaxed opacity-80`}>
-                    {offer[`description_${lang}`] || offer.description_fr || offer.description}
+                {offer[`description_${lang}`] && (
+                  <p className="mt-4 text-sm font-light leading-relaxed opacity-80">
+                    {offer[`description_${lang}`]}
                   </p>
                 )}
               </div>
 
               <div className="flex-grow mt-auto mb-10">
-                <div className={`text-xs uppercase tracking-widest mb-6 font-semibold opacity-50`}>Ce que tu as :</div>
+                <div className="text-xs uppercase tracking-widest mb-6 font-semibold opacity-50">{featuresLabel}</div>
                 <ul className="space-y-4">
-                  {(offer[`features_${lang}`] || offer.features_fr || offer.features || []).map((feature: string, j: number) => (
+                  {(offer[`features_${lang}`] || []).map((feature: string, j: number) => (
                     <li key={j} className="flex items-start gap-4 text-sm leading-relaxed font-light">
                       <div className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${offer.highlighted ? 'bg-[#C24C2A]' : 'bg-[#2A1A0E]'}`} />
                       <span>{feature}</span>
@@ -124,7 +73,7 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
               <Link to="/booking" className={`w-full py-4 rounded-full flex items-center justify-center gap-3 font-medium uppercase tracking-widest text-xs transition-all duration-300 group mt-auto ${
                 offer.highlighted ? 'bg-[#C24C2A] text-white hover:bg-[#F5EDE0] hover:text-[#2A1A0E]' : 'bg-[#2A1A0E] text-white hover:bg-[#C24C2A]'
               }`}>
-                {offer[`cta_${lang}`] || offer.cta_fr || offer.cta}
+                {offer[`cta_${lang}`]}
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

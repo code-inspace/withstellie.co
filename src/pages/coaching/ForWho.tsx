@@ -2,16 +2,9 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-const defaultCriteria = [
-  "Tu fais tout bien, mais tu te sens étrangère à ta propre vie.",
-  "Tu es en pleine transition et tu ne sais plus qui tu es dans tout ça.",
-  "Tu portes une version de toi construite pour les autres, et tu commences à en avoir assez.",
-  "Tu as déjà essayé de comprendre par toi-même, et tu sens qu'il te manque quelque chose pour vraiment avancer."
-];
-
 export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
-  const items = data?.[`items_${lang}`] || defaultCriteria;
+  const items = data?.[`items_${lang}`] || [];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -27,7 +20,7 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
         <div className="md:w-1/3">
           <h2 className="fw-title font-display text-5xl md:text-6xl text-[#F5EDE0] mb-8 sticky top-32">
-            {data?.[`title_${lang}`] || "C'est pour toi si..."}
+            {data?.[`title_${lang}`]}
           </h2>
         </div>
         <div className="md:w-2/3">
@@ -41,7 +34,7 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
           </div>
           <div className="fw-conclusion p-10 rounded-3xl bg-[#F5EDE0] text-[#2A1A0E] text-center">
             <p className="text-xl md:text-2xl font-display italic leading-relaxed">
-              {data?.[`subtitle_${lang}`] || "Tu n'as pas besoin d'être en crise. Tu as juste besoin d'être prête à regarder honnêtement."}
+              {data?.[`subtitle_${lang}`]}
             </p>
           </div>
         </div>
