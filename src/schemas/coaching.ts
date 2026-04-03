@@ -3,7 +3,7 @@ import { defineType, defineField } from 'sanity';
 export const coachingHeadline = defineType({
   name: 'coachingHeadline',
   title: 'Coaching - Headline',
-  type: 'object',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'eyebrow_fr', type: 'string', title: 'Eyebrow (FR)' }),
@@ -12,13 +12,14 @@ export const coachingHeadline = defineType({
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle (FR)' }),
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — Headline' }) }
 });
 
 export const coachingMethodMBS = defineType({
   name: 'coachingMethodMBS',
-  title: 'Coaching - MethodMBS',
-  type: 'object',
+  title: 'Coaching - Méthode MBS',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -43,13 +44,14 @@ export const coachingMethodMBS = defineType({
         })
       ]
     }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — Méthode MBS' }) }
 });
 
 export const coachingForWho = defineType({
   name: 'coachingForWho',
-  title: 'Coaching - ForWho',
-  type: 'object',
+  title: 'Coaching - Pour qui ?',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -60,13 +62,14 @@ export const coachingForWho = defineType({
     defineField({ name: 'desc_en', type: 'text', title: 'Desc (EN)' }),
     defineField({ name: 'items_fr', type: 'array', title: 'Items (FR)', of: [{ type: 'string' }] }),
     defineField({ name: 'items_en', type: 'array', title: 'Items (EN)', of: [{ type: 'string' }] }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — Pour qui ?' }) }
 });
 
 export const coachingTestimonials = defineType({
   name: 'coachingTestimonials',
-  title: 'Coaching - Testimonials',
-  type: 'object',
+  title: 'Coaching - Témoignages',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -90,13 +93,14 @@ export const coachingTestimonials = defineType({
         })
       ]
     }),
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — Témoignages' }) }
 });
 
 export const coachingOffers = defineType({
   name: 'coachingOffers',
-  title: 'Coaching - Offers',
-  type: 'object',
+  title: 'Coaching - Offres',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -133,13 +137,14 @@ export const coachingOffers = defineType({
         })
       ]
     })
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — Offres' }) }
 });
 
 export const coachingFAQ = defineType({
   name: 'coachingFAQ',
   title: 'Coaching - FAQ',
-  type: 'object',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -161,13 +166,14 @@ export const coachingFAQ = defineType({
         })
       ]
     })
-  ]
+  ],
+  preview: { prepare: () => ({ title: 'Coaching — FAQ' }) }
 });
 
 export const coachingDiscoveryCall = defineType({
   name: 'coachingDiscoveryCall',
-  title: 'Coaching - DiscoveryCall',
-  type: 'object',
+  title: 'Coaching - Appel découverte',
+  type: 'document',
   fields: [
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
@@ -180,23 +186,6 @@ export const coachingDiscoveryCall = defineType({
     defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
-  ]
-});
-
-export const pageCoaching = defineType({
-  name: 'pageCoaching',
-  title: 'Page: Coaching',
-  type: 'document',
-  fields: [
-    defineField({ name: 'coachingHeadline', type: 'coachingHeadline', title: 'coachingHeadline' }),
-    defineField({ name: 'coachingMethodMBS', type: 'coachingMethodMBS', title: 'coachingMethodMBS' }),
-    defineField({ name: 'coachingForWho', type: 'coachingForWho', title: 'coachingForWho' }),
-    defineField({ name: 'coachingTestimonials', type: 'coachingTestimonials', title: 'coachingTestimonials' }),
-    defineField({ name: 'coachingOffers', type: 'coachingOffers', title: 'coachingOffers' }),
-    defineField({ name: 'coachingFAQ', type: 'coachingFAQ', title: 'coachingFAQ' }),
-    defineField({ name: 'coachingDiscoveryCall', type: 'coachingDiscoveryCall', title: 'coachingDiscoveryCall' }),
   ],
-  preview: {
-    prepare: () => ({ title: 'CoachingHeadline' })
-  }
+  preview: { prepare: () => ({ title: 'Coaching — Appel découverte' }) }
 });

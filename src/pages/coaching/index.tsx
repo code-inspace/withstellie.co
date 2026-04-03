@@ -13,29 +13,36 @@ import { useTranslation } from 'react-i18next';
 
 const Coaching: React.FC = () => {
   const { i18n } = useTranslation();
-  const [data, setData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sections, setSections] = useState<Record<string, any> | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    client.fetch(`*[_type == "pageCoaching"][0]`).then((res) => {
-      setData(res || {});
-    }).catch(() => {
-      setData({});
-    });
+    client.fetch(`{
+      "headline":      *[_type == "coachingHeadline"][0],
+      "methodMBS":     *[_type == "coachingMethodMBS"][0],
+      "forWho":        *[_type == "coachingForWho"][0],
+      "testimonials":  *[_type == "coachingTestimonials"][0],
+      "offers":        *[_type == "coachingOffers"][0],
+      "faq":           *[_type == "coachingFAQ"][0],
+      "discoveryCall": *[_type == "coachingDiscoveryCall"][0]
+    }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!data) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+
+  const lang = i18n.language;
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
       <Navbar />
-      {data.coachingHeadline?.visible !== false && <Headline data={data.coachingHeadline} lang={i18n.language} />}
-      {data.coachingMethodMBS?.visible !== false && <MethodMBS data={data.coachingMethodMBS} lang={i18n.language} />}
-      {data.coachingForWho?.visible !== false && <ForWho data={data.coachingForWho} lang={i18n.language} />}
-      {data.coachingOffers?.visible !== false && <Offers data={data.coachingOffers} lang={i18n.language} />}
-      {data.coachingDiscoveryCall?.visible !== false && <DiscoveryCall data={data.coachingDiscoveryCall} lang={i18n.language} />}
-      {data.coachingFAQ?.visible !== false && <FAQ data={data.coachingFAQ} lang={i18n.language} />}
-      {data.coachingTestimonials?.visible !== false && <Testimonials data={data.coachingTestimonials} lang={i18n.language} />}
+      {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
+      {sections.methodMBS?.visible !== false && <MethodMBS data={sections.methodMBS} lang={lang} />}
+      {sections.forWho?.visible !== false && <ForWho data={sections.forWho} lang={lang} />}
+      {sections.offers?.visible !== false && <Offers data={sections.offers} lang={lang} />}
+      {sections.discoveryCall?.visible !== false && <DiscoveryCall data={sections.discoveryCall} lang={lang} />}
+      {sections.faq?.visible !== false && <FAQ data={sections.faq} lang={lang} />}
+      {sections.testimonials?.visible !== false && <Testimonials data={sections.testimonials} lang={lang} />}
       <Footer />
     </div>
   );

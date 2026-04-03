@@ -31,25 +31,25 @@ export default defineConfig({
                   .items([
                     S.listItem()
                       .title('Headline')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingHeadline').documentId('coachingHeadline')),
                     S.listItem()
                       .title('Méthode (Mind · Body · Soul)')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingMethodMBS').documentId('coachingMethodMBS')),
                     S.listItem()
                       .title('Pour qui ?')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingForWho').documentId('coachingForWho')),
                     S.listItem()
                       .title('Témoignages')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingTestimonials').documentId('coachingTestimonials')),
                     S.listItem()
                       .title('Offres')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingOffers').documentId('coachingOffers')),
                     S.listItem()
                       .title('FAQ')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingFAQ').documentId('coachingFAQ')),
                     S.listItem()
                       .title('Appel découverte')
-                      .child(S.document().schemaType('pageCoaching').documentId('pageCoaching').views([S.view.form()])),
+                      .child(S.document().schemaType('coachingDiscoveryCall').documentId('coachingDiscoveryCall')),
                   ])
               ),
             S.listItem()
