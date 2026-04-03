@@ -42,9 +42,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 py-6 transition-all duration-500 ${
         atTop ? '' : 'backdrop-blur-md'
       } ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
+      style={{ top: 'var(--banner-h, 0px)' }}
     >
       <div className="flex items-center justify-between px-8 md:px-16">
         <a href="/">

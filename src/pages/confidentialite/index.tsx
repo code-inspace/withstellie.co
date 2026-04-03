@@ -49,9 +49,12 @@ const Confidentialite: React.FC = () => {
           </section>
 
           <section>
-            <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Cookies</h2>
+            <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Cookies et stockage local</h2>
             <p>
               Ce site n'utilise pas de cookies de traçage, de publicité ou d'analyse comportementale. Aucune donnée de navigation n'est transmise à des tiers.
+            </p>
+            <p className="mt-3">
+              Le site utilise le stockage local (<em>localStorage</em>) de votre navigateur uniquement pour mémoriser votre préférence de fermeture du bandeau promotionnel. Cette donnée est purement fonctionnelle, reste sur votre appareil et ne contient aucune information personnelle.
             </p>
           </section>
 

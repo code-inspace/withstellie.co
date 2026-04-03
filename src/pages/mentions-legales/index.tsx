@@ -50,9 +50,9 @@ const MentionsLegales: React.FC = () => {
           </section>
 
           <section>
-            <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Cookies</h2>
+            <h2 className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mb-4">Cookies et stockage local</h2>
             <p>
-              Ce site n'utilise pas de cookies de traçage ou publicitaires.
+              Ce site n'utilise pas de cookies de traçage ou publicitaires. Le stockage local (<em>localStorage</em>) du navigateur est utilisé uniquement pour mémoriser la fermeture du bandeau promotionnel. Aucune donnée personnelle n'est concernée.
             </p>
           </section>
 
