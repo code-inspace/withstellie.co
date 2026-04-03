@@ -9,6 +9,7 @@ import Reserver from './pages/reserver/index';
 import AboutNew from './pages/about/index';
 import Contact from './pages/contact/index';
 import NotFound from './pages/notfound/index';
+import Accueil2 from './pages/accueil2/index';
 import { PromoBanner } from './components/layout/PromoBanner';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <PromoBanner />
       <Routes>
         <Route path="/" element={<Home3 />} />
+        <Route path="/accueil2" element={<Accueil2 />} />
         <Route path="/about2" element={<About />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/confidentialite" element={<Confidentialite />} />

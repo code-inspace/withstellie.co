@@ -76,13 +76,13 @@ export const Offers: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10 items-stretch pt-12 pb-16">
           {offers.map((offer, i) => (
-            <div key={i} className={`offer-card relative rounded-3xl p-8 md:p-10 flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 ${
-              offer.highlighted ? 'bg-[#2A1A0E] text-[#F5EDE0] scale-105 lg:-mt-8 shadow-2xl z-10' : 'bg-white text-[#2A1A0E] shadow-xl'
+            <div key={i} className={`offer-card relative rounded-3xl p-8 md:p-12 flex flex-col h-full transition-transform duration-500 ${
+              offer.highlighted ? 'bg-[#2A1A0E] text-[#F5EDE0] lg:scale-105 shadow-2xl z-10' : 'bg-white text-[#2A1A0E] shadow-xl my-4'
             }`}>
               {offer.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C24C2A] text-white text-xs uppercase tracking-widest font-semibold py-2 px-4 rounded-full flex items-center gap-2">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#C24C2A] text-white text-xs uppercase tracking-widest font-semibold py-2 px-4 rounded-full flex items-center gap-2 shadow-lg">
                   <Sparkles size={14} /> Best Seller
                 </div>
               )}
@@ -104,7 +104,7 @@ export const Offers: React.FC = () => {
                 )}
               </div>
 
-              <div className="flex-grow mt-8 mb-10">
+              <div className="flex-grow mt-auto mb-10">
                 <div className={`text-xs uppercase tracking-widest mb-6 font-semibold opacity-50`}>Ce que tu as :</div>
                 <ul className="space-y-4">
                   {offer.features.map((feature, j) => (
@@ -116,12 +116,12 @@ export const Offers: React.FC = () => {
                 </ul>
               </div>
 
-              <button className={`w-full py-4 rounded-full flex items-center justify-center gap-3 font-medium uppercase tracking-widest text-xs transition-all duration-300 group ${
-                offer.highlighted ? 'bg-[#C24C2A] text-white hover:bg-white hover:text-[#2A1A0E]' : 'bg-[#2A1A0E] text-white hover:bg-[#C24C2A]'
+              <a href="/reserver" className={`w-full py-4 rounded-full flex items-center justify-center gap-3 font-medium uppercase tracking-widest text-xs transition-all duration-300 group mt-auto ${
+                offer.highlighted ? 'bg-[#C24C2A] text-white hover:bg-[#F5EDE0] hover:text-[#2A1A0E]' : 'bg-[#2A1A0E] text-white hover:bg-[#C24C2A]'
               }`}>
                 {offer.cta}
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           ))}
         </div>
