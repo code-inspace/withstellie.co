@@ -167,10 +167,10 @@ export const Navbar: React.FC = () => {
         style={{ clipPath: 'circle(0% at 50% 50%)' }}
       >
         <div className={`flex flex-col items-center gap-8 px-8 w-full text-center ${menuOpen ? 'pointer-events-auto' : ''}`}>
-          <Link to="/a-propos" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link1_${i18n.language}`] || (i18n.language === 'en' ? 'About' : 'À propos')}</Link>
-          <Link to="/coaching" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link2_${i18n.language}`] || (i18n.language === 'en' ? 'Work with me' : 'L\'accompagnement')}</Link>
-          <Link to="/booking" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link3_${i18n.language}`] || (i18n.language === 'en' ? 'Book' : 'Réserver')}</Link>
-          <Link to="/contact" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl font-light uppercase tracking-[0.2em]">{data?.[`link4_${i18n.language}`] || (i18n.language === 'en' ? 'Contact' : 'Contact')}</Link>
+          <Link to="/a-propos" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl">{data?.[`link1_${i18n.language}`] || (i18n.language === 'en' ? 'About' : 'À propos')}</Link>
+          <Link to="/coaching" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl">{data?.[`link2_${i18n.language}`] || (i18n.language === 'en' ? 'Work with me' : 'L\'accompagnement')}</Link>
+          <Link to="/booking" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl">{data?.[`link3_${i18n.language}`] || (i18n.language === 'en' ? 'Book' : 'Réserver')}</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)} className="mobile-link text-[#F5EDE0] text-3xl">{data?.[`link4_${i18n.language}`] || (i18n.language === 'en' ? 'Contact' : 'Contact')}</Link>
           
           <div className="mobile-link flex items-center gap-6 mt-8 text-[#F5EDE0]">
             <button 

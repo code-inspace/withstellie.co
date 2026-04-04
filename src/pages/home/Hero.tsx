@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { urlFor } from "../../lib/sanity";
 import { useGSAP } from "@gsap/react";
 
+import { ArrowRight } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
@@ -42,7 +43,7 @@ export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr
       tl.fromTo(
         ".h3-cta",
         { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.5)" },
+        { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.5)", clearProps: "transform" },
         "-=0.5",
       );
     },
@@ -83,9 +84,10 @@ export const Hero: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr
 
         <Link
           to="/booking"
-          className="h3-cta opacity-0 px-8 py-3.5 bg-[#C24C2A] text-[#F5EDE0] rounded-full text-sm font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300"
+          className="h3-cta opacity-0 w-fit mx-auto inline-flex items-center justify-center gap-4 px-16 py-5 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#F5EDE0] hover:text-[#2A1A0E] hover:scale-105 shadow-md group"
         >
           {data?.[`cta_${lang}`] || "Réserver mon appel découverte"}
+          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </section>

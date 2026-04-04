@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ArrowRight } from 'lucide-react';
+
 
 export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
@@ -33,7 +33,6 @@ export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, l
         <div className="relative z-10 flex flex-col items-center">
           <button className="bg-[#2A1A0E] text-white px-10 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 group mb-6 shadow-xl shadow-[#2A1A0E]/20">
             {data?.[`cta_${lang}`]}
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
 
           <p className="text-xs uppercase tracking-[0.2em] font-medium text-[#2A1A0E]/50">

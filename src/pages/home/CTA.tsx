@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
@@ -31,9 +32,10 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
         <div className="flex flex-col items-center gap-6">
           <Link
             to="/booking"
-            className="px-10 py-4 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium hover:bg-[#D35C38] hover:scale-105 transition-all duration-300 shadow-xl shadow-[#C24C2A]/20"
+            className="w-fit inline-flex items-center justify-center gap-4 px-16 py-5 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#F5EDE0] hover:text-[#2A1A0E] hover:scale-105 shadow-md group"
           >
             {data?.[`cta_${lang}`]}
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <p className="text-sm font-medium tracking-widest uppercase text-[#F5EDE0]/40">
             {data?.[`subline_${lang}`]}

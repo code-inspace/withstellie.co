@@ -22,7 +22,7 @@ export const Redirection: React.FC<{ data?: any; lang?: string }> = ({ data, lan
         <h2 className="font-display text-3xl md:text-5xl mb-10 relative z-10 whitespace-pre-line">
           {data?.[`title_${lang}`] || (lang === 'en' ? "Want to book a discovery call directly?" : "Tu veux réserver un appel découverte directement ?")}
         </h2>
-        
+
         <Link to="/booking" className="inline-flex items-center gap-4 bg-[#F5EDE0] text-[#2A1A0E] hover:bg-[#2A1A0E] hover:text-[#F5EDE0] px-10 py-5 rounded-full uppercase tracking-widest text-sm font-medium transition-all duration-300 hover:scale-105 group relative z-10 shadow-lg">
           {data?.[`cta_${lang}`] || (lang === 'en' ? "This way" : "Par ici")}
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
