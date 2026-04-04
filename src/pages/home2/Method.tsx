@@ -17,9 +17,9 @@ export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang
       .fromTo('.m-card', { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.15, ease: 'power3.out' }, '-=0.5');
   }, { scope: container });
 
-  const title = data[`title_${lang}`] || "Comment je travaille";
-  const subtitle = data[`subtitle_${lang}`] || "Pas une formule. Quelque chose construit entièrement autour de toi.";
-  const cta = data[`cta_${lang}`] || "Découvrir l'accompagnement";
+  const title = data[`title_${lang}`];
+  const subtitle = data[`subtitle_${lang}`];
+  const cta = data[`cta_${lang}`];
 
   return (
     <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-[3rem] mx-4 md:mx-8 mb-12 shadow-2xl relative overflow-hidden">

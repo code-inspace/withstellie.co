@@ -31,6 +31,7 @@ export const home2StellieIntro = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
+    defineField({ name: 'image', type: 'image', title: 'Photo de Stellie', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Home2 — Stellie Intro' }) }
 });
