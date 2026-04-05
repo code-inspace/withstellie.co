@@ -18,10 +18,10 @@ export const Hero: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }
       .fromTo('.h2-btn', { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.5)' }, '-=0.6');
   }, { scope: container });
 
-  const eyebrow = data[`eyebrow_${lang}`] || "Coaching de shift identitaire";
-  const h1 = data[`h1_${lang}`] || "Tu n'es pas qui on t'a dit d'être.";
-  const subtitle = data[`subtitle_${lang}`] || "Pour les femmes et personnes queer prêtes à se retrouver.\nSessions 1:1 avec Stellie.";
-  const cta = data[`cta_${lang}`] || "Commençons";
+  const eyebrow = data[`eyebrow_${lang}`];
+  const h1 = data[`h1_${lang}`];
+  const subtitle = data[`subtitle_${lang}`];
+  const cta = data[`cta_${lang}`];
   const bgImg = data.backgroundImage ? urlFor(data.backgroundImage).url() : "/hero2.png";
 
   return (

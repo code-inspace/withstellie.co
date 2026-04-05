@@ -18,18 +18,18 @@ export const Before: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
         <div className="md:w-1/3">
           <h2 className="before-title font-display text-5xl md:text-6xl text-[#2A1A0E] italic sticky top-32">
-            {data?.[`title_${lang}`] || "L'avant"}
+            {data?.[`title_${lang}`]}
           </h2>
         </div>
         <div className="md:w-2/3 space-y-10">
           <p className="before-text text-2xl md:text-3xl font-light text-[#2A1A0E] leading-relaxed whitespace-pre-line">
-            {data?.[`text1_${lang}`] || "Dès l'âge de 5 ans, mon monde a été façonné par l'instabilité, le silence et la survie."}
+            {data?.[`text1_${lang}`]}
           </p>
           <p className="before-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed whitespace-pre-line">
-            {data?.[`text2_${lang}`] || "J'ai appris très tôt qu'être moi-même n'était pas sûr. Alors je suis devenue invisible. Adaptable. Petite. La fille qui ne prend pas de place, qui ne dérange pas, qui s'ajuste."}
+            {data?.[`text2_${lang}`]}
           </p>
           <p className="before-text text-xl md:text-2xl font-light text-[#2A1A0E] leading-relaxed border-l-2 border-[#C24C2A] pl-8 py-2 whitespace-pre-line">
-            {data?.[`text3_${lang}`] || "Pendant près de 20 ans, j'ai porté une douleur que je ne pouvais pas nommer, dans un corps qui ne me ressemblait pas. Je faisais tout ce qu'on attend d'une fille bien. Et je me sentais étrangère à chaque instant de ma propre vie."}
+            {data?.[`text3_${lang}`]}
           </p>
         </div>
       </div>

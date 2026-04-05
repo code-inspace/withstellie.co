@@ -20,22 +20,22 @@ export const TurningPoint: React.FC<{ data?: any; lang?: string }> = ({ data, la
       
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         <h2 className="tp-content font-display text-5xl md:text-6xl text-[#C24C2A] italic mb-16">
-          {data?.[`title_${lang}`] || "La dernière fois"}
+          {data?.[`title_${lang}`]}
         </h2>
         
         <p className="tp-content text-3xl md:text-5xl font-display leading-tight mb-12 whitespace-pre-line">
-          {data?.[`text1_${lang}`] || "Un jour, j'ai failli perdre la vie."}
+          {data?.[`text1_${lang}`]}
         </p>
         
         <p className="tp-content text-xl md:text-2xl font-light text-[#F5EDE0]/80 leading-relaxed mb-12 whitespace-pre-line">
-          {data?.[`text2_${lang}`] || "À ce moment précis, sur le fil entre rester et partir, quelque chose est devenu limpide."}
+          {data?.[`text2_${lang}`]}
         </p>
         
-        <p className="tp-content text-2xl md:text-4xl font-light leading-relaxed mb-16 px-4" dangerouslySetInnerHTML={{ __html: data?.[`text3_${lang}`] || "Je ne voulais pas mourir.<br/>\n<span class=\"text-[#C24C2A] italic block mt-4\">Je voulais que la douleur s'arrête.</span><br/>\nJe voulais vivre, mais je ne savais pas comment." }}></p>
+        <p className="tp-content text-2xl md:text-4xl font-light leading-relaxed mb-16 px-4" dangerouslySetInnerHTML={{ __html: data?.[`text3_${lang}`] || "" }}></p>
         
         <div className="tp-content inline-block border border-[#F5EDE0]/20 px-8 py-5 rounded-full backdrop-blur-sm">
           <p className="text-xl md:text-2xl font-medium tracking-wide text-[#F5EDE0] whitespace-pre-line">
-            {data?.[`quote_${lang}`] || "C'est la première fois que je me suis entendue vraiment."}
+            {data?.[`quote_${lang}`]}
           </p>
         </div>
       </div>

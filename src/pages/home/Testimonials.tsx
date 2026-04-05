@@ -114,7 +114,7 @@ export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({
         {/* Titre */}
         <div className="pt-24 pb-12 px-10 md:px-16 flex-shrink-0">
           <h2 className="testi-title font-display text-5xl md:text-7xl text-[#2A1A0E] text-center">
-            {data?.[`title_${lang}`] || "Des voix qui ont osé se retrouver."}
+            {data?.[`title_${lang}`]}
           </h2>
         </div>
 

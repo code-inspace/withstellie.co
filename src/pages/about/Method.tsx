@@ -25,12 +25,12 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
     <section data-navbar-theme="light" ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20 meth-title">
-          <h2 className="font-display text-5xl md:text-6xl text-[#2A1A0E] mb-8">{data?.[`title_${lang}`] || "Comment je travaille"}</h2>
+          <h2 className="font-display text-5xl md:text-6xl text-[#2A1A0E] mb-8">{data?.[`title_${lang}`]}</h2>
           <p className="text-2xl font-light text-[#C24C2A] italic mb-6">
-            {data?.[`subtitle_${lang}`] || "Pas de solution toute faite. Pas de programme identique d'une personne à l'autre."}
+            {data?.[`subtitle_${lang}`]}
           </p>
           <p className="text-xl text-[#2A1A0E]/70 font-light max-w-2xl mx-auto leading-relaxed whitespace-pre-line">
-            {data?.[`desc_${lang}`] || "Je combine plusieurs approches selon ce dont tu as besoin, là où tu en es."}
+            {data?.[`desc_${lang}`]}
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         </div>
 
         <div className="meth-title text-center">
-          <p className="text-2xl md:text-3xl font-display text-[#2A1A0E] bg-[#F4E8D9] inline-block px-12 py-8 rounded-[2rem] shadow-sm" dangerouslySetInnerHTML={{ __html: data?.[`cta_${lang}`] || "Tout est construit autour de toi. <span class=\"text-[#C24C2A] italic\">Toujours.</span>" }}></p>
+          <p className="text-2xl md:text-3xl font-display text-[#2A1A0E] bg-[#F4E8D9] inline-block px-12 py-8 rounded-[2rem] shadow-sm" dangerouslySetInnerHTML={{ __html: data?.[`cta_${lang}`] || "" }}></p>
         </div>
       </div>
     </section>

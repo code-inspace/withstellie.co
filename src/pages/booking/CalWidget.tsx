@@ -36,7 +36,7 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
       <div className="max-w-5xl mx-auto">
         <div className="text-center cal-header mb-12">
           <h2 className="font-display text-4xl md:text-5xl text-[#2A1A0E] mb-4">
-            {data?.[`title_${lang}`] || "Choisis le créneau qui te convient."}
+            {data?.[`title_${lang}`]}
           </h2>
         </div>
 
@@ -52,11 +52,11 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
         <div className="cal-reassurance flex flex-col md:flex-row items-center justify-center gap-6 text-[#2A1A0E]/70 text-sm font-medium">
           <div className="flex items-center gap-3 bg-[#2A1A0E]/5 px-6 py-4 rounded-full">
             <Info size={18} className="text-[#C24C2A]" />
-            {data?.[`info1_${lang}`] || "Tu peux annuler ou déplacer jusqu'à 24h avant."}
+            {data?.[`info1_${lang}`]}
           </div>
           <div className="flex items-center gap-3 bg-[#2A1A0E]/5 px-6 py-4 rounded-full">
             <Info size={18} className="text-[#C24C2A]" />
-            {data?.[`info2_${lang}`] || "Aucun engagement de ta part à l'issue de l'appel."}
+            {data?.[`info2_${lang}`]}
           </div>
         </div>
       </div>

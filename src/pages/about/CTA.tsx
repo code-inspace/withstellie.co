@@ -22,23 +22,23 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#2A1A0E]/10 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
 
         <h2 className="font-display text-5xl md:text-7xl mb-12 relative z-10">
-          {data?.[`title_${lang}`] || "Prête à shifter ?"}
+          {data?.[`title_${lang}`]}
         </h2>
         
         <p className="text-2xl md:text-3xl font-light italic mb-16 relative z-10 opacity-90 leading-relaxed">
-          {data?.[`text1_${lang}`] || "Tu n'as pas besoin d'avoir tout compris."}<br/>
-          {data?.[`text2_${lang}`] || "Tu n'as pas besoin d'être prête à 100%."}<br/>
-          <span className="font-medium not-italic mt-6 block text-[#F5EDE0]">{data?.[`text3_${lang}`] || "Tu as juste besoin de te dire oui."}</span>
+          {data?.[`text1_${lang}`]}<br/>
+          {data?.[`text2_${lang}`]}<br/>
+          <span className="font-medium not-italic mt-6 block text-[#F5EDE0]">{data?.[`text3_${lang}`]}</span>
         </p>
         
         <div className="relative z-10 flex flex-col items-center">
           <Link to="/booking" className="w-fit inline-flex items-center justify-center gap-4 bg-[#F5EDE0] text-[#2A1A0E] px-10 py-5 rounded-full uppercase tracking-widest text-sm font-medium transition-all duration-300 hover:bg-[#2A1A0E] hover:text-[#F5EDE0] hover:scale-105 group mb-8 shadow-xl">
-            {data?.[`cta_${lang}`] || "Réserver mon appel découverte gratuit"}
+            {data?.[`cta_${lang}`]}
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           
           <p className="text-sm uppercase tracking-[0.2em] font-medium text-[#F5EDE0]/60 flex flex-col md:flex-row items-center gap-2 md:gap-4">
-            {data?.[`subline_${lang}`] || "30 minutes · Gratuit · Sans engagement"}
+            {data?.[`subline_${lang}`]}
           </p>
         </div>
       </div>

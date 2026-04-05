@@ -31,15 +31,15 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
 
         <div className="order-1 md:order-2">
           <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-display text-[#2A1A0E] mb-10">
-            {data?.[`title_${lang}`] || "Je suis Stellie."}
+            {data?.[`title_${lang}`]}
           </h2>
           <div className="space-y-6 text-lg font-light text-[#2A1A0E]/70 leading-relaxed max-w-lg mb-12">
             <p className="a3-text whitespace-pre-line">
-              {data?.[`desc_${lang}`] || "Je suis coach somatique. Je travaille avec des personnes qui savent être capables de plus, mais qui n'arrivent plus à s'entendre.\n\nJe ne suis pas là pour te dire qui être. Je suis là pour t'aider à retrouver ce que tu sais déjà."}
+              {data?.[`desc_${lang}`]}
             </p>
           </div>
           <Link to="/about" className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
-            {data?.[`cta_${lang}`] || "En savoir plus sur mon parcours"}
+            {data?.[`cta_${lang}`]}
             <span className="p-3 rounded-full border border-[#C24C2A]/30 group-hover:bg-[#C24C2A]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
             </span>

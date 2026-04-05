@@ -101,7 +101,7 @@ const OffreAvril: React.FC = () => {
               {t('formLabel', 'Réserver ma place')}
             </p>
             <form
-              action={`https://formsubmit.co/${data?.formEmail || 'withstellie.co@gmail.com'}`}
+              action={`https://formsubmit.co/${data?.formEmail}`}
               method="POST"
               className="space-y-5"
             >

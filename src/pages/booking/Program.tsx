@@ -20,14 +20,14 @@ export const Program: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 
     <section ref={container} data-navbar-theme="dark" className="py-24 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-[3rem] mx-4 md:mx-8 mb-20 shadow-2xl">
       <div className="max-w-4xl mx-auto">
         <h2 className="prog-title font-display text-4xl md:text-5xl text-center mb-20 text-[#C24C2A] italic">
-          {data?.[`title_${lang}`] || "Ce qu'on fait pendant ces 30 minutes"}
+          {data?.[`title_${lang}`]}
         </h2>
 
         <div className="space-y-12 mb-20">
           {[
-             data?.[`text1_${lang}`] || "On commence par toi.\nOù tu en es, ce que tu traverses, ce qui t'a amenée ici.",
-             data?.[`text2_${lang}`] || "Je te présente comment je travaille,\nce que ça implique concrètement, et quel format pourrait avoir du sens pour ta situation.",
-             data?.[`text3_${lang}`] || "On décide ensemble.\nSi c'est un oui des deux côtés, on construit la suite. Sinon, tu repars avec au moins une chose claire sur toi-même."
+             data?.[`text1_${lang}`],
+             data?.[`text2_${lang}`],
+             data?.[`text3_${lang}`]
           ].map((stepText, i) => {
             const [title, ...descParts] = stepText.split('\n');
             const desc = descParts.join('\n');
@@ -44,7 +44,7 @@ export const Program: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 
         </div>
 
         <div className="prog-footer text-center pt-10 border-t border-[#F5EDE0]/10">
-          <p className="text-sm md:text-base uppercase tracking-[0.2em] font-medium text-[#F5EDE0]/50 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0" dangerouslySetInnerHTML={{ __html: data?.[`subline_${lang}`] || "<span>30 minutes</span><span class=\"hidden md:inline mx-4 text-[#C24C2A]\">·</span><span>Visio</span><span class=\"hidden md:inline mx-4 text-[#C24C2A]\">·</span><span>Entièrement gratuit</span>" }}></p>
+          <p className="text-sm md:text-base uppercase tracking-[0.2em] font-medium text-[#F5EDE0]/50 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0" dangerouslySetInnerHTML={{ __html: data?.[`subline_${lang}`] || "" }}></p>
         </div>
       </div>
     </section>

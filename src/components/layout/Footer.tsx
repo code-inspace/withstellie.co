@@ -40,24 +40,24 @@ export const Footer: React.FC = () => {
               <img src="/logo.png" alt="WithStellie.co" className="h-8 md:h-10 w-auto object-contain mb-4 brightness-0 hover:opacity-80 transition-opacity" />
             </Link>
             <p className="text-lg md:text-xl font-light text-[#1a1a1a]/80">
-              {data?.[`subtitle_${lang}`] || (lang === 'en' ? 'Identity shift coaching' : 'Coaching de shift identitaire')}
+              {data?.[`subtitle_${lang}`]}
             </p>
           </div>
 
           <div className="flex flex-col gap-4 items-center md:items-end">
             <div className="flex items-center gap-4">
-              <a href={`https://instagram.com/${(data?.instagram || 'shift.withstellie').replace(/^@/, '')}`} target="_blank" rel="noreferrer"
+              <a href={`https://instagram.com/${data?.instagram?.replace(/^@/, '') || ""}`} target="_blank" rel="noreferrer"
                 className="p-2 rounded-full border border-[#1a1a1a]/15 hover:border-[#1a1a1a]/40 text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors">
                 <IconInstagram />
               </a>
-              <a href={`https://tiktok.com/@${(data?.tiktok || 'shift.withstellie').replace(/^@/, '')}`} target="_blank" rel="noreferrer"
+              <a href={`https://tiktok.com/@${data?.tiktok?.replace(/^@/, '') || ""}`} target="_blank" rel="noreferrer"
                 className="p-2 rounded-full border border-[#1a1a1a]/15 hover:border-[#1a1a1a]/40 text-[#1a1a1a]/70 hover:text-[#1a1a1a] transition-colors">
                 <IconTikTok />
               </a>
             </div>
-            <a href={`mailto:${data?.email || 'chrystelbrc.pro@gmail.com'}`}
+            <a href={`mailto:${data?.email}`}
               className="text-sm font-medium text-[#1a1a1a]/50 hover:text-[#1a1a1a]/80 transition-colors">
-              {data?.email || 'chrystelbrc.pro@gmail.com'}
+              {data?.email}
             </a>
           </div>
         </div>
@@ -65,18 +65,18 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-[#1a1a1a]/40 pt-8 border-t border-[#1a1a1a]/10 gap-4">
           <div className="flex gap-4">
             <Link to="/legal-notice" className="hover:text-[#1a1a1a]/70 transition-colors">
-               {data?.[`legal1_${lang}`] || (lang === 'en' ? 'Legal Notice' : 'Mentions légales')}
+               {data?.[`legal1_${lang}`]}
             </Link>
             <span>·</span>
             <Link to="/privacy-policy" className="hover:text-[#1a1a1a]/70 transition-colors">
-               {data?.[`legal2_${lang}`] || (lang === 'en' ? 'Privacy Policy' : 'Politique de confidentialité')}
+               {data?.[`legal2_${lang}`]}
             </Link>
           </div>
           <div className="flex items-center gap-4">
             <p>© 2026 withstellie.co</p>
             <span>·</span>
             <a href="https://axelcoudair.com" target="_blank" rel="noreferrer" className="hover:text-[#1a1a1a]/70 transition-colors">
-               {data?.[`madeBy_${lang}`] || (lang === 'en' ? 'Made by Axel Coudair' : 'Fait par Axel Coudair')}
+               {data?.[`madeBy_${lang}`]}
             </a>
           </div>
         </div>

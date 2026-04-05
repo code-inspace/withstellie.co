@@ -15,12 +15,12 @@ export const CTA: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang })
     tl.fromTo('.c-content', { opacity: 0, scale: 0.95, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power3.out' });
   }, { scope: container });
 
-  const title = data[`title_${lang}`] || "Prête à te retrouver ?";
-  const text1 = data[`text1_${lang}`] || "Tu n'as pas besoin d'avoir tout compris.";
-  const text2 = data[`text2_${lang}`] || "Tu n'as pas besoin d'être prête à 100%.";
-  const text3 = data[`text3_${lang}`] || "Tu as juste besoin de te dire oui.";
-  const cta = data[`cta_${lang}`] || "Travailler ensemble";
-  const subline = data[`subline_${lang}`] || "Sans engagement · 30 minutes · Entièrement gratuit";
+  const title = data[`title_${lang}`];
+  const text1 = data[`text1_${lang}`];
+  const text2 = data[`text2_${lang}`];
+  const text3 = data[`text3_${lang}`];
+  const cta = data[`cta_${lang}`];
+  const subline = data[`subline_${lang}`];
 
   return (
     <section ref={container} data-navbar-theme="light" className="pb-32 px-6 md:px-16 bg-[#F9F3EC]">
