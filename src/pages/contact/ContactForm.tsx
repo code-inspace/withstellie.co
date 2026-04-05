@@ -15,7 +15,7 @@ export const ContactForm: React.FC<{ data?: any; lang?: string }> = ({ data, lan
   return (
     <section data-navbar-theme="light" ref={container} className="py-24 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-3xl mx-auto">
-        <form action="https://formsubmit.co/withstellie.co@gmail.com" method="POST" className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-[#2A1A0E]/5">
+        <form action="https://formsubmit.co/chrystelbrc.pro@gmail.com" method="POST" className="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-[#2A1A0E]/5">
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_subject" value="Nouveau message depuis WithStellie" />
           <input type="hidden" name="_captcha" value="false" />
