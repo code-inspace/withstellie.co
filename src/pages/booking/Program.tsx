@@ -36,6 +36,7 @@ export const Program: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 
              data?.[`text2_${lang}`],
              data?.[`text3_${lang}`]
           ].map((stepText, i) => {
+            if (!stepText) return null;
             const [title, ...descParts] = stepText.split('\n');
             const desc = descParts.join('\n');
             return (

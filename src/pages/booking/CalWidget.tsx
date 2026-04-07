@@ -40,11 +40,11 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
           </h2>
         </div>
 
-        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl mb-12 relative border border-[#2A1A0E]/5 h-[580px] md:h-[500px]">
+        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full">
           <Cal 
             namespace="30min"
             calLink="stellie/30min"
-            style={{ width: "100%", height: "100%", overflow: "scroll" }}
+            style={{ width: "100%" }}
             config={{ "layout": "month_view", "useSlotsViewOnSmallScreen": "true", "theme": "light" }}
           />
         </div>
