@@ -32,7 +32,6 @@ export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}
   const text1 = data[`text1_${lang}`];
   const text2 = data[`text2_${lang}`];
   const text3 = data[`text3_${lang}`];
-  const text4 = data[`text4_${lang}`];
   const cta = data[`cta_${lang}`];
 
   return (
