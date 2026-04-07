@@ -6,6 +6,8 @@ export const homeHero = defineType({
     defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
     defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({ name: 'eyebrow_fr', type: 'string', title: 'Eyebrow (FR)' }),
+    defineField({ name: 'eyebrow_en', type: 'string', title: 'Eyebrow (EN)' }),
     defineField({ name: 'subtitle_fr', type: 'text', title: 'Subtitle (FR)' }),
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
@@ -106,6 +108,7 @@ export const homeCTA = defineType({
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Home — CTA' }) }
 });

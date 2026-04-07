@@ -56,37 +56,35 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
     <section
       ref={container}
       data-navbar-theme="dark"
-      className="relative min-h-screen flex flex-col overflow-hidden bg-[#2A1A0E]"
+      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden bg-[#2A1A0E] rounded-b-[3rem] shadow-2xl z-10 px-6"
     >
       {/* Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Warm amber color wash */}
-        {/* <div className="absolute inset-0 bg-[#3D1A08]/50 z-10 mix-blend-multiply"></div> */}
-        {/* Vignette — bords sombres */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_40%,transparent_40%,#1A0A02_100%)] z-10"></div>
-        {/* Fade bas */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A0A02]/70 via-transparent to-[#1A0A02]/20 z-10"></div>
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[#2A1A0E]/70 z-10" />
         <img
-          src={data?.backgroundImage ? urlFor(data.backgroundImage).url() : "/hero2.png"}
+          src={data?.backgroundImage ? urlFor(data.backgroundImage).url() : "/hero.jpg"}
           alt="Hero background"
-          className="h3-bg w-full h-full object-cover object-center"
-          style={{ filter: "brightness(0.65) contrast(1.08) saturate(1.15)" }}
+          className="h3-bg w-full h-full object-cover object-center opacity-60"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-30 flex-1 flex flex-col justify-center items-center text-center px-6 pb-24">
-        <h1 className="h3-title opacity-0 font-display text-[clamp(3rem,8vw,7rem)] text-[#F5EDE0] leading-[1] mb-6 tracking-tight font-bold">
+      <div className="relative z-20 max-w-5xl mx-auto text-center text-[#F5EDE0] pt-24">
+        <p className="h3-sub opacity-0 text-xs md:text-sm uppercase tracking-[0.3em] font-medium text-[#C24C2A] mb-8">
+          {d?.[`eyebrow_${lang}`]}
+        </p>
+        
+        <h1 className="h3-title opacity-0 font-display text-5xl md:text-7xl lg:text-[7rem] leading-[1.05] tracking-tight mb-8 whitespace-pre-line">
           {d?.[`title_${lang}`]}
         </h1>
 
-        <p className="h3-sub opacity-0 text-[#F5EDE0]/75 text-base md:text-lg max-w-md mb-10 leading-relaxed font-light whitespace-pre-line">
+        <p className="h3-sub opacity-0 text-lg md:text-xl font-light text-[#F5EDE0]/70 max-w-2xl mx-auto mb-16 leading-relaxed whitespace-pre-line">
           {d?.[`subtitle_${lang}`]}
         </p>
 
         <Link
           to="/booking"
-          className="h3-cta opacity-0 w-fit mx-auto inline-flex items-center justify-center gap-4 px-16 py-5 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#F5EDE0] hover:text-[#2A1A0E] hover:scale-105 shadow-md group"
+          className="h3-cta opacity-0 inline-flex items-center gap-4 bg-[#C24C2A] text-white px-10 py-5 rounded-full uppercase tracking-widest text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group"
         >
           {d?.[`cta_${lang}`]}
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

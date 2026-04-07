@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { SEO } from "../../components/SEO";
 import { Hero } from "./Hero";
 import { About } from "./About";
-import { Method } from "./Method";
-import { Testimonials } from "./Testimonials";
+import { Method } from "../home2/Method";
+import { Testimonials } from "../home2/Testimonials";
 import { CTA } from "./CTA";
 import { Footer } from "../../components/layout/Footer";
 import { Navbar } from "../../components/layout/Navbar";
@@ -24,9 +24,9 @@ const Home: React.FC = () => {
       "hook":         coalesce(*[_type == "homeHook"][0],         *[_type == "pageHome"][0].homeHook),
       "presentation": coalesce(*[_type == "homePresentation"][0], *[_type == "pageHome"][0].homePresentation),
       "focus":        coalesce(*[_type == "homeFocus"][0],        *[_type == "pageHome"][0].homeFocus),
-      "method":       coalesce(*[_type == "homeMethod"][0],       *[_type == "pageHome"][0].homeMethod),
-      "testimonials": coalesce(*[_type == "homeTestimonials"][0], *[_type == "pageHome"][0].homeTestimonials),
-      "cta":          coalesce(*[_type == "homeCTA"][0],          *[_type == "pageHome"][0].homeCTA),
+      "method":       coalesce(*[_type == "home2Method"][0],       *[_type == "pageHome2"][0].home2Method) { ..., backgroundImage { asset-> { url } } },
+      "testimonials": coalesce(*[_type == "home2Testimonials"][0], *[_type == "pageHome2"][0].home2Testimonials),
+      "cta":          coalesce(*[_type == "homeCTA"][0],          *[_type == "pageHome"][0].homeCTA) { ..., backgroundImage { asset-> { url } } },
       "pricing":      coalesce(*[_type == "homePricing"][0],      *[_type == "pageHome"][0].homePricing),
       "faq":          coalesce(*[_type == "homeFAQ"][0],          *[_type == "pageHome"][0].homeFAQ),
       "cta2":         coalesce(*[_type == "homeCTA2"][0],         *[_type == "pageHome"][0].homeCTA2),

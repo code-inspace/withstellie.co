@@ -17,12 +17,25 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC] relative flex justify-center items-center isolate">
-      <div className="c3-bg absolute inset-0 mx-4 md:mx-12 my-12 bg-[#2A1A0E] rounded-[3rem] -z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#C24C2A]/20 blur-[120px] rounded-full"></div>
-      </div>
+    <section
+      ref={container}
+      data-navbar-theme="dark"
+      className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-[3rem] mx-4 md:mx-8 my-16 shadow-2xl relative overflow-hidden"
+    >
+      {data?.backgroundImage?.asset?.url && (
+        <>
+          <div 
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${data.backgroundImage.asset.url})` }}
+          />
+          <div className="absolute inset-0 bg-[#2A1A0E]/80 mix-blend-multiply z-0" />
+        </>
+      )}
+      
+      {/* Glow subtil — identique aux autres sections sombres */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#C24C2A]/10 blur-[100px] rounded-full pointer-events-none z-0" />
 
-      <div className="c3-content container mx-auto text-center max-w-3xl flex flex-col items-center py-20 px-6 md:px-10">
+      <div className="c3-content max-w-3xl mx-auto text-center flex flex-col items-center relative z-10">
         <h2 className="text-5xl md:text-7xl font-display text-[#F5EDE0] mb-8">
           {data?.[`title_${lang}`]}
         </h2>
