@@ -40,7 +40,7 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
           </h2>
         </div>
 
-        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl mb-12 relative border border-[#2A1A0E]/5 h-[750px] md:h-[650px]">
+        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl mb-12 relative border border-[#2A1A0E]/5 h-[580px] md:h-[500px]">
           <Cal 
             namespace="30min"
             calLink="stellie/30min"

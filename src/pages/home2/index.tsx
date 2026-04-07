@@ -8,6 +8,7 @@ import { Testimonials } from './Testimonials';
 import { CTA } from './CTA';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { PageLoader } from '../../components/layout/PageLoader';
 
 const Home2: React.FC = () => {
   const { i18n } = useTranslation();
@@ -25,7 +26,7 @@ const Home2: React.FC = () => {
     }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <PageLoader />;
 
   const lang = i18n.language;
 

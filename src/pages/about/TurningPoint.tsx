@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { SafeHTML } from '../../components/SafeHTML';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -17,7 +18,7 @@ export const TurningPoint: React.FC<{ data?: any; lang?: string }> = ({ data, la
     <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative overflow-hidden rounded-[3rem] mx-4 md:mx-8 mb-12 shadow-2xl">
       {data?.backgroundImage?.asset?.url && (
         <>
-          <img src={data.backgroundImage.asset.url} alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
+          <img src={data.backgroundImage.asset.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover z-0" />
           <div className="absolute inset-0 bg-[#2A1A0E]/80 mix-blend-multiply z-0" />
         </>
       )}
@@ -37,7 +38,7 @@ export const TurningPoint: React.FC<{ data?: any; lang?: string }> = ({ data, la
           {data?.[`text2_${lang}`]}
         </p>
         
-        <p className="tp-content text-2xl md:text-4xl font-light leading-relaxed mb-16 px-4" dangerouslySetInnerHTML={{ __html: data?.[`text3_${lang}`] || "" }}></p>
+        <SafeHTML tag="p" className="tp-content text-2xl md:text-4xl font-light leading-relaxed mb-16 px-4" html={data?.[`text3_${lang}`] || ""} />
         
         <div className="tp-content inline-block border border-[#F5EDE0]/20 px-8 py-5 rounded-full backdrop-blur-sm">
           <p className="text-xl md:text-2xl font-medium tracking-wide text-[#F5EDE0] whitespace-pre-line">

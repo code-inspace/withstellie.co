@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { SafeHTML } from '../../components/SafeHTML';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -15,7 +16,7 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang =
   return (
     <section ref={container} data-navbar-theme="light" className="pt-48 pb-20 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-5xl mx-auto text-center">
-        <h1 className="reserve-head font-display text-6xl md:text-8xl lg:text-[7rem] text-[#2A1A0E] tracking-tight leading-[0.95] mb-10" dangerouslySetInnerHTML={{ __html: data?.[`title_${lang}`] || "" }}></h1>
+        <SafeHTML tag="h1" className="reserve-head font-display text-6xl md:text-8xl lg:text-[7rem] text-[#2A1A0E] tracking-tight leading-[0.95] mb-10" html={data?.[`title_${lang}`] || ""} />
         <p className="reserve-head text-2xl md:text-3xl text-[#2A1A0E] font-light tracking-wide mb-6">
           {data?.[`subtitle_${lang}`]}
         </p>

@@ -7,6 +7,7 @@ import { CalWidget } from './CalWidget';
 import { ContactAlt } from './ContactAlt';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { PageLoader } from '../../components/layout/PageLoader';
 import { SEO } from '../../components/SEO';
 
 const Booking: React.FC = () => {
@@ -24,12 +25,12 @@ const Booking: React.FC = () => {
     }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <PageLoader />;
 
   const lang = i18n.language;
 
   return (
-    <div className="bg-[#F9F3EC] min-h-screen">
+    <div id="main-content" className="bg-[#F9F3EC] min-h-screen">
       <SEO
         title="Réserver mon appel | With Stellie"
         description={lang === 'en'

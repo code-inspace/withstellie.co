@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { client } from '../../lib/sanity';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -85,10 +85,14 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
+  const { pathname } = useLocation();
+  const isActive = (paths: string[]) => paths.some(p => pathname === p || pathname.startsWith(p + '/'));
+
   const forceLight = menuOpen || isDark;
   const textCls  = forceLight ? 'text-[#F5EDE0]/80' : 'text-[#2A1A0E]/70';
   const logoCls  = forceLight ? 'brightness-0 invert' : 'brightness-0';
   const burgerCls = forceLight ? 'bg-[#F5EDE0]' : 'bg-[#2A1A0E]';
+  const activeDot = forceLight ? 'bg-[#F5EDE0]' : 'bg-[#C24C2A]';
 
   return (
     <>
@@ -109,10 +113,25 @@ export const Navbar: React.FC = () => {
         </Link>
 
         <div className={`hidden md:flex items-center gap-8 text-sm transition-colors duration-300 ${textCls}`}>
-          <Link to="/a-propos" className="hover:opacity-100 transition-opacity">{data?.[`link1_${i18n.language}`] || (i18n.language === 'en' ? 'About' : 'À propos')}</Link>
-          <Link to="/coaching" className="hover:opacity-100 transition-opacity">{data?.[`link2_${i18n.language}`] || (i18n.language === 'en' ? 'Work with me' : 'L\'accompagnement')}</Link>
-          <Link to="/booking" className="hover:opacity-100 transition-opacity">{data?.[`link3_${i18n.language}`] || (i18n.language === 'en' ? 'Book' : 'Réserver')}</Link>
-          <Link to="/contact" className="hover:opacity-100 transition-opacity">{data?.[`link4_${i18n.language}`] || (i18n.language === 'en' ? 'Contact' : 'Contact')}</Link>
+          {([
+            { to: '/a-propos', alts: ['/en/about'], key: 'link1', fallbackFr: 'À propos', fallbackEn: 'About' },
+            { to: '/coaching', alts: ['/en/work-with-me'], key: 'link2', fallbackFr: "L'accompagnement", fallbackEn: 'Work with me' },
+            { to: '/booking',  alts: ['/en/book'],         key: 'link3', fallbackFr: 'Réserver',          fallbackEn: 'Book' },
+            { to: '/contact',  alts: ['/en/contact'],      key: 'link4', fallbackFr: 'Contact',           fallbackEn: 'Contact' },
+          ] as const).map(({ to, alts, key, fallbackFr, fallbackEn }) => {
+            const active = isActive([to, ...alts]);
+            return (
+              <Link
+                key={to}
+                to={to}
+                aria-current={active ? 'page' : undefined}
+                className="relative flex flex-col items-center gap-1 hover:opacity-100 transition-opacity"
+              >
+                {data?.[`${key}_${i18n.language}`] || (i18n.language === 'en' ? fallbackEn : fallbackFr)}
+                <span className={`h-[2px] w-full rounded-full transition-all duration-300 ${active ? activeDot : 'opacity-0 bg-transparent'}`} />
+              </Link>
+            );
+          })}
         </div>
 
         <div className={`text-sm flex items-center gap-6 transition-colors duration-300 relative z-[110] ${textCls}`}>

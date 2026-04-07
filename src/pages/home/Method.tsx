@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { SafeHTML } from '../../components/SafeHTML';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -20,7 +21,7 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
     <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto">
         <h2 className="m3-title text-5xl md:text-7xl font-display text-center mb-24 text-[#2A1A0E]">
-          <span dangerouslySetInnerHTML={{ __html: data?.[`title_${lang}`] }} />
+          <SafeHTML html={data?.[`title_${lang}`]} />
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">

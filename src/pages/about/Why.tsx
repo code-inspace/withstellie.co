@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { SafeHTML } from '../../components/SafeHTML';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -20,7 +21,7 @@ export const Why: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
           {data?.[`title_${lang}`]}
         </h2>
         
-        <p className="why-text text-2xl md:text-3xl font-medium text-[#C24C2A] mb-12" dangerouslySetInnerHTML={{ __html: data?.[`subtitle_${lang}`] || "" }}></p>
+        <SafeHTML tag="p" className="why-text text-2xl md:text-3xl font-medium text-[#C24C2A] mb-12" html={data?.[`subtitle_${lang}`] || ""} />
         
         <p className="why-text text-xl md:text-2xl font-light text-[#2A1A0E]/80 leading-relaxed mb-12 whitespace-pre-line">
           {data?.[`text1_${lang}`]}

@@ -72,7 +72,7 @@ export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}
           </p>
           <div 
             className="si-text opacity-0 text-2xl md:text-4xl font-display text-[#C24C2A] italic leading-relaxed whitespace-pre-line mt-8"
-            dangerouslySetInnerHTML={{ __html: text4 || "" }}
+            ref={undefined}
           />
           
           <div className="si-text opacity-0 pt-8">

@@ -33,14 +33,14 @@ const Home: React.FC = () => {
     }`).then(setSections).catch(() => setSections({}));
   }, []);
 
-  if (!sections) return <div className="min-h-screen bg-[#F9F3EC]" />;
+  if (!sections) return <PageLoader />;
 
   const lang = i18n.language;
 
   const isEn = lang === 'en';
 
   return (
-    <div className="bg-[#F9F3EC] min-h-screen">
+    <div id="main-content" className="bg-[#F9F3EC] min-h-screen">
       <SEO
         title="Stellie | Coaching de shift identitaire"
         description={isEn

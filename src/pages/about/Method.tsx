@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { SafeHTML } from '../../components/SafeHTML';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -44,7 +45,7 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         </div>
 
         <div className="meth-title text-center">
-          <p className="text-2xl md:text-3xl font-display text-[#2A1A0E] bg-[#F4E8D9] inline-block px-12 py-8 rounded-[2rem] shadow-sm" dangerouslySetInnerHTML={{ __html: data?.[`cta_${lang}`] || "" }}></p>
+          <SafeHTML tag="p" className="text-2xl md:text-3xl font-display text-[#2A1A0E] bg-[#F4E8D9] inline-block px-12 py-8 rounded-[2rem] shadow-sm" html={data?.[`cta_${lang}`] || ""} />
         </div>
       </div>
     </section>
