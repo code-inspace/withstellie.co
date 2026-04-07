@@ -20,9 +20,9 @@ const Coaching: React.FC = () => {
     window.scrollTo(0, 0);
     client.fetch(`{
       "headline":      *[_type == "coachingHeadline"][0],
-      "methodMBS":     *[_type == "coachingMethodMBS"][0],
-      "forWho":        *[_type == "coachingForWho"][0],
-      "testimonials":  *[_type == "coachingTestimonials"][0],
+      "methodMBS":     *[_type == "coachingMethodMBS"][0]    { ..., backgroundImage { asset-> { url } } },
+      "forWho":        *[_type == "coachingForWho"][0]       { ..., backgroundImage { asset-> { url } } },
+      "testimonials":  *[_type == "coachingTestimonials"][0] { ..., backgroundImage { asset-> { url } } },
       "offers":        *[_type == "coachingOffers"][0],
       "faq":           *[_type == "coachingFAQ"][0],
       "discoveryCall": *[_type == "coachingDiscoveryCall"][0]

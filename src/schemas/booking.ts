@@ -28,6 +28,7 @@ export const bookingProgram = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Booking — Programme' }) }
 });

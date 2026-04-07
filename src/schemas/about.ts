@@ -12,6 +12,7 @@ export const aboutHeadline = defineType({
     defineField({ name: 'warningTitle_en', type: 'string', title: 'Warning Title (EN)' }),
     defineField({ name: 'warningText_fr', type: 'text', title: 'Warning Text (FR)' }),
     defineField({ name: 'warningText_en', type: 'text', title: 'Warning Text (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'About — Headline' }) }
 });
@@ -46,6 +47,7 @@ export const aboutTurningPoint = defineType({
     defineField({ name: 'text3_en', type: 'text', title: 'Text3 (EN)' }),
     defineField({ name: 'quote_fr', type: 'string', title: 'Quote (FR)' }),
     defineField({ name: 'quote_en', type: 'string', title: 'Quote (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'About — Turning Point' }) }
 });
@@ -94,6 +96,7 @@ export const aboutQuote = defineType({
     defineField({ name: 'text1_en', type: 'string', title: 'Text1 (EN)' }),
     defineField({ name: 'text2_fr', type: 'string', title: 'Text2 (FR)' }),
     defineField({ name: 'text2_en', type: 'string', title: 'Text2 (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'About — Quote' }) }
 });

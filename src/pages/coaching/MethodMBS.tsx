@@ -17,8 +17,14 @@ export const MethodMBS: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-t-[3rem]">
-      <div className="max-w-7xl mx-auto">
+    <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-t-[3rem] relative overflow-hidden">
+      {data?.backgroundImage?.asset?.url && (
+        <>
+          <img src={data.backgroundImage.asset.url} alt="" className="absolute inset-0 w-full h-full object-cover z-0" />
+          <div className="absolute inset-0 bg-[#2A1A0E]/80 mix-blend-multiply z-0" />
+        </>
+      )}
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24">
           <h2 className="mbs-title font-display text-5xl md:text-7xl mb-8">{data?.[`title_${lang}`]}</h2>
           <p className="mbs-intro text-xl md:text-2xl font-light text-[#F5EDE0]/80 max-w-4xl mx-auto leading-relaxed whitespace-pre-line">

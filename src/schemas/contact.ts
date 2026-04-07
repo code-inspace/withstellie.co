@@ -10,6 +10,7 @@ export const contactHeadline = defineType({
     defineField({ name: 'subtitle_en', type: 'text', title: 'Subtitle (EN)' }),
     defineField({ name: 'subline_fr', type: 'string', title: 'Subline (FR)' }),
     defineField({ name: 'subline_en', type: 'string', title: 'Subline (EN)' }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Contact — Headline' }) }
 });

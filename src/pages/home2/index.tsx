@@ -17,9 +17,9 @@ const Home2: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     client.fetch(`{
-      "hero":         coalesce(*[_type == "home2Hero"][0],         *[_type == "pageHome2"][0].home2Hero),
+      "hero":         coalesce(*[_type == "home2Hero"][0],         *[_type == "pageHome2"][0].home2Hero) { ..., backgroundImage { asset-> { url } } },
       "stellieIntro": coalesce(*[_type == "home2StellieIntro"][0], *[_type == "pageHome2"][0].home2StellieIntro),
-      "method":       coalesce(*[_type == "home2Method"][0],       *[_type == "pageHome2"][0].home2Method),
+      "method":       coalesce(*[_type == "home2Method"][0],       *[_type == "pageHome2"][0].home2Method) { ..., backgroundImage { asset-> { url } } },
       "testimonials": coalesce(*[_type == "home2Testimonials"][0], *[_type == "pageHome2"][0].home2Testimonials),
       "cta":          coalesce(*[_type == "home2CTA"][0],          *[_type == "pageHome2"][0].home2CTA)
     }`).then(setSections).catch(() => setSections({}));

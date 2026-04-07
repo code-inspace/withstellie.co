@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     client.fetch(`{
-      "headline":    coalesce(*[_type == "contactHeadline"][0],     *[_type == "pageContact"][0].contactHeadline),
+      "headline":    coalesce(*[_type == "contactHeadline"][0],     *[_type == "pageContact"][0].contactHeadline) { ..., backgroundImage { asset-> { url } } },
       "form":        coalesce(*[_type == "contactContactForm"][0],  *[_type == "pageContact"][0].contactContactForm),
       "alternatives":coalesce(*[_type == "contactAlternatives"][0], *[_type == "pageContact"][0].contactAlternatives),
       "redirection": coalesce(*[_type == "contactRedirection"][0],  *[_type == "pageContact"][0].contactRedirection)

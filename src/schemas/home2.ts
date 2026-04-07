@@ -55,6 +55,7 @@ export const home2Method = defineType({
         defineField({ name: 'desc_en', type: 'text', title: 'Description (EN)' }),
       ]})]
     }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Home2 — Method' }) }
 });

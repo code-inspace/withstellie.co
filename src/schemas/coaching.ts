@@ -44,6 +44,7 @@ export const coachingMethodMBS = defineType({
         })
       ]
     }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Coaching — Méthode MBS' }) }
 });
@@ -62,6 +63,7 @@ export const coachingForWho = defineType({
     defineField({ name: 'desc_en', type: 'text', title: 'Desc (EN)' }),
     defineField({ name: 'items_fr', type: 'array', title: 'Items (FR)', of: [{ type: 'string' }] }),
     defineField({ name: 'items_en', type: 'array', title: 'Items (EN)', of: [{ type: 'string' }] }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Coaching — Pour qui ?' }) }
 });
@@ -93,6 +95,7 @@ export const coachingTestimonials = defineType({
         })
       ]
     }),
+    defineField({ name: 'backgroundImage', type: 'image', title: 'Background Image', options: { hotspot: true } }),
   ],
   preview: { prepare: () => ({ title: 'Coaching — Témoignages' }) }
 });

@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     client.fetch(`{
-      "hero":         coalesce(*[_type == "homeHero"][0],         *[_type == "pageHome"][0].homeHero),
+      "hero":         coalesce(*[_type == "homeHero"][0],         *[_type == "pageHome"][0].homeHero) { ..., backgroundImage { asset-> { url } } },
       "hook":         coalesce(*[_type == "homeHook"][0],         *[_type == "pageHome"][0].homeHook),
       "presentation": coalesce(*[_type == "homePresentation"][0], *[_type == "pageHome"][0].homePresentation),
       "focus":        coalesce(*[_type == "homeFocus"][0],        *[_type == "pageHome"][0].homeFocus),

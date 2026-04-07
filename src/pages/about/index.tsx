@@ -20,12 +20,12 @@ const About: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     client.fetch(`{
-      "headline":       coalesce(*[_type == "aboutHeadline"][0],       *[_type == "pageAbout"][0].aboutHeadline),
+      "headline":       coalesce(*[_type == "aboutHeadline"][0],       *[_type == "pageAbout"][0].aboutHeadline)     { ..., backgroundImage { asset-> { url } } },
       "before":         coalesce(*[_type == "aboutBefore"][0],         *[_type == "pageAbout"][0].aboutBefore),
-      "turningPoint":   coalesce(*[_type == "aboutTurningPoint"][0],   *[_type == "pageAbout"][0].aboutTurningPoint),
+      "turningPoint":   coalesce(*[_type == "aboutTurningPoint"][0],   *[_type == "pageAbout"][0].aboutTurningPoint) { ..., backgroundImage { asset-> { url } } },
       "reconstruction": coalesce(*[_type == "aboutReconstruction"][0], *[_type == "pageAbout"][0].aboutReconstruction),
       "why":            coalesce(*[_type == "aboutWhy"][0],            *[_type == "pageAbout"][0].aboutWhy),
-      "quote":          coalesce(*[_type == "aboutQuote"][0],          *[_type == "pageAbout"][0].aboutQuote),
+      "quote":          coalesce(*[_type == "aboutQuote"][0],          *[_type == "pageAbout"][0].aboutQuote)         { ..., backgroundImage { asset-> { url } } },
       "method":         coalesce(*[_type == "aboutMethod"][0],         *[_type == "pageAbout"][0].aboutMethod),
       "cta":            coalesce(*[_type == "aboutCTA"][0],            *[_type == "pageAbout"][0].aboutCTA)
     }`).then(setSections).catch(() => setSections({}));
