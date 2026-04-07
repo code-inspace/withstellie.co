@@ -7,6 +7,7 @@ import { Alternatives } from './Alternatives';
 import { Redirection } from './Redirection';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 
 const Contact: React.FC = () => {
   const { i18n } = useTranslation();
@@ -29,6 +30,15 @@ const Contact: React.FC = () => {
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
+      <SEO
+        title="Contact | With Stellie"
+        description={lang === 'en'
+          ? 'Get in touch with Stellie. A question, a collaboration, or just a hello — all messages are welcome.'
+          : 'Contacte Stellie. Une question, une collaboration, ou juste un bonjour — tous les messages sont les bienvenus.'
+        }
+        canonical={lang === 'en' ? '/en/contact' : '/contact'}
+        lang={lang}
+      />
       <Navbar />
       {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
       {sections.form?.visible !== false && <ContactForm data={sections.form} lang={lang} />}

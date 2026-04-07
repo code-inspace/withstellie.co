@@ -7,6 +7,7 @@ import { CalWidget } from './CalWidget';
 import { ContactAlt } from './ContactAlt';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 
 const Booking: React.FC = () => {
   const { i18n } = useTranslation();
@@ -29,6 +30,15 @@ const Booking: React.FC = () => {
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
+      <SEO
+        title="Réserver mon appel | With Stellie"
+        description={lang === 'en'
+          ? 'Book your free 30-minute discovery call with Stellie. No commitment — just a conversation to see if we\'re a fit.'
+          : 'Réserve ton appel découverte gratuit de 30 minutes avec Stellie. Sans engagement — juste une conversation pour voir si ça matche.'
+        }
+        canonical={lang === 'en' ? '/en/book' : '/booking'}
+        lang={lang}
+      />
       <Navbar />
       {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
       {sections.program?.visible !== false && <Program data={sections.program} lang={lang} />}

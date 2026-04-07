@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet-async';
+import { SEO } from "../../components/SEO";
 import { Hero } from "./Hero";
 import { About } from "./About";
 import { Method } from "./Method";
@@ -35,8 +37,35 @@ const Home: React.FC = () => {
 
   const lang = i18n.language;
 
+  const isEn = lang === 'en';
+
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
+      <SEO
+        title="Stellie | Coaching de shift identitaire"
+        description={isEn
+          ? 'Identity shift coaching for women and queer individuals ready to rewrite their story. MBS method — Mind · Body · Soul.'
+          : 'Coaching de shift identitaire pour les femmes et personnes queer prêtes à réécrire leur histoire. Méthode MBS — Mind · Body · Soul.'
+        }
+        canonical="/"
+        lang={lang}
+      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Stellie",
+          "jobTitle": "Coach de shift identitaire",
+          "url": "https://withstellie.co",
+          "image": "https://withstellie.co/hero.jpg",
+          "sameAs": ["https://instagram.com/shift.withstellie"],
+          "offers": {
+            "@type": "Offer",
+            "url": "https://withstellie.co/coaching",
+            "name": "Coaching individuel — Méthode MBS"
+          }
+        })}</script>
+      </Helmet>
       <Navbar />
       {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
       {sections.about?.visible !== false && <About data={sections.about} lang={lang} />}

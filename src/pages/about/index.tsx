@@ -11,6 +11,7 @@ import { Method } from './Method';
 import { CTA } from './CTA';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 
 const About: React.FC = () => {
   const { i18n } = useTranslation();
@@ -37,6 +38,15 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
+      <SEO
+        title="À propos | With Stellie"
+        description={lang === 'en'
+          ? 'Discover Stellie\'s story — identity shift coach. From burnout to reconstruction, a method built from lived experience.'
+          : 'Découvrez l\'histoire de Stellie — coach de shift identitaire. Du burnout à la reconstruction, une méthode née du vécu.'
+        }
+        canonical={lang === 'en' ? '/en/about' : '/a-propos'}
+        lang={lang}
+      />
       <Navbar />
       {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
       {sections.before?.visible !== false && <Before data={sections.before} lang={lang} />}

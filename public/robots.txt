@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /studio
+Disallow: /home2
+Disallow: /about2
+
+Sitemap: https://withstellie.co/sitemap.xml

@@ -10,6 +10,7 @@ import { FAQ } from './FAQ';
 import { Testimonials } from './Testimonials';
 import { client } from '../../lib/sanity';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../../components/SEO';
 
 const Coaching: React.FC = () => {
   const { i18n } = useTranslation();
@@ -35,6 +36,15 @@ const Coaching: React.FC = () => {
 
   return (
     <div className="bg-[#F9F3EC] min-h-screen">
+      <SEO
+        title="Coaching | With Stellie"
+        description={lang === 'en'
+          ? 'Individual identity shift coaching. MBS method — Mind · Body · Soul. Book your free discovery call.'
+          : 'Coaching individuel de shift identitaire. Méthode MBS — Mind · Body · Soul. Réserve ton appel découverte gratuit.'
+        }
+        canonical={lang === 'en' ? '/en/work-with-me' : '/coaching'}
+        lang={lang}
+      />
       <Navbar />
       {sections.headline?.visible !== false && <Headline data={sections.headline} lang={lang} />}
       {sections.methodMBS?.visible !== false && <MethodMBS data={sections.methodMBS} lang={lang} />}
