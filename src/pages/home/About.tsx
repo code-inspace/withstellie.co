@@ -38,7 +38,7 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
               {data?.[`desc_${lang}`]}
             </p>
           </div>
-          <Link to="/about" className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
+          <Link to={lang === 'en' ? "/en/about" : "/a-propos"} className="a3-text inline-flex items-center gap-4 text-[#C24C2A] hover:text-[#D35C38] uppercase tracking-widest text-sm font-medium transition-colors group">
             {data?.[`cta_${lang}`]}
             <span className="p-3 rounded-full border border-[#C24C2A]/30 group-hover:bg-[#C24C2A]/10 transition-all group-hover:translate-x-2 duration-300">
               <ArrowRight size={18} />
