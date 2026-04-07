@@ -89,7 +89,7 @@ export const Navbar: React.FC = () => {
   const isActive = (paths: string[]) => paths.some(p => pathname === p || pathname.startsWith(p + '/'));
 
   const forceLight = menuOpen || isDark;
-  const textCls  = forceLight ? 'text-[#F5EDE0]/80' : 'text-[#2A1A0E]/70';
+  const textCls  = forceLight ? 'text-[#F5EDE0]' : 'text-[#2A1A0E]';
   const logoCls  = forceLight ? 'brightness-0 invert' : 'brightness-0';
   const burgerCls = forceLight ? 'bg-[#F5EDE0]' : 'bg-[#2A1A0E]';
   const activeDot = forceLight ? 'bg-[#F5EDE0]' : 'bg-[#C24C2A]';

@@ -109,6 +109,8 @@ export const Testimonials: React.FC<{ data?: any; lang?: string }> = ({
       ref={container}
       data-navbar-theme="light"
       className="bg-[#F9F3EC] overflow-hidden"
+      role="region"
+      aria-label={lang === 'en' ? 'Testimonials' : 'Témoignages'}
     >
       <div className="h-screen flex flex-col">
         {/* Titre */}
