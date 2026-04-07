@@ -65,7 +65,7 @@ const TARGETS = [
   // Contact
   { type: 'contactHeadline',        img: 'a' },
   // Booking
-  { type: 'bookingHero',            img: 'b' },
+  { type: 'bookingProgram',         img: 'b' },
 ];
 
 // ── Main ─────────────────────────────────────────────────────────────────────

@@ -17,7 +17,7 @@ const Booking: React.FC = () => {
     window.scrollTo(0, 0);
     client.fetch(`{
       "headline":   coalesce(*[_type == "bookingHeadline"][0],   *[_type == "pageBooking"][0].bookingHeadline),
-      "program":    coalesce(*[_type == "bookingProgram"][0],    *[_type == "pageBooking"][0].bookingProgram),
+      "program":    coalesce(*[_type == "bookingProgram"][0]{ ..., backgroundImage { asset-> { url } } },    *[_type == "pageBooking"][0].bookingProgram{ ..., backgroundImage { asset-> { url } } }),
       "calWidget":  coalesce(*[_type == "bookingCalWidget"][0],  *[_type == "pageBooking"][0].bookingCalWidget),
       "contactAlt": coalesce(*[_type == "bookingContactAlt"][0], *[_type == "pageBooking"][0].bookingContactAlt)
     }`).then(setSections).catch(() => setSections({}));

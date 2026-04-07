@@ -48,30 +48,6 @@ export const Navbar: React.FC = () => {
       .then((res) => { if (res) setData(res); })
       .catch((err) => console.error("Sanity nav fetch error", err));
 
-    // Retourne la couleur de fond réelle derrière la navbar au point (x, y)
-    const getBgBehindNav = (x: number, y: number): string | null => {
-      const header = headerRef.current;
-      const elements = document.elementsFromPoint(x, y) as HTMLElement[];
-      for (const el of elements) {
-        // Ignorer la navbar et ses enfants
-        if (header && (el === header || header.contains(el))) continue;
-        // Ignorer les overlays transparents (menus, etc.)
-        const bg = getComputedStyle(el).backgroundColor;
-        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') return bg;
-      }
-      return null;
-    };
-
-    // Détermine si une couleur rgb(...) est sombre
-    const isDarkColor = (rgb: string): boolean => {
-      const match = rgb.match(/\d+/g);
-      if (!match) return true;
-      const [r, g, b] = match.map(Number);
-      // Luminance relative (formule W3C)
-      const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-      return luminance < 140;
-    };
-
     const detect = () => {
       const currentY = window.scrollY;
       const scrollingUp = currentY < lastY.current;
@@ -80,13 +56,24 @@ export const Navbar: React.FC = () => {
       setAtTop(currentY < 80);
       setVisible(currentY < 80 || scrollingUp);
 
-      // Sonder la couleur au centre de la navbar
+      // Sonder la section sous le centre de la navbar
       const navY = (headerRef.current?.getBoundingClientRect().top ?? 0)
         + (headerRef.current?.offsetHeight ?? 64) / 2;
-      const navX = window.innerWidth / 2;
 
-      const bg = getBgBehindNav(navX, navY);
-      if (bg) setIsDark(isDarkColor(bg));
+      let overDark = false;
+      // On cherche parmi tous les <section>
+      const sections = document.querySelectorAll('section');
+      for (const sec of sections) {
+        const rect = sec.getBoundingClientRect();
+        // Si le centre de la nav est dans les limites horizontales de cette section
+        if (navY >= rect.top && navY <= rect.bottom) {
+          if (sec.classList.contains('bg-[#2A1A0E]') || sec.getAttribute('data-navbar-theme') === 'dark') {
+            overDark = true;
+          }
+          break; 
+        }
+      }
+      setIsDark(overDark);
     };
 
     detect();
