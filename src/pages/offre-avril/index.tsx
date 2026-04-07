@@ -29,7 +29,10 @@ const OffreAvril: React.FC = () => {
   const t = (key: string, fallback: string) => data?.[`${key}_${lang}`] || data?.[`${key}_fr`] || fallback;
 
   return (
-    <div className="bg-[#F9F3EC] min-h-screen font-sans text-[#2A1A0E]">
+    <div 
+      className="bg-[#F9F3EC] min-h-screen font-sans text-[#2A1A0E]"
+      style={{ paddingTop: 'var(--banner-h, 0px)' }}
+    >
 
       {/* Logo */}
       <div className="flex justify-center pt-10 pb-0 px-6">
