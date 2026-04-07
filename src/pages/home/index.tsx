@@ -10,6 +10,7 @@ import { Footer } from "../../components/layout/Footer";
 import { Navbar } from "../../components/layout/Navbar";
 import { client } from "../../lib/sanity";
 import { useTranslation } from "react-i18next";
+import { PageLoader } from "../../components/layout/PageLoader";
 
 const Home: React.FC = () => {
   const { i18n } = useTranslation();
