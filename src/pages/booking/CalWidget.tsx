@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 import { Info } from 'lucide-react';
 import Cal, { getCalApi } from "@calcom/embed-react";
 
@@ -40,7 +43,7 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
           </h2>
         </div>
 
-        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full">
+        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full min-h-[650px]">
           <Cal 
             namespace="30min"
             calLink="stellie/30min"

@@ -22,7 +22,7 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
         <div className="a3-img relative w-full max-w-md mx-auto md:max-w-none order-2 md:order-1">
           <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-20px_rgba(200,90,58,0.2)]">
             <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"
+              src={data?.image?.asset?.url || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"}
               alt="Portrait de Stellie"
               className="w-full h-full object-cover"
             />

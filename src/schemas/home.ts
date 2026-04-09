@@ -155,6 +155,7 @@ export const homeAbout = defineType({
     defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
     defineField({ name: 'desc_fr', type: 'text', title: 'Desc (FR)' }),
     defineField({ name: 'desc_en', type: 'text', title: 'Desc (EN)' }),
+    defineField({ name: 'image', type: 'image', title: 'Portrait Image', options: { hotspot: true } }),
     defineField({ name: 'cta_fr', type: 'string', title: 'Cta (FR)' }),
     defineField({ name: 'cta_en', type: 'string', title: 'Cta (EN)' }),
   ],

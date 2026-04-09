@@ -30,7 +30,7 @@ const Home: React.FC = () => {
       "pricing":      coalesce(*[_type == "homePricing"][0],      *[_type == "pageHome"][0].homePricing),
       "faq":          coalesce(*[_type == "homeFAQ"][0],          *[_type == "pageHome"][0].homeFAQ),
       "cta2":         coalesce(*[_type == "homeCTA2"][0],         *[_type == "pageHome"][0].homeCTA2),
-      "about":        coalesce(*[_type == "homeAbout"][0],        *[_type == "pageHome"][0].homeAbout)
+      "about":        coalesce(*[_type == "homeAbout"][0],        *[_type == "pageHome"][0].homeAbout) { ..., image { asset-> { url } } }
     }`).then(setSections).catch(() => setSections({}));
   }, []);
 
