@@ -19,7 +19,7 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
   return (
     <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-        <div className="a3-img relative w-full max-w-md mx-auto md:max-w-none order-2 md:order-1">
+        <div className="a3-img relative w-full max-w-md mx-auto md:max-w-none order-1 md:order-1">
           <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-20px_rgba(200,90,58,0.2)]">
             <img
               src={data?.image?.asset?.url || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"}
@@ -29,7 +29,7 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
           </div>
         </div>
 
-        <div className="order-1 md:order-2">
+        <div className="order-2 md:order-2">
           <h2 className="a3-text text-4xl md:text-5xl lg:text-6xl font-display text-[#2A1A0E] mb-10">
             {data?.[`title_${lang}`]}
           </h2>
