@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
-
 import { Link } from 'react-router-dom';
 
 export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }) => {
@@ -22,7 +21,7 @@ export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang
   const cta = data[`cta_${lang}`];
 
   return (
-    <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] rounded-[3rem] mx-4 md:mx-8 mb-12 shadow-2xl relative overflow-hidden">
+    <section ref={container} data-navbar-theme="dark" className="pt-32 pb-44 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative overflow-hidden">
       {data?.backgroundImage?.asset?.url && (
         <>
           <img src={data.backgroundImage.asset.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover z-0" />
@@ -57,6 +56,12 @@ export const Method: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang
             </span>
           </Link>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
+          <path d="M0,30 C200,90 400,0 600,45 C800,90 1000,10 1200,50 C1310,72 1380,30 1440,20 L1440,110 L0,110 Z" fill="#EDE7DF" />
+        </svg>
       </div>
     </section>
   );
