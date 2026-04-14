@@ -1,11 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Info } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
-import { Info } from 'lucide-react';
-import Cal, { getCalApi } from "@calcom/embed-react";
 
 export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
@@ -16,23 +15,8 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
     });
     tl.fromTo('.cal-header', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
       .fromTo('.cal-widget', { opacity: 0, scale: 0.98, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power3.out' }, '-=0.6')
-      .fromTo('.cal-reassurance', { opacity: 0, y: 20 }, { opacity: 1, y:0, duration: 1 }, '-=0.4');
+      .fromTo('.cal-reassurance', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, '-=0.4');
   }, { scope: container });
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({"namespace":"30min"});
-      cal("ui", {
-        "theme": "light",
-        "cssVarsPerTheme": {
-          "light": {"cal-brand": "#C24C2A"},
-          "dark": {"cal-brand": "#C24C2A"}
-        },
-        "hideEventTypeDetails": false,
-        "layout": "month_view"
-      });
-    })();
-  }, []);
 
   return (
     <section data-navbar-theme="light" ref={container} className="py-16 px-6 md:px-16 bg-[#F9F3EC]">
@@ -44,11 +28,10 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
         </div>
 
         <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full min-h-[650px]">
-          <Cal 
-            namespace="30min"
-            calLink="stellie/30min"
-            style={{ width: "100%" }}
-            config={{ "layout": "month_view", "useSlotsViewOnSmallScreen": "true", "theme": "light" }}
+          <iframe
+            src="https://cal.eu/withstellie.co/get-to-know-call?embed=true&theme=light&brandColor=%23C24C2A&brandTextColor=%23F5EDE0&brandBgColor=%23F9F3EC"
+            style={{ width: '100%', height: '650px', border: 'none' }}
+            title="Calendrier de réservation"
           />
         </div>
 
