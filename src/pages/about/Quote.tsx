@@ -22,7 +22,7 @@ export const Quote: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
       )}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#C24C2A]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <p className="quote-text font-display italic text-4xl md:text-5xl lg:text-7xl leading-tight">
+        <p className="quote-text font-display text-4xl md:text-5xl lg:text-7xl leading-tight">
           {data?.[`text1_${lang}`]}<br/>
           <span className="text-[#C24C2A] block mt-8">{data?.[`text2_${lang}`]}</span>
         </p>

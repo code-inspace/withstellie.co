@@ -45,7 +45,7 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
             ))}
           </div>
           <div className="fw-conclusion p-10 rounded-3xl bg-[#F5EDE0] text-[#2A1A0E] text-center">
-            <p className="text-xl md:text-2xl font-display italic leading-relaxed">
+            <p className="text-xl md:text-2xl font-display leading-relaxed">
               {data?.[`subtitle_${lang}`]}
             </p>
           </div>

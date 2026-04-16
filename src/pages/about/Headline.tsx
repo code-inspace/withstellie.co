@@ -48,7 +48,7 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({
         <h1 className="about-head font-display text-5xl md:text-7xl lg:text-[7rem] text-center leading-[1.1] mb-8">
           {data?.[`title_${lang}`]}
         </h1>
-        <p className="about-head text-2xl md:text-4xl font-light italic text-[#C24C2A] text-center max-w-4xl mx-auto leading-relaxed mb-20 whitespace-pre-line">
+        <p className="about-head text-2xl md:text-4xl font-light text-[#C24C2A] text-center max-w-4xl mx-auto leading-relaxed mb-20 whitespace-pre-line">
           {data?.[`subtitle_${lang}`]}
         </p>
       </div>

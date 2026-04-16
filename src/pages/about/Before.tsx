@@ -17,7 +17,7 @@ export const Before: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
     <section data-navbar-theme="light" ref={container} className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
         <div className="md:w-1/3">
-          <h2 className="before-title font-display text-5xl md:text-6xl text-[#2A1A0E] italic sticky top-32">
+          <h2 className="before-title font-display text-5xl md:text-6xl text-[#2A1A0E] sticky top-32">
             {data?.[`title_${lang}`]}
           </h2>
         </div>

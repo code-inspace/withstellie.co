@@ -26,7 +26,7 @@ export const TurningPoint: React.FC<{ data?: any; lang?: string }> = ({ data, la
       <div className="absolute -left-32 -top-32 w-96 h-96 bg-[#C24C2A]/20 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-4xl mx-auto relative z-10 text-center">
-        <h2 className="tp-content font-display text-5xl md:text-6xl text-[#C24C2A] italic mb-16">
+        <h2 className="tp-content font-display text-5xl md:text-6xl text-[#C24C2A] mb-16">
           {data?.[`title_${lang}`]}
         </h2>
         

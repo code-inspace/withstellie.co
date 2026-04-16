@@ -26,7 +26,7 @@ export const Program: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 
         </>
       )}
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="prog-title font-display text-4xl md:text-5xl text-center mb-20 text-[#C24C2A] italic">
+        <h2 className="prog-title font-display text-4xl md:text-5xl text-center mb-20 text-[#C24C2A]">
           {data?.[`title_${lang}`]}
         </h2>
 

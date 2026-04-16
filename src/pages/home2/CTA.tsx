@@ -32,7 +32,7 @@ export const CTA: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang })
           {title}
         </h2>
         
-        <p className="text-2xl md:text-3xl font-light italic mb-14 relative z-10 opacity-90 leading-relaxed">
+        <p className="text-2xl md:text-3xl font-light mb-14 relative z-10 opacity-90 leading-relaxed">
           <span className="block mb-2">{text1}</span>
           <span className="block mb-4">{text2}</span>
           <span className="font-medium not-italic mt-4 block text-white">{text3}</span>

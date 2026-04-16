@@ -25,7 +25,7 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
           {data?.[`title_${lang}`]}
         </h2>
         
-        <p className="text-2xl md:text-3xl font-light italic mb-16 relative z-10 opacity-90 leading-relaxed">
+        <p className="text-2xl md:text-3xl font-light mb-16 relative z-10 opacity-90 leading-relaxed">
           {data?.[`text1_${lang}`]}<br/>
           {data?.[`text2_${lang}`]}<br/>
           <span className="font-medium not-italic mt-6 block text-[#F5EDE0]">{data?.[`text3_${lang}`]}</span>

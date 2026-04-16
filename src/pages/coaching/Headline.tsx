@@ -17,7 +17,7 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang =
       <div className="max-w-5xl mx-auto text-center">
         <h1 className="headline-text font-display text-6xl md:text-8xl lg:text-[7rem] text-[#2A1A0E] tracking-tight leading-[0.95] mb-10">
           {data?.[`title_${lang}`]}<br />
-          <span className="italic text-[#C24C2A] block mt-4">{data?.[`eyebrow_${lang}`]}</span>
+          <span className="text-[#C24C2A] block mt-4">{data?.[`eyebrow_${lang}`]}</span>
         </h1>
         <p className="headline-text text-xl md:text-2xl text-[#2A1A0E]/60 font-light tracking-wide whitespace-pre-line">
           {data?.[`subtitle_${lang}`]}

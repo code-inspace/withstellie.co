@@ -22,7 +22,7 @@ export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, l
           {data?.[`title_${lang}`]}
         </h2>
 
-        <p className="text-2xl font-light text-[#C24C2A] italic mb-6 relative z-10">
+        <p className="text-2xl font-light text-[#C24C2A] mb-6 relative z-10">
           {data?.[`subtitle_${lang}`]}
         </p>
 

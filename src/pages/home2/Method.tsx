@@ -65,7 +65,7 @@ export const Method: React.FC<{ data?: any; lang: string }> = ({
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24 m-head opacity-0">
           <h2 className="font-display text-5xl md:text-7xl mb-8">{title}</h2>
-          <p className="text-xl md:text-3xl font-light text-[#C24C2A] italic max-w-2xl mx-auto whitespace-pre-line">
+          <p className="text-xl md:text-3xl font-light text-[#C24C2A] max-w-2xl mx-auto whitespace-pre-line">
             {subtitle}
           </p>
         </div>
@@ -82,7 +82,7 @@ export const Method: React.FC<{ data?: any; lang: string }> = ({
               <div className="text-5xl font-display italic text-[#C24C2A] mb-8 relative z-10">
                 {card.title}
               </div>
-              <p className="text-lg leading-relaxed font-light mt-auto text-[#F5EDE0]/80 relative z-10">
+              <p className="text-lg leading-relaxed font-light text-[#F5EDE0]/80 relative z-10">
                 {card[`desc_${lang}`] || card.desc_fr}
               </p>
             </div>

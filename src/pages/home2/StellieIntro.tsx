@@ -39,7 +39,7 @@ export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-32">
         {/* Colonne Gauche : Titre + Photo (Sticky) */}
         <div className="lg:w-5/12 flex flex-col gap-10 lg:sticky lg:top-32 h-fit relative z-10">
-          <h2 className="si-title opacity-0 font-display text-5xl md:text-7xl text-[#2A1A0E] italic">
+          <h2 className="si-title opacity-0 font-display text-5xl md:text-7xl text-[#2A1A0E]">
             {title}
           </h2>
           
@@ -70,7 +70,7 @@ export const StellieIntro: React.FC<{ data?: any, lang: string }> = ({ data = {}
             {text3}
           </p>
           <div 
-            className="si-text opacity-0 text-2xl md:text-4xl font-display text-[#C24C2A] italic leading-relaxed whitespace-pre-line mt-8"
+            className="si-text opacity-0 text-2xl md:text-4xl font-display text-[#C24C2A] leading-relaxed whitespace-pre-line mt-8"
             ref={undefined}
           />
           

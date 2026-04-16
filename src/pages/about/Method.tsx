@@ -27,7 +27,7 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20 meth-title">
           <h2 className="font-display text-5xl md:text-6xl text-[#2A1A0E] mb-8">{data?.[`title_${lang}`]}</h2>
-          <p className="text-2xl font-light text-[#C24C2A] italic mb-6">
+          <p className="text-2xl font-light text-[#C24C2A] mb-6">
             {data?.[`subtitle_${lang}`]}
           </p>
           <p className="text-xl text-[#2A1A0E]/70 font-light max-w-2xl mx-auto leading-relaxed whitespace-pre-line">
@@ -38,7 +38,7 @@ export const Method: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
         <div className="space-y-6 mb-20">
           {methods.map((m, i) => (
             <div key={i} className="meth-item bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-[#2A1A0E]/5 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 transition-transform duration-500 hover:-translate-y-2 hover:shadow-md">
-              <div className="text-2xl font-display italic text-[#C24C2A] md:min-w-[200px]">{m.name}</div>
+              <div className="text-2xl font-display text-[#C24C2A] md:min-w-[200px]">{m.name}</div>
               <div className="text-lg md:text-xl font-light text-[#2A1A0E]/70 leading-relaxed">{m.desc}</div>
             </div>
           ))}

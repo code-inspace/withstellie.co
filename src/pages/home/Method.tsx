@@ -34,7 +34,7 @@ export const Method: React.FC<{ data?: HomeMethod; lang?: string }> = ({ data, l
                 <div className="absolute -right-10 -top-10 text-[12rem] font-sans text-[#F5EDE0]/5 font-bold leading-none select-none pointer-events-none">
                   {card.letter}
                 </div>
-                <div className="text-6xl font-display italic text-[#C24C2A] mb-6">{card.title}</div>
+                <div className="text-6xl font-display text-[#C24C2A] mb-6">{card.title}</div>
                 <p className="text-lg leading-relaxed font-light mt-auto w-[90%] text-[#F5EDE0]/80">{c[`desc_${lang}`] || card.desc_fr}</p>
               </div>
             );

@@ -48,7 +48,7 @@ export const Offers: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
                 <div className={`text-sm uppercase tracking-widest font-medium mb-6 ${offer.highlighted ? 'text-[#F5EDE0]/60' : 'text-[#2A1A0E]/50'}`}>
                   {offer[`duration_${lang}`]} <span className="mx-2">·</span> {startingAt} {offer.price}
                 </div>
-                <p className={`font-medium italic leading-relaxed ${offer.highlighted ? 'text-[#F5EDE0]' : 'text-[#2A1A0E]'}`}>
+                <p className={`font-medium leading-relaxed ${offer.highlighted ? 'text-[#F5EDE0]' : 'text-[#2A1A0E]'}`}>
                   {offer[`subtitle_${lang}`]}
                 </p>
                 {offer[`description_${lang}`] && (
