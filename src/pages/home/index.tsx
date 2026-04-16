@@ -41,7 +41,7 @@ const Home: React.FC = () => {
   const isEn = lang === 'en';
 
   return (
-    <div id="main-content" className="bg-[#F9F3EC] min-h-screen">
+    <div id="main-content" className="bg-[#F9F3EC] min-h-screen overflow-x-hidden">
       <SEO
         title="Stellie | Coaching de shift identitaire"
         description={isEn
@@ -68,11 +68,24 @@ const Home: React.FC = () => {
         })}</script>
       </Helmet>
       <Navbar />
+
+      {/* Hero — dark */}
       {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
-      {sections.about?.visible !== false && <About data={sections.about} lang={lang} />}
+
+      {/* About zone — cream #F9F3EC */}
+      <div className="bg-[#F9F3EC]">
+        {sections.about?.visible !== false && <About data={sections.about} lang={lang} />}
+      </div>
+
+      {/* Method — full width dark, wave built-in at bottom */}
       {sections.method?.visible !== false && <Method data={sections.method} lang={lang} />}
-      {sections.testimonials?.visible !== false && <Testimonials data={sections.testimonials} lang={lang} />}
-      {sections.cta?.visible !== false && <CTA data={sections.cta} lang={lang} />}
+
+      {/* Testimonials zone — warm #EDE7DF */}
+      <div className="bg-[#EDE7DF]">
+        {sections.testimonials?.visible !== false && <Testimonials data={sections.testimonials} lang={lang} />}
+        {sections.cta?.visible !== false && <CTA data={sections.cta} lang={lang} />}
+      </div>
+
       <Footer />
     </div>
   );

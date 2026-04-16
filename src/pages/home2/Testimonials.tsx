@@ -16,7 +16,7 @@ export const Testimonials: React.FC<{ data?: any, lang: string }> = ({ data = {}
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-16 bg-[#F9F3EC]">
+    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-16 bg-[#EDE7DF]">
       <div className="max-w-6xl mx-auto">
         <h2 className="t-title opacity-0 font-display text-5xl md:text-6xl text-center text-[#2A1A0E] mb-20 italic">
           {data[`title_${lang}`]}

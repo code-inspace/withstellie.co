@@ -56,7 +56,7 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
     <section
       ref={container}
       data-navbar-theme="dark"
-      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden bg-[#2A1A0E] rounded-b-[3rem] shadow-2xl z-10 px-6"
+      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden bg-[#2A1A0E] z-10 px-6"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -68,8 +68,15 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
         />
       </div>
 
+      {/* Curved bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 pointer-events-none">
+        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
+          <path d="M0,0 Q720,110 1440,0 L1440,110 L0,110 Z" fill="#F9F3EC" />
+        </svg>
+      </div>
+
       {/* Content */}
-      <div className="relative z-20 max-w-5xl mx-auto text-center text-[#F5EDE0] pt-24">
+      <div className="relative z-20 max-w-5xl mx-auto text-center text-[#F5EDE0] pt-24 pb-28">
         <p className="h3-sub opacity-0 text-xs md:text-sm uppercase tracking-[0.3em] font-medium text-[#C24C2A] mb-8">
           {d?.[`eyebrow_${lang}`]}
         </p>

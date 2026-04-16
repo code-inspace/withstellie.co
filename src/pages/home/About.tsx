@@ -20,7 +20,20 @@ export const About: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'f
     <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
       <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-16 md:gap-24 items-center">
         <div className="a3-img relative w-full max-w-md mx-auto md:max-w-none order-1 md:order-1">
-          <div className="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-20px_rgba(200,90,58,0.2)]">
+          <svg width="0" height="0" style={{ position: 'absolute' }}>
+            <defs>
+              <clipPath id="blobAbout" clipPathUnits="objectBoundingBox">
+                <path d="M0.14,0.06 C0.38,0.00 0.76,0.02 0.91,0.17 C0.99,0.27 0.97,0.50 0.91,0.68 C0.84,0.86 0.93,0.96 0.76,0.99 C0.57,1.00 0.27,0.98 0.11,0.88 C0.01,0.79 0.02,0.57 0.07,0.40 C0.13,0.22 0.00,0.13 0.14,0.06 Z" />
+              </clipPath>
+            </defs>
+          </svg>
+          <div
+            className="aspect-[3/4]"
+            style={{
+              clipPath: 'url(#blobAbout)',
+              filter: 'drop-shadow(0 20px 40px rgba(200,90,58,0.18))',
+            }}
+          >
             <img
               src={data?.image?.asset?.url || "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop"}
               alt="Portrait de Stellie"
