@@ -15,7 +15,7 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang =
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="dark" className="pt-40 pb-24 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] min-h-[85vh] flex flex-col justify-center rounded-b-[3rem] relative overflow-hidden">
+    <section ref={container} data-navbar-theme="dark" className="pt-40 pb-36 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
       {data?.backgroundImage?.asset?.url && (
         <>
           <img src={data.backgroundImage.asset.url} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover z-0" />
@@ -40,6 +40,12 @@ export const Headline: React.FC<{ data?: any; lang?: string }> = ({ data, lang =
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-[-1px] left-0 right-0 z-30 pointer-events-none">
+        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
+          <path d="M0,0 Q720,110 1440,0 L1440,110 L0,110 Z" fill="#F9F3EC" />
+        </svg>
       </div>
     </section>
   );

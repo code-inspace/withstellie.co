@@ -69,7 +69,7 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
       </div>
 
       {/* Curved bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 pointer-events-none">
+      <div className="absolute bottom-[-1px] left-0 right-0 z-30 pointer-events-none">
         <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
           <path d="M0,0 Q720,110 1440,0 L1440,110 L0,110 Z" fill="#F9F3EC" />
         </svg>
