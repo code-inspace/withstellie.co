@@ -83,7 +83,7 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
         </p>
 
         <Link
-          to="/booking"
+          to={lang === 'en' ? '/en/book' : '/booking'}
           className="h3-cta opacity-0 inline-flex items-center gap-4 bg-[#C24C2A] text-white px-10 py-5 rounded-full uppercase tracking-widest text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group"
         >
           {d?.[`cta_${lang}`]}

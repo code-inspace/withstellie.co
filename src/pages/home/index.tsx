@@ -45,8 +45,8 @@ const Home: React.FC = () => {
       <SEO
         title="Stellie | Coaching de shift identitaire"
         description={isEn
-          ? 'Identity shift coaching for women and queer individuals ready to rewrite their story. MBS method — Mind · Body · Soul.'
-          : 'Coaching de shift identitaire pour les femmes et personnes queer prêtes à réécrire leur histoire. Méthode MBS — Mind · Body · Soul.'
+          ? 'Identity shift coaching for women and queer individuals ready to rewrite their story. MBS method Mind Body Soul.'
+          : 'Coaching de shift identitaire pour les femmes et personnes queer prêtes à réécrire leur histoire. Méthode MBS Mind Body Soul.'
         }
         canonical="/"
         lang={lang}
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
           "offers": {
             "@type": "Offer",
             "url": "https://withstellie.co/coaching",
-            "name": "Coaching individuel — Méthode MBS"
+            "name": "Coaching individuel Méthode MBS"
           }
         })}</script>
       </Helmet>
