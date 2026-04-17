@@ -16,24 +16,24 @@ export const Testimonials: React.FC<{ data?: any, lang: string }> = ({ data = {}
   }, { scope: container });
 
   return (
-    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-16 bg-[#EDE7DF]">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="t-title opacity-0 font-display text-5xl md:text-6xl text-center text-[#2A1A0E] mb-20 italic">
+    <section ref={container} data-navbar-theme="light" className="py-20 px-6 md:px-16 bg-[#EDE7DF]">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="t-title opacity-0 font-display text-4xl md:text-5xl text-center text-[#2A1A0E] mb-14 italic">
           {data[`title_${lang}`]}
         </h2>
-        
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10">
           {testimonials.map((testi: any, i: number) => (
-            <div key={i} className="t-card opacity-0 bg-white rounded-[2.5rem] p-12 shadow-xl border border-[#2A1A0E]/5 relative flex flex-col">
-              <Quote className="text-[#C24C2A] w-12 h-12 opacity-30 mb-8" />
-              <p className="font-display text-3xl md:text-4xl leading-relaxed mb-12 text-[#2A1A0E]/90 italic flex-grow">
+            <div key={i} className="t-card opacity-0 bg-white rounded-[2rem] p-8 shadow-xl border border-[#2A1A0E]/5 relative flex flex-col">
+              <Quote className="text-[#C24C2A] w-8 h-8 opacity-30 mb-5" />
+              <p className="font-display text-2xl md:text-3xl leading-relaxed mb-8 text-[#2A1A0E]/90 italic flex-grow">
                 "{testi[`quote_${lang}`] || testi.quote_fr}"
               </p>
-              <div className="border-t border-[#2A1A0E]/10 pt-6">
-                <p className="text-lg font-medium text-[#C24C2A]">
+              <div className="border-t border-[#2A1A0E]/10 pt-4">
+                <p className="text-base font-medium text-[#C24C2A]">
                   {testi[`author_${lang}`] || testi.author_fr}
                 </p>
-                <p className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mt-2">
+                <p className="text-xs uppercase tracking-widest text-[#2A1A0E]/40 mt-1">
                   {testi[`role_${lang}`] || testi.role_fr}
                 </p>
               </div>
