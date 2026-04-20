@@ -19,7 +19,7 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
 
 
   return (
-    <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative overflow-hidden">
+    <section ref={container} data-navbar-theme="dark" className="py-32 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative">
       {data?.backgroundImage?.asset?.url && (
         <>
           <div 
@@ -50,6 +50,15 @@ export const ForWho: React.FC<{ data?: any; lang?: string }> = ({ data, lang = '
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none translate-y-[6px] z-10">
+        <svg viewBox="0 0 375 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block md:hidden" style={{ height: '80px' }}>
+          <path d="M0,40 C100,80 275,0 375,40 L375,80 L0,80 Z" fill="#F9F3EC" />
+        </svg>
+        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full hidden md:block">
+          <path d="M0,30 C200,90 400,0 600,45 C800,90 1000,10 1200,50 C1310,72 1380,30 1440,20 L1440,110 L0,110 Z" fill="#F9F3EC" />
+        </svg>
       </div>
     </section>
   );

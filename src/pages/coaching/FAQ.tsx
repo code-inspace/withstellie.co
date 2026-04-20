@@ -57,6 +57,7 @@ export const FAQ: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
           ))}
         </div>
       </div>
+
     </section>
   );
 };
