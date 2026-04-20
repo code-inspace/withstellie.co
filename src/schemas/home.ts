@@ -161,3 +161,21 @@ export const homeAbout = defineType({
   ],
   preview: { prepare: () => ({ title: 'Home — About' }) }
 });
+
+export const homeReprogrammation = defineType({
+  name: 'homeReprogrammation', title: 'Home - Reprogrammation', type: 'document',
+  fields: [
+    defineField({ name: 'visible', type: 'boolean', title: 'Visible', initialValue: true }),
+    defineField({ name: 'title_fr', type: 'string', title: 'Title (FR)' }),
+    defineField({ name: 'title_en', type: 'string', title: 'Title (EN)' }),
+    defineField({ name: 'subtitle_fr', type: 'string', title: 'Subtitle (FR)' }),
+    defineField({ name: 'subtitle_en', type: 'string', title: 'Subtitle (EN)' }),
+    defineField({ name: 'text1_fr', type: 'text', title: 'Text 1 (FR)' }),
+    defineField({ name: 'text1_en', type: 'text', title: 'Text 1 (EN)' }),
+    defineField({ name: 'text2_fr', type: 'text', title: 'Text 2 (FR)' }),
+    defineField({ name: 'text2_en', type: 'text', title: 'Text 2 (EN)' }),
+    defineField({ name: 'text3_fr', type: 'text', title: 'Text 3 (FR)' }),
+    defineField({ name: 'text3_en', type: 'text', title: 'Text 3 (EN)' }),
+  ],
+  preview: { prepare: () => ({ title: 'Home — Reprogrammation' }) }
+});

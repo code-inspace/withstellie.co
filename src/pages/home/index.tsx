@@ -22,6 +22,7 @@ const Home: React.FC = () => {
     window.scrollTo(0, 0);
     client.fetch(`{
       "hero":         coalesce(*[_type == "homeHero"][0],         *[_type == "pageHome"][0].homeHero) { ..., backgroundImage { asset-> { url } } },
+      "reprogrammation": coalesce(*[_type == "homeReprogrammation"][0], *[_type == "pageHome"][0].homeReprogrammation),
       "hook":         coalesce(*[_type == "homeHook"][0],         *[_type == "pageHome"][0].homeHook),
       "presentation": coalesce(*[_type == "homePresentation"][0], *[_type == "pageHome"][0].homePresentation),
       "focus":        coalesce(*[_type == "homeFocus"][0],        *[_type == "pageHome"][0].homeFocus),
@@ -73,7 +74,7 @@ const Home: React.FC = () => {
       {/* Hero — dark */}
       {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
 
-      <Reprogrammation lang={lang} />
+      {sections.reprogrammation?.visible !== false && <Reprogrammation data={sections.reprogrammation} lang={lang} />}
 
       {/* About zone — cream #F9F3EC */}
       <div className="bg-[#F9F3EC]">

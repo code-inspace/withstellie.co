@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import type { HomeReprogrammation } from '../../types/sanity';
 
-export const Reprogrammation: React.FC<{ lang?: string }> = ({ lang = 'fr' }) => {
+export const Reprogrammation: React.FC<{ data?: HomeReprogrammation; lang?: string }> = ({ data, lang = 'fr' }) => {
+  const d = data as Record<string, string> | undefined;
   const container = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -38,17 +40,17 @@ export const Reprogrammation: React.FC<{ lang?: string }> = ({ lang = 'fr' }) =>
   const isEn = lang === 'en';
 
   const content = {
-    title: isEn ? "Identity Reprogramming." : "La Reprogrammation Identitaire.",
-    subtitle: isEn ? "A profound inner shift." : "Un shift intérieur profond.",
-    text1: isEn 
+    title: d?.[`title_${lang}`] || (isEn ? "Identity Reprogramming." : "La Reprogrammation Identitaire."),
+    subtitle: d?.[`subtitle_${lang}`] || (isEn ? "A profound inner shift." : "Un shift intérieur profond."),
+    text1: d?.[`text1_${lang}`] || (isEn 
       ? "Our identity is not static. It is the result of years of conditioning, beliefs, and experiences that have shaped our perception of ourselves and the world."
-      : "Notre identité n'est pas statique. Elle est le fruit d'années de conditionnements, de croyances et d'expériences qui ont forgé notre perception de nous-même et du monde.",
-    text2: isEn
+      : "Notre identité n'est pas statique. Elle est le fruit d'années de conditionnements, de croyances et d'expériences qui ont forgé notre perception de nous-même et du monde."),
+    text2: d?.[`text2_${lang}`] || (isEn
       ? "Identity reprogramming is a profound process that consists of deconstructing limiting patterns to rebuild an identity aligned with your true desires. It's not about becoming someone else, but about removing layers of conditioning to reveal who you truly are."
-      : "La reprogrammation identitaire est un processus profond qui consiste à déconstruire les schémas limitants pour reconstruire une identité alignée avec vos véritables désirs. Il ne s'agit pas de devenir quelqu'un d'autre, mais de retirer les couches de conditionnement pour révéler qui vous êtes vraiment.",
-    text3: isEn
+      : "La reprogrammation identitaire est un processus profond qui consiste à déconstruire les schémas limitants pour reconstruire une identité alignée avec vos véritables désirs. Il ne s'agit pas de devenir quelqu'un d'autre, mais de retirer les couches de conditionnement pour révéler qui vous êtes vraiment."),
+    text3: d?.[`text3_${lang}`] || (isEn
       ? "It is a total realignment of your Mind, Body, and Soul, allowing you to fully embody your power and manifest the life you deserve."
-      : "C'est un réalignement total de votre Mind (esprit), Body (corps) et Soul (âme), vous permettant d'incarner pleinement votre puissance et de manifester la vie que vous méritez."
+      : "C'est un réalignement total de votre Mind (esprit), Body (corps) et Soul (âme), vous permettant d'incarner pleinement votre puissance et de manifester la vie que vous méritez.")
   };
 
   return (

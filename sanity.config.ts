@@ -24,6 +24,7 @@ export default defineConfig({
                   .title('Home — Sections')
                   .items([
                     S.listItem().title('Hero').child(S.document().schemaType('homeHero').documentId('homeHero')),
+                    S.listItem().title('Reprogrammation').child(S.document().schemaType('homeReprogrammation').documentId('homeReprogrammation')),
                     S.listItem().title('Hook').child(S.document().schemaType('homeHook').documentId('homeHook')),
                     S.listItem().title('Présentation').child(S.document().schemaType('homePresentation').documentId('homePresentation')),
                     S.listItem().title('Focus').child(S.document().schemaType('homeFocus').documentId('homeFocus')),

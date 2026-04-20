@@ -46,6 +46,15 @@ export interface HomeHero {
   backgroundImage?: SanityImage;
 }
 
+export interface HomeReprogrammation {
+  visible: boolean;
+  title_fr: string; title_en: string;
+  subtitle_fr: string; subtitle_en: string;
+  text1_fr: string; text1_en: string;
+  text2_fr: string; text2_en: string;
+  text3_fr: string; text3_en: string;
+}
+
 export interface HomeHook {
   visible: boolean;
   quote_fr: string;  quote_en: string;
@@ -333,6 +342,7 @@ export interface BookingContactAlt {
 
 export interface HomeSections {
   hero?: HomeHero;
+  reprogrammation?: HomeReprogrammation;
   hook?: HomeHook;
   presentation?: HomePresentation;
   method?: HomeMethod;
