@@ -1,54 +1,133 @@
-import React, { useRef } from 'react';
-import { SafeHTML } from '../../components/SafeHTML';
-import { ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { Link } from 'react-router-dom';
-import type { HomeMethod, MethodCard } from '../../types/sanity';
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export const Method: React.FC<{ data?: HomeMethod; lang?: string }> = ({ data, lang = 'fr' }) => {
-  const d = data as Record<string, string> | undefined;
+export const Method: React.FC<{ data?: any; lang: string }> = ({
+  data = {},
+  lang,
+}) => {
   const container = useRef<HTMLElement>(null);
-  const cards: MethodCard[] = data?.cards || [];
+  const cards = data?.cards || [];
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: { trigger: container.current, start: 'top 65%', toggleActions: 'play none none reverse' }
-    });
-    tl.fromTo('.m3-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-      .fromTo('.m3-card', { opacity: 0, y: 60, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1.2, stagger: 0.15, ease: 'power3.out' }, '-=0.6');
-  }, { scope: container });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
+      tl.fromTo(
+        ".m-head",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" },
+      ).fromTo(
+        ".m-card",
+        { opacity: 0, y: 50, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power3.out",
+        },
+        "-=0.5",
+      );
+    },
+    { scope: container },
+  );
+
+  const title = data[`title_${lang}`];
+  const subtitle = data[`subtitle_${lang}`];
+  const cta = data[`cta_${lang}`];
 
   return (
-    <section ref={container} data-navbar-theme="light" className="py-32 px-6 md:px-12 bg-[#F9F3EC]">
-      <div className="container mx-auto">
-        <h2 className="m3-title text-5xl md:text-7xl font-display text-center mb-24 text-[#2A1A0E]">
-          <SafeHTML html={d?.[`title_${lang}`]} />
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
-          {cards.map((card, i) => {
-            const c = card as unknown as Record<string, string>;
-            return (
-              <div key={i} className="m3-card group bg-[#2A1A0E] text-[#F5EDE0] rounded-[2.5rem] p-10 md:p-12 relative overflow-hidden flex flex-col transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2">
-                <div className="absolute -right-10 -top-10 text-[12rem] font-sans text-[#F5EDE0]/5 font-bold leading-none select-none pointer-events-none">
-                  {card.letter}
-                </div>
-                <div className="text-6xl font-display text-[#C24C2A] mb-6">{card.title}</div>
-                <p className="text-lg leading-relaxed font-light mt-auto w-[90%] text-[#F5EDE0]/80">{c[`desc_${lang}`] || card.desc_fr}</p>
-              </div>
-            );
-          })}
+    <section
+      ref={container}
+      data-navbar-theme="dark"
+      className="pt-32 pb-44 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative"
+    >
+      {data?.backgroundImage?.asset?.url && (
+        <>
+          <img
+            src={data.backgroundImage.asset.url}
+            alt=""
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+          <div className="absolute inset-0 bg-[#2A1A0E]/80 mix-blend-multiply z-0" />
+        </>
+      )}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-24 m-head opacity-0">
+          <h2 className="font-display text-5xl md:text-7xl mb-8">{title}</h2>
+          <p className="text-xl md:text-3xl font-light text-[#C24C2A] max-w-2xl mx-auto whitespace-pre-line">
+            {subtitle}
+          </p>
         </div>
 
-        <div className="text-center">
-          <Link to="/coaching" className="inline-flex items-center gap-4 text-[#2A1A0E] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group">
-            {d?.[`subtitle_${lang}`]}
-            <span className="p-3 rounded-full border border-[#2A1A0E]/30 group-hover:bg-[#2A1A0E]/10 transition-all group-hover:translate-x-2 duration-300">
-              <ArrowRight size={18} />
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
+          {cards.map((card: any, i: number) => (
+            <div
+              key={i}
+              className="m-card opacity-0 bg-[#F5EDE0]/5 rounded-[2.5rem] p-10 md:p-12 relative overflow-hidden flex flex-col transition-all duration-500 hover:bg-[#F5EDE0]/10 hover:-translate-y-2 border border-white/5"
+            >
+              <div className="absolute -right-6 -top-10 text-[14rem] font-sans text-white/5 font-bold leading-none select-none pointer-events-none">
+                {card.letter}
+              </div>
+              <div className="text-5xl font-display italic text-[#C24C2A] mb-8 relative z-10">
+                {card.title}
+              </div>
+              <p className="text-lg leading-relaxed font-light text-[#F5EDE0]/80 relative z-10">
+                {card[`desc_${lang}`] || card.desc_fr}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center m-head opacity-0">
+          <Link
+            to="/coaching"
+            className="inline-flex items-center gap-4 text-[#F5EDE0] hover:text-[#C24C2A] uppercase tracking-widest text-sm font-medium transition-colors group"
+          >
+            {cta}
+            <span className="p-3 rounded-full border border-[#F5EDE0]/30 group-hover:bg-[#C24C2A] group-hover:border-transparent transition-all group-hover:translate-x-2 duration-300">
+              <ArrowRight size={18} className="group-hover:text-[#F5EDE0]" />
             </span>
           </Link>
         </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none translate-y-[6px] z-10">
+        {/* Mobile : vague unique */}
+        <svg
+          viewBox="0 0 375 80"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full block md:hidden"
+          style={{ height: '80px' }}
+        >
+          <path
+            d="M0,40 C100,80 275,0 375,40 L375,80 L0,80 Z"
+            fill="#EDE7DF"
+          />
+        </svg>
+        {/* Desktop : vague complexe */}
+        <svg
+          viewBox="0 0 1440 110"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full hidden md:block"
+        >
+          <path
+            d="M0,30 C200,90 400,0 600,45 C800,90 1000,10 1200,50 C1310,72 1380,30 1440,20 L1440,110 L0,110 Z"
+            fill="#EDE7DF"
+          />
+        </svg>
       </div>
     </section>
   );

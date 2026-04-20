@@ -1,4 +1,4 @@
-import { home2Hero, home2StellieIntro, home2Method, home2Testimonials, home2CTA } from './home2';
+import { home2Method, home2Testimonials } from './home2';
 import { aboutHeadline, aboutBefore, aboutTurningPoint, aboutReconstruction, aboutWhy, aboutQuote, aboutMethod, aboutCTA } from './about';
 import { contactHeadline, contactContactForm, contactAlternatives, contactRedirection } from './contact';
 import { bookingHeadline, bookingProgram, bookingCalWidget, bookingContactAlt } from './booking';
@@ -9,11 +9,8 @@ import { pageLegalNotice, pagePrivacyPolicy } from './legal';
 import { pageOffer } from './offer';
 
 export const schemaTypes = [
-  home2Hero,
-  home2StellieIntro,
   home2Method,
   home2Testimonials,
-  home2CTA,
   aboutHeadline,
   aboutBefore,
   aboutTurningPoint,

@@ -92,19 +92,7 @@ export default defineConfig({
                     S.listItem().title('Contact alternatif').child(S.document().schemaType('bookingContactAlt').documentId('bookingContactAlt')),
                   ])
               ),
-            S.listItem()
-              .title('Home 2')
-              .child(
-                S.list()
-                  .title('Home 2 — Sections')
-                  .items([
-                    S.listItem().title('Hero').child(S.document().schemaType('home2Hero').documentId('home2Hero')),
-                    S.listItem().title('Stellie Intro').child(S.document().schemaType('home2StellieIntro').documentId('home2StellieIntro')),
-                    S.listItem().title('Method').child(S.document().schemaType('home2Method').documentId('home2Method')),
-                    S.listItem().title('Testimonials').child(S.document().schemaType('home2Testimonials').documentId('home2Testimonials')),
-                    S.listItem().title('CTA').child(S.document().schemaType('home2CTA').documentId('home2CTA')),
-                  ])
-              ),
+
             S.listItem()
               .title('Offres')
               .child(
