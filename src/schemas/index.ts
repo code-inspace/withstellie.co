@@ -3,7 +3,7 @@ import { aboutHeadline, aboutBefore, aboutTurningPoint, aboutReconstruction, abo
 import { contactHeadline, contactContactForm, contactAlternatives, contactRedirection } from './contact';
 import { bookingHeadline, bookingProgram, bookingCalWidget, bookingContactAlt } from './booking';
 import { coachingHeadline, coachingMethodMBS, coachingForWho, coachingTestimonials, coachingOffers, coachingFAQ, coachingDiscoveryCall } from './coaching';
-import { homeHero, homeHook, homePresentation, homeFocus, homeMethod, homeTestimonials, homeCTA, homePricing, homeFAQ, homeCTA2, homeAbout, homeReprogrammation } from './home';
+import { homeHero, homeCTA, homeAbout, homeReprogrammation } from './home';
 import { globalNav, globalFooter } from './global';
 import { pageLegalNotice, pagePrivacyPolicy } from './legal';
 import { pageOffer } from './offer';
@@ -35,15 +35,7 @@ export const schemaTypes = [
   coachingFAQ,
   coachingDiscoveryCall,
   homeHero,
-  homeHook,
-  homePresentation,
-  homeFocus,
-  homeMethod,
-  homeTestimonials,
   homeCTA,
-  homePricing,
-  homeFAQ,
-  homeCTA2,
   homeAbout,
   homeReprogrammation,
   globalNav,

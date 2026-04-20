@@ -25,15 +25,9 @@ export default defineConfig({
                   .items([
                     S.listItem().title('Hero').child(S.document().schemaType('homeHero').documentId('homeHero')),
                     S.listItem().title('Reprogrammation').child(S.document().schemaType('homeReprogrammation').documentId('homeReprogrammation')),
-                    S.listItem().title('Hook').child(S.document().schemaType('homeHook').documentId('homeHook')),
-                    S.listItem().title('Présentation').child(S.document().schemaType('homePresentation').documentId('homePresentation')),
-                    S.listItem().title('Focus').child(S.document().schemaType('homeFocus').documentId('homeFocus')),
                     S.listItem().title('Méthode').child(S.document().schemaType('home2Method').documentId('home2Method')),
                     S.listItem().title('Témoignages').child(S.document().schemaType('home2Testimonials').documentId('home2Testimonials')),
                     S.listItem().title('CTA').child(S.document().schemaType('homeCTA').documentId('homeCTA')),
-                    S.listItem().title('Pricing').child(S.document().schemaType('homePricing').documentId('homePricing')),
-                    S.listItem().title('FAQ').child(S.document().schemaType('homeFAQ').documentId('homeFAQ')),
-                    S.listItem().title('CTA 2').child(S.document().schemaType('homeCTA2').documentId('homeCTA2')),
                     S.listItem().title('About').child(S.document().schemaType('homeAbout').documentId('homeAbout')),
                   ])
               ),

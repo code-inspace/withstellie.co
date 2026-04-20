@@ -23,15 +23,11 @@ const Home: React.FC = () => {
     client.fetch(`{
       "hero":         coalesce(*[_type == "homeHero"][0],         *[_type == "pageHome"][0].homeHero) { ..., backgroundImage { asset-> { url } } },
       "reprogrammation": coalesce(*[_type == "homeReprogrammation"][0], *[_type == "pageHome"][0].homeReprogrammation),
-      "hook":         coalesce(*[_type == "homeHook"][0],         *[_type == "pageHome"][0].homeHook),
-      "presentation": coalesce(*[_type == "homePresentation"][0], *[_type == "pageHome"][0].homePresentation),
-      "focus":        coalesce(*[_type == "homeFocus"][0],        *[_type == "pageHome"][0].homeFocus),
+
       "method":       coalesce(*[_type == "home2Method"][0],       *[_type == "pageHome2"][0].home2Method) { ..., backgroundImage { asset-> { url } } },
       "testimonials": coalesce(*[_type == "home2Testimonials"][0], *[_type == "pageHome2"][0].home2Testimonials),
       "cta":          coalesce(*[_type == "homeCTA"][0],          *[_type == "pageHome"][0].homeCTA) { ..., backgroundImage { asset-> { url } } },
-      "pricing":      coalesce(*[_type == "homePricing"][0],      *[_type == "pageHome"][0].homePricing),
-      "faq":          coalesce(*[_type == "homeFAQ"][0],          *[_type == "pageHome"][0].homeFAQ),
-      "cta2":         coalesce(*[_type == "homeCTA2"][0],         *[_type == "pageHome"][0].homeCTA2),
+
       "about":        coalesce(*[_type == "homeAbout"][0],        *[_type == "pageHome"][0].homeAbout) { ..., image { asset-> { url } } }
     }`).then(setSections).catch(() => setSections({}));
   }, []);
