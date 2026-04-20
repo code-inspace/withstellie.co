@@ -83,7 +83,7 @@ const OffreAvril: React.FC = () => {
           {t('forWhoLabel', 'Cette offre est faite pour toi si')}
         </p>
         <p className="text-xl md:text-2xl font-display font-normal text-[#2A1A0E]/80 leading-relaxed whitespace-pre-line">
-          {t('forWho', "Tu sens que quelque chose doit changer, mais tu ne sais pas encore par où commencer.\nTu es prêt·e à t'investir, pas juste à "essayer".\nTu cherches un accompagnement humain, pas une méthode de plus.")}
+          {t('forWho', "Tu sens que quelque chose doit changer, mais tu ne sais pas encore par où commencer.\nTu es prêt·e à t'investir, pas juste à \"essayer\".\nTu cherches un accompagnement humain, pas une méthode de plus.")}
         </p>
       </section>
 
