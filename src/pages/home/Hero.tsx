@@ -4,10 +4,13 @@ import { urlFor } from "../../lib/sanity";
 import { useGSAP } from "@gsap/react";
 
 import { ArrowRight } from "lucide-react";
-import { Link } from 'react-router-dom';
-import type { HomeHero } from '../../types/sanity';
+import { Link } from "react-router-dom";
+import type { HomeHero } from "../../types/sanity";
 
-export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang = 'fr' }) => {
+export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({
+  data,
+  lang = "fr",
+}) => {
   const d = data as Record<string, string> | undefined;
   const container = useRef<HTMLElement>(null);
 
@@ -45,7 +48,13 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
       tl.fromTo(
         ".h3-cta",
         { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.5)", clearProps: "transform" },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.5)",
+          clearProps: "transform",
+        },
         "-=0.5",
       );
     },
@@ -62,7 +71,11 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#2A1A0E]/70 z-10" />
         <img
-          src={data?.backgroundImage ? urlFor(data.backgroundImage).url() : "/hero.jpg"}
+          src={
+            data?.backgroundImage
+              ? urlFor(data.backgroundImage).url()
+              : "/hero.jpg"
+          }
           alt="Hero background"
           className="h3-bg w-full h-full object-cover object-center opacity-60"
         />
@@ -70,7 +83,12 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
 
       {/* Curved bottom */}
       <div className="absolute bottom-[-1px] left-0 right-0 z-30 pointer-events-none">
-        <svg viewBox="0 0 1440 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block">
+        <svg
+          viewBox="0 0 1440 110"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full block"
+        >
           <path d="M0,0 Q720,110 1440,0 L1440,110 L0,110 Z" fill="#F9F3EC" />
         </svg>
       </div>
@@ -80,7 +98,7 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
         <p className="h3-sub opacity-0 text-xs md:text-sm uppercase tracking-[0.3em] font-medium text-[#C24C2A] mb-8">
           {d?.[`eyebrow_${lang}`]}
         </p>
-        
+
         <h1 className="h3-title opacity-0 font-display text-5xl md:text-7xl lg:text-[7rem] leading-[1.05] tracking-tight mb-8 whitespace-pre-line">
           {d?.[`title_${lang}`]}
         </h1>
@@ -90,11 +108,14 @@ export const Hero: React.FC<{ data?: HomeHero; lang?: string }> = ({ data, lang 
         </p>
 
         <Link
-          to={lang === 'en' ? '/en/book' : '/booking'}
-          className="h3-cta opacity-0 inline-flex items-center gap-3 md:gap-4 bg-[#C24C2A] text-white px-7 py-3 md:px-10 md:py-5 rounded-full uppercase tracking-widest text-xs md:text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group"
+          to={lang === "en" ? "/en/book" : "/booking"}
+          className="h3-cta opacity-0 inline-flex items-center gap-3 md:gap-4 bg-[#C24C2A] text-white px-7 py-5 md:px-10 md:py-5 rounded-full uppercase tracking-widest text-xs md:text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group"
         >
           {d?.[`cta_${lang}`]}
-          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <ArrowRight
+            size={18}
+            className="group-hover:translate-x-1 transition-transform"
+          />
         </Link>
       </div>
     </section>

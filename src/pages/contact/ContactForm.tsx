@@ -140,7 +140,7 @@ export const ContactForm: React.FC<{ data?: ContactFormData; lang?: string }> = 
             <button type="submit"
               disabled={status === 'sending'}
               aria-busy={status === 'sending'}
-              className="w-full md:w-auto bg-[#2A1A0E] text-[#F5EDE0] px-8 py-3 md:px-16 md:py-5 rounded-full font-medium uppercase tracking-widest text-xs md:text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 mb-6 shadow-md disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full md:w-auto bg-[#2A1A0E] text-[#F5EDE0] px-8 py-5 md:px-16 rounded-full font-medium uppercase tracking-widest text-xs md:text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 mb-6 shadow-md disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               {status === 'sending'
                 ? (lang === 'en' ? 'Sending…' : 'Envoi…')
