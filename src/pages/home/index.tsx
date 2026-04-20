@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet-async';
 import { SEO } from "../../components/SEO";
 import { Hero } from "./Hero";
+import { Reprogrammation } from "./Reprogrammation";
 import { About } from "./About";
 import { Method } from "../home2/Method";
 import { Testimonials } from "../home2/Testimonials";
@@ -71,6 +72,8 @@ const Home: React.FC = () => {
 
       {/* Hero — dark */}
       {sections.hero?.visible !== false && <Hero data={sections.hero} lang={lang} />}
+
+      <Reprogrammation lang={lang} />
 
       {/* About zone — cream #F9F3EC */}
       <div className="bg-[#F9F3EC]">
