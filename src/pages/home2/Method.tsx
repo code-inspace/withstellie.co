@@ -49,7 +49,7 @@ export const Method: React.FC<{ data?: any; lang: string }> = ({
     <section
       ref={container}
       data-navbar-theme="dark"
-      className="pt-32 pb-44 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative overflow-hidden"
+      className="pt-32 pb-44 px-6 md:px-16 bg-[#2A1A0E] text-[#F5EDE0] relative"
     >
       {data?.backgroundImage?.asset?.url && (
         <>
@@ -102,12 +102,26 @@ export const Method: React.FC<{ data?: any; lang: string }> = ({
         </div>
       </div>
 
-      <div className="absolute bottom-[-1px] left-0 right-0 pointer-events-none">
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none translate-y-[6px] z-10">
+        {/* Mobile : vague unique */}
+        <svg
+          viewBox="0 0 375 80"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          className="w-full block md:hidden"
+          style={{ height: '80px' }}
+        >
+          <path
+            d="M0,40 C100,80 275,0 375,40 L375,80 L0,80 Z"
+            fill="#EDE7DF"
+          />
+        </svg>
+        {/* Desktop : vague complexe */}
         <svg
           viewBox="0 0 1440 110"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
-          className="w-full block"
+          className="w-full hidden md:block"
         >
           <path
             d="M0,30 C200,90 400,0 600,45 C800,90 1000,10 1200,50 C1310,72 1380,30 1440,20 L1440,110 L0,110 Z"
