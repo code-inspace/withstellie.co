@@ -43,7 +43,7 @@ export const NotFound: React.FC = () => {
               L'espace que tu cherches n'existe pas ou a peut-être été déplacé.
             </p>
 
-            <Link to="/" className="nf-btn opacity-0 inline-flex items-center gap-4 bg-[#2A1A0E] text-[#F5EDE0] px-10 py-5 rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 shadow-xl group">
+            <Link to="/" className="nf-btn opacity-0 inline-flex items-center gap-3 md:gap-4 bg-[#2A1A0E] text-[#F5EDE0] px-7 py-3 md:px-10 md:py-5 rounded-full font-medium uppercase tracking-widest text-xs md:text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 shadow-xl group">
               <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               Retourner à l'accueil
             </Link>

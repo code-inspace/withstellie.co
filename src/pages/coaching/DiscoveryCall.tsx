@@ -31,7 +31,7 @@ export const DiscoveryCall: React.FC<{ data?: any; lang?: string }> = ({ data, l
         </p>
 
         <div className="relative z-10 flex flex-col items-center">
-          <button className="bg-[#2A1A0E] text-white px-10 py-5 rounded-full flex items-center justify-center gap-4 font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 group mb-6 shadow-xl shadow-[#2A1A0E]/20">
+          <button className="bg-[#2A1A0E] text-white px-7 py-3 md:px-10 md:py-5 rounded-full flex items-center justify-center gap-3 md:gap-4 font-medium uppercase tracking-widest text-xs md:text-sm transition-all duration-300 hover:bg-[#C24C2A] hover:scale-105 group mb-6 shadow-xl shadow-[#2A1A0E]/20">
             {data?.[`cta_${lang}`]}
           </button>
 

@@ -45,7 +45,7 @@ export const CTA: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr'
         <div className="flex flex-col items-center gap-6">
           <Link
             to="/booking"
-            className="w-fit inline-flex items-center justify-center gap-4 px-16 py-5 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium uppercase tracking-widest text-sm transition-all duration-300 hover:bg-[#F5EDE0] hover:text-[#2A1A0E] hover:scale-105 shadow-md group"
+            className="w-fit inline-flex items-center justify-center gap-3 md:gap-4 px-8 py-3 md:px-16 md:py-5 bg-[#C24C2A] text-[#F5EDE0] rounded-full font-medium uppercase tracking-widest text-xs md:text-sm transition-all duration-300 hover:bg-[#F5EDE0] hover:text-[#2A1A0E] hover:scale-105 shadow-md group"
           >
             {data?.[`cta_${lang}`]}
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

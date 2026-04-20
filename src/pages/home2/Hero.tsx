@@ -44,7 +44,7 @@ export const Hero: React.FC<{ data?: any, lang: string }> = ({ data = {}, lang }
           {subtitle}
         </p>
 
-        <Link to="/booking" className="h2-btn opacity-0 inline-flex items-center gap-4 bg-[#C24C2A] text-white px-10 py-5 rounded-full uppercase tracking-widest text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group">
+        <Link to="/booking" className="h2-btn opacity-0 inline-flex items-center gap-3 md:gap-4 bg-[#C24C2A] text-white px-7 py-3 md:px-10 md:py-5 rounded-full uppercase tracking-widest text-xs md:text-sm font-medium transition-all duration-300 hover:bg-white hover:text-[#2A1A0E] hover:scale-105 group">
           {cta}
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </Link>
