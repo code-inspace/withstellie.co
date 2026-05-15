@@ -5,7 +5,6 @@ import { PromoBanner } from './components/layout/PromoBanner';
 import { ScrollToTop } from './components/layout/ScrollToTop';
 
 const Home         = lazy(() => import('./pages/home/index'));
-const About        = lazy(() => import('./pages/about2/index'));
 const LegalNotice  = lazy(() => import('./pages/legal-notice/index'));
 const PrivacyPolicy= lazy(() => import('./pages/privacy-policy/index'));
 const OffreAvril   = lazy(() => import('./pages/offre-avril/index'));
@@ -26,7 +25,6 @@ function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/"                  element={<Home />} />
-          <Route path="/about2"            element={<About />} />
           <Route path="/legal-notice"      element={<LegalNotice />} />
           <Route path="/privacy-policy"    element={<PrivacyPolicy />} />
           <Route path="/offre-avril"       element={<OffreAvril />} />
