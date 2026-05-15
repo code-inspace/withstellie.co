@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { AlertCircle } from "lucide-react";
 
 export const Headline: React.FC<{ data?: any; lang?: string }> = ({
   data,
