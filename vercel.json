@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.sanity.io https://images.unsplash.com; connect-src 'self' https://*.sanity.io https://formsubmit.co https://cal.com; frame-src https://cal.com https://*.cal.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.sanity.io https://images.unsplash.com https://*.cal.com https://*.cal.eu; connect-src 'self' https://*.sanity.io https://formsubmit.co https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu; frame-src https://cal.com https://*.cal.com https://cal.eu https://*.cal.eu; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests"
         },
         {
           "key": "Strict-Transport-Security",
