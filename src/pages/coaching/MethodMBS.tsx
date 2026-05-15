@@ -86,12 +86,15 @@ export const MethodMBS: React.FC<{ data?: any; lang?: string }> = ({
           {dimensions.map((dim: any, i: number) => (
             <div
               key={i}
-              className="mbs-card bg-[#F5EDE0]/5 rounded-[2rem] p-10 md:p-12 hover:bg-[#F5EDE0]/10 transition-colors duration-500 h-full flex flex-col"
+              className="mbs-card bg-[#F5EDE0]/5 rounded-[2rem] p-10 md:p-12 hover:bg-[#F5EDE0]/10 transition-colors duration-500 h-full flex flex-col relative overflow-hidden"
             >
-              <h3 className="font-display italic text-5xl text-[#C24C2A] mb-8">
+              <div className="absolute -right-6 -top-10 text-[14rem] font-sans text-white/5 font-bold leading-none select-none pointer-events-none">
+                {dim.letter || dim.title?.charAt(0)}
+              </div>
+              <h3 className="font-display italic text-5xl text-[#C24C2A] mb-8 relative z-10">
                 {dim.title}
               </h3>
-              <p className="text-lg leading-relaxed font-light text-[#F5EDE0]/70">
+              <p className="text-lg leading-relaxed font-light text-[#F5EDE0]/70 relative z-10">
                 {dim[`desc_${lang}`]}
               </p>
             </div>
