@@ -1,13 +1,45 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Info } from 'lucide-react';
+import Cal, { getCalApi } from '@calcom/embed-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang = 'fr' }) => {
   const container = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi({ namespace: 'get-to-know-call' });
+      cal('ui', {
+        theme: 'light',
+        cssVarsPerTheme: {
+          light: {
+            'cal-brand': '#C24C2A',
+            'cal-brand-emphasis': '#A83D22',
+            'cal-brand-text': '#F5EDE0',
+            'cal-bg': '#F9F3EC',
+            'cal-bg-emphasis': '#EDE7DF',
+            'cal-text': '#2A1A0E',
+            'cal-text-emphasis': '#2A1A0E',
+            'cal-border': '#2A1A0E1A',
+          },
+          dark: {
+            'cal-brand': '#C24C2A',
+            'cal-brand-emphasis': '#A83D22',
+            'cal-brand-text': '#F5EDE0',
+            'cal-bg': '#2A1A0E',
+            'cal-bg-emphasis': '#3A2A1E',
+            'cal-text': '#F5EDE0',
+            'cal-text-emphasis': '#F5EDE0',
+            'cal-border': '#F5EDE01A',
+          },
+        },
+      });
+    })();
+  }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -27,11 +59,13 @@ export const CalWidget: React.FC<{ data?: any; lang?: string }> = ({ data, lang 
           </h2>
         </div>
 
-        <div className="cal-widget bg-white rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full min-h-[650px]">
-          <iframe
-            src="https://cal.eu/withstellie.co/get-to-know-call?embed=true&theme=light&brandColor=%23C24C2A&brandTextColor=%23F5EDE0&brandBgColor=%23F9F3EC"
-            style={{ width: '100%', height: '650px', border: 'none' }}
-            title="Calendrier de réservation"
+        <div className="cal-widget bg-[#F9F3EC] rounded-3xl overflow-hidden shadow-xl my-[20px] relative border border-[#2A1A0E]/5 w-full min-h-[650px]">
+          <Cal
+            namespace="get-to-know-call"
+            calLink="withstellie.co/get-to-know-call"
+            calOrigin="https://cal.eu"
+            style={{ width: '100%', height: '100%', minHeight: '650px' }}
+            config={{ layout: 'month_view' }}
           />
         </div>
 
